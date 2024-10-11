@@ -1,0 +1,14 @@
+d:\Năm 3\TTCSN\MyFirstCSharpProject\CoffeeShopManager\bin\Debug\net8.0-windows\CoffeeShopManager.exe
+d:\Năm 3\TTCSN\MyFirstCSharpProject\CoffeeShopManager\bin\Debug\net8.0-windows\CoffeeShopManager.deps.json
+d:\Năm 3\TTCSN\MyFirstCSharpProject\CoffeeShopManager\bin\Debug\net8.0-windows\CoffeeShopManager.runtimeconfig.json
+d:\Năm 3\TTCSN\MyFirstCSharpProject\CoffeeShopManager\bin\Debug\net8.0-windows\CoffeeShopManager.dll
+d:\Năm 3\TTCSN\MyFirstCSharpProject\CoffeeShopManager\bin\Debug\net8.0-windows\CoffeeShopManager.pdb
+d:\Năm 3\TTCSN\MyFirstCSharpProject\CoffeeShopManager\obj\Debug\net8.0-windows\CoffeeShopManager.GeneratedMSBuildEditorConfig.editorconfig
+d:\Năm 3\TTCSN\MyFirstCSharpProject\CoffeeShopManager\obj\Debug\net8.0-windows\CoffeeShopManager.AssemblyInfoInputs.cache
+d:\Năm 3\TTCSN\MyFirstCSharpProject\CoffeeShopManager\obj\Debug\net8.0-windows\CoffeeShopManager.AssemblyInfo.cs
+d:\Năm 3\TTCSN\MyFirstCSharpProject\CoffeeShopManager\obj\Debug\net8.0-windows\CoffeeShopManager.csproj.CoreCompileInputs.cache
+d:\Năm 3\TTCSN\MyFirstCSharpProject\CoffeeShopManager\obj\Debug\net8.0-windows\CoffeeShopManager.dll
+d:\Năm 3\TTCSN\MyFirstCSharpProject\CoffeeShopManager\obj\Debug\net8.0-windows\refint\CoffeeShopManager.dll
+d:\Năm 3\TTCSN\MyFirstCSharpProject\CoffeeShopManager\obj\Debug\net8.0-windows\CoffeeShopManager.pdb
+d:\Năm 3\TTCSN\MyFirstCSharpProject\CoffeeShopManager\obj\Debug\net8.0-windows\CoffeeShopManager.genruntimeconfig.cache
+d:\Năm 3\TTCSN\MyFirstCSharpProject\CoffeeShopManager\obj\Debug\net8.0-windows\ref\CoffeeShopManager.dll
