@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "zPbdmtCRmVbJlPjEyb2grx51Wj5773oBG9gehFDfwaxLBnx2aVJE7kwnM0UfZDXnrXrBVKLC14TW6SYHSaranA==",
+  "success": true,
+  "projectFilePath": "E:\\Thuc_Tap_Co_So_Nganh\\Project\\QuanLyQuanCafe\\QuanLyQuanCAFE.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nvduc\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.1\\microsoft.extensions.dependencyinjection.8.0.1.nupkg.sha512",
+    "C:\\Users\\nvduc\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.2\\microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\nvduc\\.nuget\\packages\\microsoft.extensions.logging\\8.0.1\\microsoft.extensions.logging.8.0.1.nupkg.sha512",
+    "C:\\Users\\nvduc\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.2\\microsoft.extensions.logging.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\nvduc\\.nuget\\packages\\microsoft.extensions.options\\8.0.2\\microsoft.extensions.options.8.0.2.nupkg.sha512",
+    "C:\\Users\\nvduc\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
