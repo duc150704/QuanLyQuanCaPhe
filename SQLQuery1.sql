@@ -55,5 +55,17 @@ create table BillInfo
 
 )
 
-drop table BillInfo
 
+insert into Account (UserName, DisplayName, Password, Type)
+values ('NgoVanDuc', 'NgoDuc', 'ngovanduc@123',0),
+		('NguyenVanHieu','NguyenHieu','nguyenvanhieu@123',1)
+
+go
+
+create proc USP_GetPeopleByUserName
+@userName nvarchar(100)
+as
+begin
+	select *from Account Where UserName = @userName 
+end
+go

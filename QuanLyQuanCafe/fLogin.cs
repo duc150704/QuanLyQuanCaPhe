@@ -1,4 +1,6 @@
-﻿namespace QuanLyQuanCAFE
+﻿using QuanLyQuanCAFE.DAO;
+
+namespace QuanLyQuanCAFE
 {
     public partial class fLogin : Form
     {
@@ -11,13 +13,30 @@
         {
         
         }
+
+        private bool Login(string userName, String password)
+        {
+            return AccountDAO.Instance.Login(userName, password);
+        }
         private void ButLogin_Click(object sender, EventArgs e)
         {
-            tableManagercs f = new tableManagercs();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
+            string userName = textBox1.Text;
+            string password = texPassWord.Text;
+            if (Login(userName,password))
+            {
+                tableManagercs f = new tableManagercs();
+                this.Hide();
+                f.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Tên tài khoản hoặc mật khẩu không đúng");
+            }
+
         }
+
+
           private void butExit_Click(object sender, EventArgs e)
         {
          

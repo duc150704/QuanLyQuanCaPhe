@@ -92,13 +92,13 @@
             // thôngTinCáNhânToolStripMenuItem1
             // 
             thôngTinCáNhânToolStripMenuItem1.Name = "thôngTinCáNhânToolStripMenuItem1";
-            thôngTinCáNhânToolStripMenuItem1.Size = new Size(224, 26);
+            thôngTinCáNhânToolStripMenuItem1.Size = new Size(210, 26);
             thôngTinCáNhânToolStripMenuItem1.Text = "Thông tin cá nhân";
             // 
             // đăngXuấtToolStripMenuItem
             // 
             đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            đăngXuấtToolStripMenuItem.Size = new Size(224, 26);
+            đăngXuấtToolStripMenuItem.Size = new Size(210, 26);
             đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             đăngXuấtToolStripMenuItem.Click += đăngXuấtToolStripMenuItem_Click;
             // 
