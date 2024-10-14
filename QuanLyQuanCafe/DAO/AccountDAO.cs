@@ -25,8 +25,8 @@ namespace QuanLyQuanCAFE.DAO
 
         public bool Login(string userName, string passWord)
         {
-            string query = "select * from Account Where UserName = '" + userName + "' and PassWord =  '" + passWord + "'";
-            DataTable result = DataProvider.Instance.ExcuteQuery(query);
+            string query = "USP_Login @userName , @passWord";
+            DataTable result = DataProvider.Instance.ExcuteQuery(query,new object[] {userName, passWord});
             return result.Rows.Count > 0;
         }
     }
