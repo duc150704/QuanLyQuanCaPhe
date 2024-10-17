@@ -1,4 +1,4 @@
-﻿create database QuanLyQuanCaPhe
+﻿create database QuanLyQuanCaPhe 
 go
 
 use QuanLyQuanCaPhe
@@ -78,5 +78,15 @@ begin
 end
 go
 
+declare  @i int = 0
+while @i <= 10
+begin 
+	insert dbo.TableFood (name) values ( N'Bàn '+ cast(@i as nvarchar(100)))
+		set @i=@i+1
+end
 
+create proc USP_GetTableList 
+As Select * from dbo.TableFood 
+go
+EXEC dbo.USP_GetTableList
 
