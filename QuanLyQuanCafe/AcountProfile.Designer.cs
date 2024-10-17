@@ -67,11 +67,12 @@
             // lbUserName
             // 
             lbUserName.AutoSize = true;
-            lbUserName.Location = new Point(37, 23);
+            lbUserName.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbUserName.Location = new Point(9, 22);
             lbUserName.Name = "lbUserName";
-            lbUserName.Size = new Size(112, 20);
+            lbUserName.Size = new Size(163, 24);
             lbUserName.TabIndex = 1;
-            lbUserName.Text = "Tên Đăng Nhập";
+            lbUserName.Text = "Tên Đăng Nhập:";
             // 
             // textBox1
             // 
@@ -94,11 +95,12 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(37, 23);
+            label1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(9, 20);
             label1.Name = "label1";
-            label1.Size = new Size(95, 20);
+            label1.Size = new Size(143, 24);
             label1.TabIndex = 1;
-            label1.Text = "Tên Hiển Thị ";
+            label1.Text = "Tên Hiển Thị :";
             // 
             // txbDisPlayName
             // 
@@ -121,11 +123,12 @@
             // lbPassWord
             // 
             lbPassWord.AutoSize = true;
-            lbPassWord.Location = new Point(37, 28);
+            lbPassWord.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbPassWord.Location = new Point(15, 25);
             lbPassWord.Name = "lbPassWord";
-            lbPassWord.Size = new Size(72, 20);
+            lbPassWord.Size = new Size(107, 24);
             lbPassWord.TabIndex = 1;
-            lbPassWord.Text = "Mật Khẩu";
+            lbPassWord.Text = "Mật Khẩu:";
             // 
             // texPassWord
             // 
@@ -147,11 +150,12 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(37, 28);
             label2.Name = "label2";
-            label2.Size = new Size(68, 20);
+            label2.Size = new Size(100, 24);
             label2.TabIndex = 1;
-            label2.Text = "Nhập Lại";
+            label2.Text = "Nhập Lại:";
             // 
             // textBox3
             // 
@@ -173,11 +177,12 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(37, 28);
+            label3.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(14, 28);
             label3.Name = "label3";
-            label3.Size = new Size(102, 20);
+            label3.Size = new Size(149, 24);
             label3.TabIndex = 1;
-            label3.Text = "Mật Khẩu mới";
+            label3.Text = "Mật Khẩu Mới:";
             // 
             // textBox2
             // 

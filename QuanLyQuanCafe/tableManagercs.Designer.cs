@@ -80,6 +80,7 @@
             adminToolStripMenuItem.Name = "adminToolStripMenuItem";
             adminToolStripMenuItem.Size = new Size(67, 24);
             adminToolStripMenuItem.Text = "Admin";
+            adminToolStripMenuItem.Click += adminToolStripMenuItem_Click;
             // 
             // thôngTinCáNhânToolStripMenuItem
             // 
@@ -94,6 +95,7 @@
             thôngTinCáNhânToolStripMenuItem1.Name = "thôngTinCáNhânToolStripMenuItem1";
             thôngTinCáNhânToolStripMenuItem1.Size = new Size(210, 26);
             thôngTinCáNhânToolStripMenuItem1.Text = "Thông tin cá nhân";
+            thôngTinCáNhânToolStripMenuItem1.Click += thôngTinCáNhânToolStripMenuItem1_Click;
             // 
             // đăngXuấtToolStripMenuItem
             // 
@@ -134,7 +136,7 @@
             // cbSwitchTable
             // 
             cbSwitchTable.FormattingEnabled = true;
-            cbSwitchTable.Location = new Point(0, 31);
+            cbSwitchTable.Location = new Point(0, 36);
             cbSwitchTable.Name = "cbSwitchTable";
             cbSwitchTable.Size = new Size(114, 28);
             cbSwitchTable.TabIndex = 7;
@@ -150,7 +152,7 @@
             // 
             // numericUpDown
             // 
-            numericUpDown.Location = new Point(204, 32);
+            numericUpDown.Location = new Point(204, 37);
             numericUpDown.Name = "numericUpDown";
             numericUpDown.Size = new Size(104, 27);
             numericUpDown.TabIndex = 5;
@@ -189,7 +191,7 @@
             // 
             // nnFoodCount
             // 
-            nnFoodCount.Location = new Point(347, 34);
+            nnFoodCount.Location = new Point(347, 27);
             nnFoodCount.Minimum = new decimal(new int[] { 100, 0, 0, int.MinValue });
             nnFoodCount.Name = "nnFoodCount";
             nnFoodCount.Size = new Size(52, 27);

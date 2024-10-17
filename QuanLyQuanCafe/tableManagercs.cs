@@ -1,9 +1,7 @@
-﻿using QuanLyQuanCAFE.DAO;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,14 +15,11 @@ namespace QuanLyQuanCAFE
         public tableManagercs()
         {
             InitializeComponent();
-
         }
-
 
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AcountProfile f = new AcountProfile();
-            f.ShowDialog();
+            
         }
 
         private void lvBill_SelectedIndexChanged(object sender, EventArgs e)
@@ -39,8 +34,20 @@ namespace QuanLyQuanCAFE
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
-        this.Close();
+            this.Close();
         }
 
+        private void adminToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fAmin f = new fAmin();
+            f.ShowDialog();
+
+        }
+
+        private void thôngTinCáNhânToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            AcountProfile f = new AcountProfile();
+            f.ShowDialog();
+        }
     }
 }
