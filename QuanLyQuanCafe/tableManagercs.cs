@@ -15,8 +15,33 @@ namespace QuanLyQuanCAFE
         public tableManagercs()
         {
             InitializeComponent();
+            LoadTable();
         }
 
+        #region Method
+        void LoadTable()
+        {
+            List<Table> TableList = TableDAO.Instance.LoadTableList();
+            foreach (Table item in TableList)
+            {
+                Button btn = new Button() { Width = TableDAO.TableWidth, Height = TableDAO.TableHeight };
+                btn.Text = item.Name + Environment.NewLine + item.Status;
+                switch (item.Status)
+                {
+                    case "Trống":
+                        btn.BackColor = Color.LightBlue;
+                        break;
+                    default : 
+                        btn.BackColor = Color.LightPink; 
+                        break;
+                }
+
+                flpTable.Controls.Add(btn);
+            }
+        }
+        #endregion
+
+        #region Events
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
@@ -49,5 +74,6 @@ namespace QuanLyQuanCAFE
             AcountProfile f = new AcountProfile();
             f.ShowDialog();
         }
+        #endregion
     }
 }
