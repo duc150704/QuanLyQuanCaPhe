@@ -1,4 +1,6 @@
-﻿using System;
+using QuanLyQuanCAFE.DAO;
+using QuanLyQuanCAFE.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,9 +10,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuanLyQuanCafe
+namespace QuanLyQuanCAFE
 {
-        public partial class tableManagercs : Form
+    public partial class tableManagercs : Form
     {
         public tableManagercs()
         {
@@ -18,33 +20,9 @@ namespace QuanLyQuanCafe
             LoadTable();
         }
 
-        #region Method
-        void LoadTable()
-        {
-            List<Table> TableList = TableDAO.Instance.LoadTableList();
-            foreach (Table item in TableList)
-            {
-                Button btn = new Button() { Width = TableDAO.TableWidth, Height = TableDAO.TableHeight };
-                btn.Text = item.Name + Environment.NewLine + item.Status;
-                switch (item.Status)
-                {
-                    case "Trống":
-                        btn.BackColor = Color.LightBlue;
-                        break;
-                    default : 
-                        btn.BackColor = Color.LightPink; 
-                        break;
-                }
-
-                flpTable.Controls.Add(btn);
-            }
-        }
-        #endregion
-
-        #region Events
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void lvBill_SelectedIndexChanged(object sender, EventArgs e)
@@ -56,7 +34,7 @@ namespace QuanLyQuanCafe
         {
 
         }
-
+        #region Events
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -74,6 +52,44 @@ namespace QuanLyQuanCafe
             AcountProfile f = new AcountProfile();
             f.ShowDialog();
         }
+        #endregion
+        private void cbFood_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddFood_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        #region
+
+        void LoadTable()
+        {
+            List<Table> tableList =  TableDAO.Instance.LoadTableList();
+
+            foreach (Table t in tableList) {
+                Button btn = new Button() 
+                {   
+                    Width = TableDAO.TableWidth,
+                    Height = TableDAO.TableHeight 
+                };
+                btn.Text = t.Name + Environment.NewLine + t.Status;
+
+                if (t.Status.Equals("Trống"))
+                {
+                    btn.BackColor = Color.Gray;
+                }
+                else
+                {
+                    btn.BackColor = Color.Green;
+                }
+
+                flpTable.Controls.Add(btn);
+            }
+        }
+
         #endregion
     }
 }

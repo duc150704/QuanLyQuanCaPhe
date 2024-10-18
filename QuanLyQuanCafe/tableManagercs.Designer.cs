@@ -107,16 +107,16 @@
             // panel2
             // 
             panel2.Controls.Add(lvBill);
-            panel2.Location = new Point(466, 160);
+            panel2.Location = new Point(466, 146);
             panel2.Name = "panel2";
-            panel2.Size = new Size(422, 340);
+            panel2.Size = new Size(422, 354);
             panel2.TabIndex = 3;
             // 
             // lvBill
             // 
-            lvBill.Location = new Point(0, 3);
+            lvBill.Location = new Point(3, 3);
             lvBill.Name = "lvBill";
-            lvBill.Size = new Size(422, 334);
+            lvBill.Size = new Size(416, 348);
             lvBill.TabIndex = 0;
             lvBill.UseCompatibleStateImageBehavior = false;
             lvBill.SelectedIndexChanged += lvBill_SelectedIndexChanged;
@@ -186,12 +186,12 @@
             panel4.Controls.Add(cbCategory);
             panel4.Location = new Point(466, 68);
             panel4.Name = "panel4";
-            panel4.Size = new Size(419, 89);
+            panel4.Size = new Size(419, 72);
             panel4.TabIndex = 5;
             // 
             // nnFoodCount
             // 
-            nnFoodCount.Location = new Point(347, 27);
+            nnFoodCount.Location = new Point(356, 20);
             nnFoodCount.Minimum = new decimal(new int[] { 100, 0, 0, int.MinValue });
             nnFoodCount.Name = "nnFoodCount";
             nnFoodCount.Size = new Size(52, 27);
@@ -200,31 +200,34 @@
             // 
             // AddFood
             // 
-            AddFood.Location = new Point(232, 18);
+            AddFood.Location = new Point(241, 0);
             AddFood.Name = "AddFood";
-            AddFood.Size = new Size(109, 43);
+            AddFood.Size = new Size(109, 65);
             AddFood.TabIndex = 2;
             AddFood.Text = "Thêm Món";
             AddFood.UseVisualStyleBackColor = true;
+            AddFood.Click += AddFood_Click;
             // 
             // cbFood
             // 
             cbFood.FormattingEnabled = true;
-            cbFood.Location = new Point(3, 47);
+            cbFood.Location = new Point(3, 37);
             cbFood.Name = "cbFood";
-            cbFood.Size = new Size(205, 28);
+            cbFood.Size = new Size(232, 28);
             cbFood.TabIndex = 1;
+            cbFood.SelectedIndexChanged += cbFood_SelectedIndexChanged;
             // 
             // cbCategory
             // 
             cbCategory.FormattingEnabled = true;
             cbCategory.Location = new Point(3, 3);
             cbCategory.Name = "cbCategory";
-            cbCategory.Size = new Size(205, 28);
+            cbCategory.Size = new Size(232, 28);
             cbCategory.TabIndex = 0;
             // 
             // flpTable
             // 
+            flpTable.AutoScroll = true;
             flpTable.Location = new Point(12, 71);
             flpTable.Name = "flpTable";
             flpTable.Size = new Size(414, 481);
