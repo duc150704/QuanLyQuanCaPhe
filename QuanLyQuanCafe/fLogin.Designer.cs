@@ -126,7 +126,7 @@ namespace QuanLyQuanCAFE
             lbUserName.Size = new Size(112, 20);
             lbUserName.TabIndex = 1;
             lbUserName.Text = "Tên Đăng Nhập";
-            lbUserName.FontChanged += this.lbUserName_FontChanged;
+            lbUserName.FontChanged += lbUserName_FontChanged;
             // 
             // fLogin
             // 
