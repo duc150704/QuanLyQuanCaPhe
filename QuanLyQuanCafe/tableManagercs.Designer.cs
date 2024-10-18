@@ -1,4 +1,4 @@
-﻿namespace QuanLyQuanCAFE
+﻿namespace QuanLyQuanCafe
 {
     partial class tableManagercs
     {

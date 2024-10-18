@@ -1,4 +1,4 @@
-﻿using QuanLyQuanCAFE.DAO;
+using QuanLyQuanCAFE.DAO;
 using QuanLyQuanCAFE.DTO;
 using System;
 using System.Collections.Generic;
