@@ -58,7 +58,8 @@ create table BillInfo
 
 insert into Account (UserName, DisplayName, Password, Type)
 values ('NgoVanDuc', 'NgoDuc', 'ngovanduc@123',0),
-		('NguyenVanHieu','NguyenHieu','nguyenvanhieu@123',1)
+		('NguyenVanHieu','NguyenHieu','nguyenvanhieu@123',1),
+		('admin','admin','admin',1)
 
 go
 
@@ -77,6 +78,25 @@ begin
 	select * from Account where UserName = @userName and Password = @passWord 
 end
 go
+
+declare @i int = 0
+while @i <= 10
+begin
+	insert TableFood(id,name)
+	values (@i, N'Bàn ' + CAST( @i as nvarchar(100)))
+	set @i = @i + 1
+end
+go
+
+create proc USP_GetTableList
+as select * from TableFood
+go
+
+exec USP_GetTableList
+
+
+
+
 
 
 
