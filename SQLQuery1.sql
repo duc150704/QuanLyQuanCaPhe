@@ -78,7 +78,7 @@ begin
 	select * from Account where UserName = @userName and Password = @passWord 
 end
 go
-
+--thêm bàn
 declare @i int = 0
 while @i <= 10
 begin
@@ -92,11 +92,49 @@ create proc USP_GetTableList
 as select * from TableFood
 go
 
-exec USP_GetTableList
+
+--thêm category
+insert FoodCategory (id,name)
+values (0,N'Đồ uống'),
+		(1,N'Đồ ăn nhẹ')
+
+go
+
+--thêm món ăn
+insert into Food(id,name, idCategory, price)
+values (0,N'Cà phê đen', 0, 30000),
+		(1,N'Cà phê sữa', 0, 25000),
+		(2,N'Cà phê phin', 0, 50000),
+		(3,N'Trà xanh', 0, 30000),
+		(4,N'Trà đào', 0, 30000),
+		(5,N'Bánh mì', 1, 20000),
+		(6,N'Bánh bông lan', 1, 30000),
+		(8,N'Cánh gà', 1, 30000),
+		(9,N'Đùi gà', 1, 30000)
+go
+		
 
 
+--thêm bill
+insert into Bill
+values (0,GETDATE(), null , 1, 0),
+		(1,GETDATE(), null , 2, 0),
+		(2,GETDATE(), GETDATE() , 3, 1),
+		(3,GETDATE(), GETDATE() , 4, 1)
+go
 
 
+--thêm billinfo
+insert BillInfo
+values (0,2,0,5),
+		(1,3,2,4),
+		(2,1,1,2),
+		(3,4,3,1)
+go
 
+select * from FoodCategory
+select * from Food
+select * from Bill
+select * from BillInfo
 
 
