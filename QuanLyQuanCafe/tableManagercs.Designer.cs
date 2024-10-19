@@ -35,7 +35,9 @@
             thôngTinCáNhânToolStripMenuItem1 = new ToolStripMenuItem();
             đăngXuấtToolStripMenuItem = new ToolStripMenuItem();
             panel2 = new Panel();
-            lvBill = new ListView();
+            lsvBill = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
             panel3 = new Panel();
             cbSwitchTable = new ComboBox();
             SwitchTable = new Button();
@@ -48,6 +50,8 @@
             cbFood = new ComboBox();
             cbCategory = new ComboBox();
             flpTable = new FlowLayoutPanel();
+            columnHeader3 = new ColumnHeader();
+            columnHeader4 = new ColumnHeader();
             menuStrip2.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -106,20 +110,33 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(lvBill);
+            panel2.Controls.Add(lsvBill);
             panel2.Location = new Point(466, 146);
             panel2.Name = "panel2";
             panel2.Size = new Size(422, 354);
             panel2.TabIndex = 3;
             // 
-            // lvBill
+            // lsvBill
             // 
-            lvBill.Location = new Point(3, 3);
-            lvBill.Name = "lvBill";
-            lvBill.Size = new Size(416, 348);
-            lvBill.TabIndex = 0;
-            lvBill.UseCompatibleStateImageBehavior = false;
-            lvBill.SelectedIndexChanged += lvBill_SelectedIndexChanged;
+            lsvBill.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
+            lsvBill.GridLines = true;
+            lsvBill.Location = new Point(3, 3);
+            lsvBill.Name = "lsvBill";
+            lsvBill.Size = new Size(416, 348);
+            lsvBill.TabIndex = 0;
+            lsvBill.UseCompatibleStateImageBehavior = false;
+            lsvBill.View = View.Details;
+            lsvBill.SelectedIndexChanged += lvBill_SelectedIndexChanged;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Tên món";
+            columnHeader1.Width = 140;
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "Số Lượng";
+            columnHeader2.Width = 80;
             // 
             // panel3
             // 
@@ -233,6 +250,16 @@
             flpTable.Size = new Size(414, 481);
             flpTable.TabIndex = 6;
             // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Đơn giá";
+            columnHeader3.Width = 80;
+            // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "Thành tiền";
+            columnHeader4.Width = 100;
+            // 
             // tableManagercs
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -267,7 +294,7 @@
         private ToolStripMenuItem thôngTinCáNhânToolStripMenuItem1;
         private ToolStripMenuItem đăngXuấtToolStripMenuItem;
         private Panel panel2;
-        private ListView lvBill;
+        private ListView lsvBill;
         private Panel panel3;
         private Panel panel4;
         private ComboBox cbCategory;
@@ -280,5 +307,9 @@
         private Button butDiscount;
         private ComboBox cbSwitchTable;
         private Button SwitchTable;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
+        private ColumnHeader columnHeader4;
     }
 }

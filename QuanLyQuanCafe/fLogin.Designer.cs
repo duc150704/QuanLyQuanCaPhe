@@ -50,6 +50,7 @@ namespace QuanLyQuanCAFE
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(386, 27);
             textBox1.TabIndex = 0;
+            textBox1.Text = "admin";
             textBox1.TextChanged += textBox1_TextChanged;
             // 
             // panel1
@@ -107,6 +108,7 @@ namespace QuanLyQuanCAFE
             texPassWord.Name = "texPassWord";
             texPassWord.Size = new Size(386, 27);
             texPassWord.TabIndex = 0;
+            texPassWord.Text = "admin";
             texPassWord.UseSystemPasswordChar = true;
             // 
             // panel2

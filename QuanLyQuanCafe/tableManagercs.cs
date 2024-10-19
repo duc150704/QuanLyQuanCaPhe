@@ -35,6 +35,15 @@ namespace QuanLyQuanCAFE
 
         }
         #region Events
+
+        private void btn_Click(object? sender, EventArgs e)
+        {
+            int tableID = ((sender as Button).Tag  as Table).ID;
+            ShowBill(tableID);
+        }
+
+        
+
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -76,6 +85,9 @@ namespace QuanLyQuanCAFE
                     Height = TableDAO.TableHeight 
                 };
                 btn.Text = t.Name + Environment.NewLine + t.Status;
+                btn.Click += btn_Click;
+                btn.Tag = t;
+
 
                 if (t.Status.Equals("Trống"))
                 {
@@ -90,6 +102,24 @@ namespace QuanLyQuanCAFE
             }
         }
 
+        private void ShowBill(int id)
+        {
+            lsvBill.Items.Clear();
+
+            List<Menu> listBillInfo = MenuDAO.Instance.GetListMenuByTable(id);
+
+            foreach (Menu item in listBillInfo)
+            {
+                ListViewItem lsvItem = new ListViewItem(item.FoodName.ToString());
+                lsvItem.SubItems.Add(item.Count.ToString());
+                lsvItem.SubItems.Add(item.Price.ToString());
+                lsvItem.SubItems.Add(item.TotalPrice.ToString());
+
+
+                lsvBill.Items.Add(lsvItem);
+            }
+
+        }
         #endregion
     }
 }
