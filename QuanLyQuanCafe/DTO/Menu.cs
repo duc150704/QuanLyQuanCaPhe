@@ -22,7 +22,7 @@ namespace QuanLyQuanCAFE.DTO
             this.FoodName = row["name"].ToString();
             this.Count = (int)row["quantity"];
             this.Price = (float)Convert.ToDouble(row["price"]);
-            this.totalPrice = (float)Convert.ToDouble(row["totalPrice"]);
+            this.totalPrice = (float)Convert.ToDouble(row["totalPrice"].ToString());
         }
 
         private string foodName;

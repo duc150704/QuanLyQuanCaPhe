@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,7 @@ namespace QuanLyQuanCAFE
         {
             InitializeComponent();
             LoadTable();
+            LoadCategory();
         }
 
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
@@ -38,11 +40,13 @@ namespace QuanLyQuanCAFE
 
         private void btn_Click(object? sender, EventArgs e)
         {
-            int tableID = ((sender as Button).Tag  as Table).ID;
+            int tableID = ((sender as Button).Tag as Table).ID;
+            lsvBill.Tag = (sender as Button).Tag;
+
             ShowBill(tableID);
         }
 
-        
+
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -69,20 +73,51 @@ namespace QuanLyQuanCAFE
 
         private void AddFood_Click(object sender, EventArgs e)
         {
+            Table table = lsvBill.Tag as Table;
+            int idBill = BillDAO.Instance.GetUncheckBillIDBytableID(table.ID);
+            int idFood = (cbFood.SelectedItem as Food).Id;
+            int count = (int)nnFoodCount.Value;
 
+            
+            if (idBill == -1)
+            {
+                BillDAO.Instance.InsertBill(table.ID);
+                BillInfoDAO.Instance.InsertBillInfor(BillDAO.Instance.GetMaxIdBill(), idFood, count);
+            } else
+            {
+                BillInfoDAO.Instance.InsertBillInfor(idBill, idFood, count);
+
+            }
+
+            ShowBill(table.ID);
         }
 
         #region
 
+        void LoadCategory()
+        {
+            List<Category> list = CategoryDAO.Instance.GetListCategory();
+            cbCategory.DataSource = list;
+            cbCategory.DisplayMember = "name";
+        }
+
+        void LoadFoodListByCategoryID(int id)
+        {
+            List<Food> list = FoodDAO.Instance.GetFoodByCategoryID(id);
+            cbFood.DataSource = list;
+            cbFood.DisplayMember = "name";
+        }
+
         void LoadTable()
         {
-            List<Table> tableList =  TableDAO.Instance.LoadTableList();
+            List<Table> tableList = TableDAO.Instance.LoadTableList();
 
-            foreach (Table t in tableList) {
-                Button btn = new Button() 
-                {   
+            foreach (Table t in tableList)
+            {
+                Button btn = new Button()
+                {
                     Width = TableDAO.TableWidth,
-                    Height = TableDAO.TableHeight 
+                    Height = TableDAO.TableHeight
                 };
                 btn.Text = t.Name + Environment.NewLine + t.Status;
                 btn.Click += btn_Click;
@@ -107,6 +142,8 @@ namespace QuanLyQuanCAFE
             lsvBill.Items.Clear();
 
             List<Menu> listBillInfo = MenuDAO.Instance.GetListMenuByTable(id);
+            float totalPrice = 0;
+
 
             foreach (Menu item in listBillInfo)
             {
@@ -115,11 +152,35 @@ namespace QuanLyQuanCAFE
                 lsvItem.SubItems.Add(item.Price.ToString());
                 lsvItem.SubItems.Add(item.TotalPrice.ToString());
 
+                totalPrice += item.TotalPrice;
+
 
                 lsvBill.Items.Add(lsvItem);
             }
 
+            CultureInfo culture = new CultureInfo("vi-VN");
+
+            txbtotalPrice.Text = totalPrice.ToString("c", culture);
+
         }
         #endregion
+
+        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int id = 0;
+
+            ComboBox cb = sender as ComboBox;
+
+            if (cb.SelectedItem == null) 
+            {
+                return;
+            }
+
+            Category selected = cb.SelectedItem as Category;
+            id = selected.Id;
+
+
+            LoadFoodListByCategoryID(id);
+        }
     }
 }

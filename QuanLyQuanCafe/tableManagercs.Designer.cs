@@ -38,7 +38,10 @@
             lsvBill = new ListView();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
+            columnHeader4 = new ColumnHeader();
             panel3 = new Panel();
+            txbtotalPrice = new TextBox();
             cbSwitchTable = new ComboBox();
             SwitchTable = new Button();
             numericUpDown = new NumericUpDown();
@@ -50,8 +53,6 @@
             cbFood = new ComboBox();
             cbCategory = new ComboBox();
             flpTable = new FlowLayoutPanel();
-            columnHeader3 = new ColumnHeader();
-            columnHeader4 = new ColumnHeader();
             menuStrip2.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -138,8 +139,19 @@
             columnHeader2.Text = "Số Lượng";
             columnHeader2.Width = 80;
             // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Đơn giá";
+            columnHeader3.Width = 80;
+            // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "Thành tiền";
+            columnHeader4.Width = 100;
+            // 
             // panel3
             // 
+            panel3.Controls.Add(txbtotalPrice);
             panel3.Controls.Add(cbSwitchTable);
             panel3.Controls.Add(SwitchTable);
             panel3.Controls.Add(numericUpDown);
@@ -150,10 +162,21 @@
             panel3.Size = new Size(419, 70);
             panel3.TabIndex = 4;
             // 
+            // txbtotalPrice
+            // 
+            txbtotalPrice.Font = new Font("Arial Narrow", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txbtotalPrice.Location = new Point(230, 34);
+            txbtotalPrice.Name = "txbtotalPrice";
+            txbtotalPrice.ReadOnly = true;
+            txbtotalPrice.Size = new Size(186, 28);
+            txbtotalPrice.TabIndex = 8;
+            txbtotalPrice.Text = "0";
+            txbtotalPrice.TextAlign = HorizontalAlignment.Center;
+            // 
             // cbSwitchTable
             // 
             cbSwitchTable.FormattingEnabled = true;
-            cbSwitchTable.Location = new Point(0, 36);
+            cbSwitchTable.Location = new Point(0, 34);
             cbSwitchTable.Name = "cbSwitchTable";
             cbSwitchTable.Size = new Size(114, 28);
             cbSwitchTable.TabIndex = 7;
@@ -169,7 +192,7 @@
             // 
             // numericUpDown
             // 
-            numericUpDown.Location = new Point(204, 37);
+            numericUpDown.Location = new Point(120, 35);
             numericUpDown.Name = "numericUpDown";
             numericUpDown.Size = new Size(104, 27);
             numericUpDown.TabIndex = 5;
@@ -179,18 +202,18 @@
             // 
             // butDiscount
             // 
-            butDiscount.Location = new Point(204, 4);
+            butDiscount.Location = new Point(120, 0);
             butDiscount.Name = "butDiscount";
-            butDiscount.Size = new Size(105, 27);
+            butDiscount.Size = new Size(105, 32);
             butDiscount.TabIndex = 4;
             butDiscount.Text = "Giảm giá";
             butDiscount.UseVisualStyleBackColor = true;
             // 
             // Pay
             // 
-            Pay.Location = new Point(307, 3);
+            Pay.Location = new Point(230, -1);
             Pay.Name = "Pay";
-            Pay.Size = new Size(109, 64);
+            Pay.Size = new Size(186, 32);
             Pay.TabIndex = 3;
             Pay.Text = "Thanh Toán";
             Pay.UseVisualStyleBackColor = true;
@@ -241,24 +264,15 @@
             cbCategory.Name = "cbCategory";
             cbCategory.Size = new Size(232, 28);
             cbCategory.TabIndex = 0;
+            cbCategory.SelectedIndexChanged += cbCategory_SelectedIndexChanged;
             // 
             // flpTable
             // 
             flpTable.AutoScroll = true;
             flpTable.Location = new Point(12, 71);
             flpTable.Name = "flpTable";
-            flpTable.Size = new Size(414, 481);
+            flpTable.Size = new Size(414, 548);
             flpTable.TabIndex = 6;
-            // 
-            // columnHeader3
-            // 
-            columnHeader3.Text = "Đơn giá";
-            columnHeader3.Width = 80;
-            // 
-            // columnHeader4
-            // 
-            columnHeader4.Text = "Thành tiền";
-            columnHeader4.Width = 100;
             // 
             // tableManagercs
             // 
@@ -279,6 +293,7 @@
             menuStrip2.PerformLayout();
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown).EndInit();
             panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)nnFoodCount).EndInit();
@@ -311,5 +326,6 @@
         private ColumnHeader columnHeader2;
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader4;
+        private TextBox txbtotalPrice;
     }
 }
