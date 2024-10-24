@@ -30,11 +30,11 @@
         {
             tabControl1 = new TabControl();
             tabBill = new TabPage();
-            dataGridView1 = new DataGridView();
+            listBill = new DataGridView();
             panel3 = new Panel();
             button1 = new Button();
-            dateTimePicker1 = new DateTimePicker();
-            dateTimePicker2 = new DateTimePicker();
+            dateTimePicker02 = new DateTimePicker();
+            dateTimePicker01 = new DateTimePicker();
             tabFood = new TabPage();
             panel5 = new Panel();
             txbSearchFoodName = new TextBox();
@@ -60,8 +60,6 @@
             panel1 = new Panel();
             dtgvFood = new DataGridView();
             tabFoodCategory = new TabPage();
-            tabTable = new TabPage();
-            tabAccount = new TabPage();
             panel11 = new Panel();
             butViewCategory = new Button();
             butDleteCategory = new Button();
@@ -76,12 +74,16 @@
             txbCategoryID = new TextBox();
             panel17 = new Panel();
             dtgvCategory = new DataGridView();
+            tabTable = new TabPage();
             panel10 = new Panel();
             butViewTable = new Button();
             butDeleteTable = new Button();
             butEditTable = new Button();
             butAddTable = new Button();
             panel13 = new Panel();
+            panel20 = new Panel();
+            cbTableStatus = new ComboBox();
+            label8 = new Label();
             panel14 = new Panel();
             label4 = new Label();
             textBox1 = new TextBox();
@@ -90,9 +92,7 @@
             textBox3 = new TextBox();
             panel19 = new Panel();
             dtgvTable = new DataGridView();
-            panel20 = new Panel();
-            label8 = new Label();
-            cbTableStatus = new ComboBox();
+            tabAccount = new TabPage();
             panel21 = new Panel();
             textBox4 = new TextBox();
             button2 = new Button();
@@ -102,6 +102,7 @@
             butEditAccount = new Button();
             butAddAccount = new Button();
             panel23 = new Panel();
+            button3 = new Button();
             panel25 = new Panel();
             cbAccountType = new ComboBox();
             label10 = new Label();
@@ -113,10 +114,9 @@
             textBox6 = new TextBox();
             panel28 = new Panel();
             dtgvAccount = new DataGridView();
-            button3 = new Button();
             tabControl1.SuspendLayout();
             tabBill.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)listBill).BeginInit();
             panel3.SuspendLayout();
             tabFood.SuspendLayout();
             panel5.SuspendLayout();
@@ -130,21 +130,21 @@
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dtgvFood).BeginInit();
             tabFoodCategory.SuspendLayout();
-            tabTable.SuspendLayout();
-            tabAccount.SuspendLayout();
             panel11.SuspendLayout();
             panel12.SuspendLayout();
             panel15.SuspendLayout();
             panel16.SuspendLayout();
             panel17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dtgvCategory).BeginInit();
+            tabTable.SuspendLayout();
             panel10.SuspendLayout();
             panel13.SuspendLayout();
+            panel20.SuspendLayout();
             panel14.SuspendLayout();
             panel18.SuspendLayout();
             panel19.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dtgvTable).BeginInit();
-            panel20.SuspendLayout();
+            tabAccount.SuspendLayout();
             panel21.SuspendLayout();
             panel22.SuspendLayout();
             panel23.SuspendLayout();
@@ -170,7 +170,7 @@
             // 
             // tabBill
             // 
-            tabBill.Controls.Add(dataGridView1);
+            tabBill.Controls.Add(listBill);
             tabBill.Controls.Add(panel3);
             tabBill.Location = new Point(4, 29);
             tabBill.Name = "tabBill";
@@ -180,20 +180,24 @@
             tabBill.Text = "Doanh thu";
             tabBill.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // listBill
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(6, 61);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(750, 395);
-            dataGridView1.TabIndex = 3;
+            listBill.AllowUserToResizeColumns = false;
+            listBill.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            listBill.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            listBill.Location = new Point(6, 62);
+            listBill.Name = "listBill";
+            listBill.ReadOnly = true;
+            listBill.RowHeadersWidth = 51;
+            listBill.Size = new Size(750, 335);
+            listBill.TabIndex = 3;
+            listBill.CellContentClick += listBill_CellContentClick;
             // 
             // panel3
             // 
             panel3.Controls.Add(button1);
-            panel3.Controls.Add(dateTimePicker1);
-            panel3.Controls.Add(dateTimePicker2);
+            panel3.Controls.Add(dateTimePicker02);
+            panel3.Controls.Add(dateTimePicker01);
             panel3.Location = new Point(7, 6);
             panel3.Name = "panel3";
             panel3.Size = new Size(749, 41);
@@ -207,20 +211,21 @@
             button1.TabIndex = 2;
             button1.Text = "Thống kê";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
-            // dateTimePicker1
+            // dateTimePicker02
             // 
-            dateTimePicker1.Location = new Point(483, 7);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(263, 27);
-            dateTimePicker1.TabIndex = 1;
+            dateTimePicker02.Location = new Point(483, 7);
+            dateTimePicker02.Name = "dateTimePicker02";
+            dateTimePicker02.Size = new Size(263, 27);
+            dateTimePicker02.TabIndex = 1;
             // 
-            // dateTimePicker2
+            // dateTimePicker01
             // 
-            dateTimePicker2.Location = new Point(3, 7);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(260, 27);
-            dateTimePicker2.TabIndex = 0;
+            dateTimePicker01.Location = new Point(3, 7);
+            dateTimePicker01.Name = "dateTimePicker01";
+            dateTimePicker01.Size = new Size(260, 27);
+            dateTimePicker01.TabIndex = 0;
             // 
             // tabFood
             // 
@@ -458,33 +463,6 @@
             tabFoodCategory.Text = "Danh mục";
             tabFoodCategory.UseVisualStyleBackColor = true;
             // 
-            // tabTable
-            // 
-            tabTable.Controls.Add(panel10);
-            tabTable.Controls.Add(panel13);
-            tabTable.Controls.Add(panel19);
-            tabTable.Location = new Point(4, 29);
-            tabTable.Name = "tabTable";
-            tabTable.Padding = new Padding(3);
-            tabTable.Size = new Size(884, 462);
-            tabTable.TabIndex = 3;
-            tabTable.Text = "Bàn ăn";
-            tabTable.UseVisualStyleBackColor = true;
-            // 
-            // tabAccount
-            // 
-            tabAccount.Controls.Add(panel21);
-            tabAccount.Controls.Add(panel22);
-            tabAccount.Controls.Add(panel23);
-            tabAccount.Controls.Add(panel28);
-            tabAccount.Location = new Point(4, 29);
-            tabAccount.Name = "tabAccount";
-            tabAccount.Padding = new Padding(3);
-            tabAccount.Size = new Size(884, 462);
-            tabAccount.TabIndex = 4;
-            tabAccount.Text = "Tài khoản";
-            tabAccount.UseVisualStyleBackColor = true;
-            // 
             // panel11
             // 
             panel11.Controls.Add(butViewCategory);
@@ -613,6 +591,19 @@
             dtgvCategory.Size = new Size(440, 347);
             dtgvCategory.TabIndex = 0;
             // 
+            // tabTable
+            // 
+            tabTable.Controls.Add(panel10);
+            tabTable.Controls.Add(panel13);
+            tabTable.Controls.Add(panel19);
+            tabTable.Location = new Point(4, 29);
+            tabTable.Name = "tabTable";
+            tabTable.Padding = new Padding(3);
+            tabTable.Size = new Size(884, 462);
+            tabTable.TabIndex = 3;
+            tabTable.Text = "Bàn ăn";
+            tabTable.UseVisualStyleBackColor = true;
+            // 
             // panel10
             // 
             panel10.Controls.Add(butViewTable);
@@ -669,6 +660,33 @@
             panel13.Name = "panel13";
             panel13.Size = new Size(420, 375);
             panel13.TabIndex = 8;
+            // 
+            // panel20
+            // 
+            panel20.Controls.Add(cbTableStatus);
+            panel20.Controls.Add(label8);
+            panel20.Location = new Point(3, 156);
+            panel20.Name = "panel20";
+            panel20.Size = new Size(414, 63);
+            panel20.TabIndex = 5;
+            // 
+            // cbTableStatus
+            // 
+            cbTableStatus.FormattingEnabled = true;
+            cbTableStatus.Location = new Point(167, 18);
+            cbTableStatus.Name = "cbTableStatus";
+            cbTableStatus.Size = new Size(227, 28);
+            cbTableStatus.TabIndex = 2;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Location = new Point(9, 22);
+            label8.Name = "label8";
+            label8.Size = new Size(113, 24);
+            label8.TabIndex = 1;
+            label8.Text = "Trạng thái:";
             // 
             // panel14
             // 
@@ -742,32 +760,19 @@
             dtgvTable.Size = new Size(440, 347);
             dtgvTable.TabIndex = 0;
             // 
-            // panel20
+            // tabAccount
             // 
-            panel20.Controls.Add(cbTableStatus);
-            panel20.Controls.Add(label8);
-            panel20.Location = new Point(3, 156);
-            panel20.Name = "panel20";
-            panel20.Size = new Size(414, 63);
-            panel20.TabIndex = 5;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(9, 22);
-            label8.Name = "label8";
-            label8.Size = new Size(113, 24);
-            label8.TabIndex = 1;
-            label8.Text = "Trạng thái:";
-            // 
-            // cbTableStatus
-            // 
-            cbTableStatus.FormattingEnabled = true;
-            cbTableStatus.Location = new Point(167, 18);
-            cbTableStatus.Name = "cbTableStatus";
-            cbTableStatus.Size = new Size(227, 28);
-            cbTableStatus.TabIndex = 2;
+            tabAccount.Controls.Add(panel21);
+            tabAccount.Controls.Add(panel22);
+            tabAccount.Controls.Add(panel23);
+            tabAccount.Controls.Add(panel28);
+            tabAccount.Location = new Point(4, 29);
+            tabAccount.Name = "tabAccount";
+            tabAccount.Padding = new Padding(3);
+            tabAccount.Size = new Size(884, 462);
+            tabAccount.TabIndex = 4;
+            tabAccount.Text = "Tài khoản";
+            tabAccount.UseVisualStyleBackColor = true;
             // 
             // panel21
             // 
@@ -851,6 +856,15 @@
             panel23.Name = "panel23";
             panel23.Size = new Size(420, 375);
             panel23.TabIndex = 5;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(226, 227);
+            button3.Name = "button3";
+            button3.Size = new Size(135, 63);
+            button3.TabIndex = 6;
+            button3.Text = "Đặt lại mật khẩu";
+            button3.UseVisualStyleBackColor = true;
             // 
             // panel25
             // 
@@ -951,15 +965,6 @@
             dtgvAccount.Size = new Size(440, 347);
             dtgvAccount.TabIndex = 0;
             // 
-            // button3
-            // 
-            button3.Location = new Point(226, 227);
-            button3.Name = "button3";
-            button3.Size = new Size(135, 63);
-            button3.TabIndex = 6;
-            button3.Text = "Đặt lại mật khẩu";
-            button3.UseVisualStyleBackColor = true;
-            // 
             // fAmin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -971,7 +976,7 @@
             Text = "fAmin";
             tabControl1.ResumeLayout(false);
             tabBill.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)listBill).EndInit();
             panel3.ResumeLayout(false);
             tabFood.ResumeLayout(false);
             panel5.ResumeLayout(false);
@@ -990,8 +995,6 @@
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dtgvFood).EndInit();
             tabFoodCategory.ResumeLayout(false);
-            tabTable.ResumeLayout(false);
-            tabAccount.ResumeLayout(false);
             panel11.ResumeLayout(false);
             panel12.ResumeLayout(false);
             panel15.ResumeLayout(false);
@@ -1000,16 +1003,18 @@
             panel16.PerformLayout();
             panel17.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dtgvCategory).EndInit();
+            tabTable.ResumeLayout(false);
             panel10.ResumeLayout(false);
             panel13.ResumeLayout(false);
+            panel20.ResumeLayout(false);
+            panel20.PerformLayout();
             panel14.ResumeLayout(false);
             panel14.PerformLayout();
             panel18.ResumeLayout(false);
             panel18.PerformLayout();
             panel19.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dtgvTable).EndInit();
-            panel20.ResumeLayout(false);
-            panel20.PerformLayout();
+            tabAccount.ResumeLayout(false);
             panel21.ResumeLayout(false);
             panel21.PerformLayout();
             panel22.ResumeLayout(false);
@@ -1033,11 +1038,11 @@
         private TabPage tabFoodCategory;
         private TabPage tabTable;
         private TabPage tabAccount;
-        private DataGridView dataGridView1;
+        private DataGridView listBill;
         private Panel panel3;
         private Button button1;
-        private DateTimePicker dateTimePicker1;
-        private DateTimePicker dateTimePicker2;
+        private DateTimePicker dateTimePicker02;
+        private DateTimePicker dateTimePicker01;
         private Panel panel5;
         private Panel panel4;
         private Panel panel2;

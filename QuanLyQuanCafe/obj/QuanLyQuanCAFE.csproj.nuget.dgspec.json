@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Thuc_Tap_Co_So_Nganh\\Project\\QuanLyQuanCafe\\QuanLyQuanCAFE.csproj": {}
+    "E:\\Thuc_Tap_Co_So_Nganh\\QuanLyQuanCaPhe\\QuanLyQuanCafe\\QuanLyQuanCAFE.csproj": {}
   },
   "projects": {
-    "E:\\Thuc_Tap_Co_So_Nganh\\Project\\QuanLyQuanCafe\\QuanLyQuanCAFE.csproj": {
+    "E:\\Thuc_Tap_Co_So_Nganh\\QuanLyQuanCaPhe\\QuanLyQuanCafe\\QuanLyQuanCAFE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Thuc_Tap_Co_So_Nganh\\Project\\QuanLyQuanCafe\\QuanLyQuanCAFE.csproj",
+        "projectUniqueName": "E:\\Thuc_Tap_Co_So_Nganh\\QuanLyQuanCaPhe\\QuanLyQuanCafe\\QuanLyQuanCAFE.csproj",
         "projectName": "QuanLyQuanCAFE",
-        "projectPath": "E:\\Thuc_Tap_Co_So_Nganh\\Project\\QuanLyQuanCafe\\QuanLyQuanCAFE.csproj",
+        "projectPath": "E:\\Thuc_Tap_Co_So_Nganh\\QuanLyQuanCaPhe\\QuanLyQuanCafe\\QuanLyQuanCAFE.csproj",
         "packagesPath": "C:\\Users\\nvduc\\.nuget\\packages\\",
-        "outputPath": "E:\\Thuc_Tap_Co_So_Nganh\\Project\\QuanLyQuanCafe\\obj\\",
+        "outputPath": "E:\\Thuc_Tap_Co_So_Nganh\\QuanLyQuanCaPhe\\QuanLyQuanCafe\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
