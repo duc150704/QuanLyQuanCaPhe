@@ -136,22 +136,23 @@ values (2,4,5),
 		(4,1,3)
 go
 
+
 select * from BillInfo
 select * from Bill
 select * from Food
-
+go
 
 create proc USP_InserBill
 @idTable int
 as
 begin
-	insert into Bill(DateCheckIn, DateCheckOut, idTable, status)
-	values (getdate(),null, @idTable, 0)
+	insert into Bill(DateCheckIn, DateCheckOut, idTable, status, discount)
+	values (getdate(),null, @idTable, 0,0)
 end
 go
 
 
-ALTER PROC USP_InsertBillInfo
+create PROC USP_InsertBillInfo
 @idBill INT, @idFood INT, @count INT
 AS 
 BEGIN
@@ -175,12 +176,154 @@ END
 GO
 
 
+alter trigger UTG_UpdateBillInfo
+on BillInfo for insert, update
+as
+begin
+	declare @idBill int
+
+	select @idBill = idBill from inserted
+
+	declare @idTable int
+
+	select @idTable = idTable from Bill where id = @idBill and status = 0
+
+	declare @count int
+	select @count = count (*) from BillInfo where idBill = @idBill
+
+	if(@count > 0)
+		begin
+			update TableFood set status = N'Có người' where id = @idTable
+		end
+	else 
+		begin
+			update TableFood set status = N'Trống' where id = @idTable
+		end
+
+end
+go
+
+create trigger UTG_UpdateBill
+on Bill for update
+as
+begin
+	declare @idBill int
+
+	select @idBill = id from inserted
+
+	declare @idTable int
+
+	select @idTable = idTable from Bill where id = @idBill
+
+	declare @count int = 0
+
+	select @count = count(*) from Bill where idTable = @idTable and status = 0
+	
+	if(@count = 0)
+		update TableFood set status = N'Trống' where id = @idTable
+
+end
+go
+
+
 
 
 select * from FoodCategory
 select * from Food
 select * from Bill
 select * from BillInfo
+select * from TableFood
 
 
+delete from BillInfo
+delete from Bill
+
+alter table Bill
+add discount int
+go
+
+select * from Bill
+
+update Bill set discount = 0
+go
+
+
+alter proc USP_SwitchTable
+@idTable1 int, @idTable2 int
+as
+begin
+	declare @idFirstBill int
+	declare @idSecondBill int
+	declare @isFirstTableEmpty int = 1
+	declare @isSecondTableEmpty int = 1
+
+
+	select @idSecondBill = id from Bill where idTable = @idTable2 and status = 0
+	select @idFirstBill = id from Bill where idTable = @idTable1 and status = 0
+
+
+
+
+	if(@idFirstBill is null)
+	begin
+		insert Bill (DateCheckIn,DateCheckOut,idTable,status)
+		values (getdate(),null,@idTable1,0)
+	
+		select @idFirstBill = max(id) from Bill Where idTable = @idTable1 and status = 0
+
+		
+
+	end
+	select @isFirstTableEmpty = count(*) from BillInfo where idBill = @idFirstBill
+
+
+
+	if(@idSecondBill is null)
+	begin
+		insert Bill (DateCheckIn,DateCheckOut,idTable,status)
+		values (getdate(),null,@idTable2,0)
+	
+		select @idSecondBill = max(id) from Bill Where idTable = @idTable2 and status = 0
+
+	
+
+	end
+		select @isSecondTableEmpty = count(*) from BillInfo where idBill = @idSecondBill
+
+
+
+
+	select id into IDBillInfoTable from BillInfo where idBill = @idSecondBill
+	update BillInfo set idBill = @idSecondBill where idBill = @idFirstBill
+	update BillInfo set idBill = @idFirstBill where id in (select *from IDBillInfoTable)
+
+	drop table IDBillInfoTable
+
+	if(@isFirstTableEmpty = 0)
+	begin
+		update TableFood set status = N'Trống' where id = @idTable2
+	end
+
+	if(@isSecondTableEmpty = 0)
+	begin
+		update TableFood set status = N'Trống' where id = @idTable1
+	end
+
+end
+go
+
+alter table Bill add totalPrice Float
+go
+
+
+create proc USP_GetListBillByDate
+@checkIn date, @checkOut date
+as
+begin
+	select t.name as [Tên bàn], DateCheckIn[Ngày vào], DateCheckOut[Ngày ra], discount[Giảm giá(%)] , b.totalPrice[Tổng tiền]
+	from Bill as b, TableFood as t
+	where DateCheckIn >= @checkIn and DateCheckOut < @checkOut and b.status = 1
+	and t.id = b.idTable
+end
+go
 
