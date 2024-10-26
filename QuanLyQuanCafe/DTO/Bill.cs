@@ -13,18 +13,21 @@ namespace QuanLyQuanCAFE.DTO
         private DateTime? dateCheckOut;
         private DateTime? dateCheckIn;
         private int iD;
+        private int discount;
 
         public int ID { get => iD; set => iD = value; }
-        public DateTime? DataCheckIn { get => dateCheckIn; set => dateCheckIn = value; }
+        public DateTime? DateCheckIn { get => dateCheckIn; set => dateCheckIn = value; }
         public DateTime? DateCheckOut { get => dateCheckOut; set => dateCheckOut = value; }
         public int Status { get => status; set => status = value; }
+        public int Discount { get => discount; set => discount = value; }
 
-        public Bill(int id, DateTime? dateCheckIn, DateTime? dateCheckout, int status)
+        public Bill(int id, DateTime? dateCheckIn, DateTime? dateCheckout, int status, int discount)
         {
             this.ID = id;
-            this.dateCheckIn = dateCheckIn;
-            this.dateCheckOut = dateCheckout;
-            this.status = status;
+            this.DateCheckIn = dateCheckIn;
+            this.DateCheckOut = dateCheckout;
+            this.Status = status;
+            this.Discount = discount;
         }
 
 
@@ -41,6 +44,9 @@ namespace QuanLyQuanCAFE.DTO
 
             
             this.status = (int)row["status"];
+
+            if (row["discount"].ToString() != "")
+                this.Discount = (int)row["discount"];
         }
         
     }
