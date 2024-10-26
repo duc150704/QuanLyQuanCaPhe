@@ -146,8 +146,8 @@ create proc USP_InserBill
 @idTable int
 as
 begin
-	insert into Bill(DateCheckIn, DateCheckOut, idTable, status, discount)
-	values (getdate(),null, @idTable, 0,0)
+	insert into Bill(DateCheckIn, DateCheckOut, idTable, status, discount, timeCheckIn)
+	values (getdate(),null, @idTable, 0,0, getdate())
 end
 go
 
@@ -266,8 +266,8 @@ begin
 
 	if(@idFirstBill is null)
 	begin
-		insert Bill (DateCheckIn,DateCheckOut,idTable,status)
-		values (getdate(),null,@idTable1,0)
+		insert Bill (DateCheckIn,DateCheckOut,idTable,status, timeCheckIn)
+		values (getdate(),null,@idTable1,0,GETDATE())
 	
 		select @idFirstBill = max(id) from Bill Where idTable = @idTable1 and status = 0
 
@@ -280,8 +280,8 @@ begin
 
 	if(@idSecondBill is null)
 	begin
-		insert Bill (DateCheckIn,DateCheckOut,idTable,status)
-		values (getdate(),null,@idTable2,0)
+		insert Bill (DateCheckIn,DateCheckOut,idTable,status,timeCheckIn)
+		values (getdate(),null,@idTable2,0,getdate())
 	
 		select @idSecondBill = max(id) from Bill Where idTable = @idTable2 and status = 0
 
@@ -316,14 +316,21 @@ alter table Bill add totalPrice Float
 go
 
 
-create proc USP_GetListBillByDate
+alter proc USP_GetListBillByDate
 @checkIn date, @checkOut date
 as
 begin
-	select t.name as [Tên bàn], DateCheckIn[Ngày vào], DateCheckOut[Ngày ra], discount[Giảm giá(%)] , b.totalPrice[Tổng tiền]
+	select t.name as [Tên bàn], FORMAT(DateCheckIn, 'dd/MM/yyyy') AS [Ngày vào], timeCheckIn [Giờ vào],timeCheckOut[Giờ về], discount[Giảm giá(%)] , b.totalPrice[Đã thanh toán]
 	from Bill as b, TableFood as t
-	where DateCheckIn >= @checkIn and DateCheckOut < @checkOut and b.status = 1
+	where DateCheckIn >= @checkIn and DateCheckOut <= @checkOut and b.status = 1
 	and t.id = b.idTable
 end
 go
 
+select * from Bill
+
+alter table Bill
+add timeCheckIn time(0), timeCheckOut time(0)
+
+
+delete Bill

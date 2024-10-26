@@ -30,6 +30,8 @@
         {
             tabControl1 = new TabControl();
             tabBill = new TabPage();
+            tongDoanhThu = new TextBox();
+            doanhThu = new TextBox();
             listBill = new DataGridView();
             panel3 = new Panel();
             button1 = new Button();
@@ -170,6 +172,8 @@
             // 
             // tabBill
             // 
+            tabBill.Controls.Add(tongDoanhThu);
+            tabBill.Controls.Add(doanhThu);
             tabBill.Controls.Add(listBill);
             tabBill.Controls.Add(panel3);
             tabBill.Location = new Point(4, 29);
@@ -177,8 +181,27 @@
             tabBill.Padding = new Padding(3);
             tabBill.Size = new Size(884, 462);
             tabBill.TabIndex = 0;
-            tabBill.Text = "Doanh thu";
+            tabBill.Text = "Tổng doanh thu";
             tabBill.UseVisualStyleBackColor = true;
+            // 
+            // tongDoanhThu
+            // 
+            tongDoanhThu.Location = new Point(137, 418);
+            tongDoanhThu.Name = "tongDoanhThu";
+            tongDoanhThu.ReadOnly = true;
+            tongDoanhThu.Size = new Size(202, 27);
+            tongDoanhThu.TabIndex = 5;
+            tongDoanhThu.TextAlign = HorizontalAlignment.Center;
+            // 
+            // doanhThu
+            // 
+            doanhThu.Location = new Point(6, 418);
+            doanhThu.Name = "doanhThu";
+            doanhThu.ReadOnly = true;
+            doanhThu.Size = new Size(125, 27);
+            doanhThu.TabIndex = 4;
+            doanhThu.Text = "Tổng doanh thu";
+            doanhThu.TextAlign = HorizontalAlignment.Center;
             // 
             // listBill
             // 
@@ -976,6 +999,7 @@
             Text = "fAmin";
             tabControl1.ResumeLayout(false);
             tabBill.ResumeLayout(false);
+            tabBill.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)listBill).EndInit();
             panel3.ResumeLayout(false);
             tabFood.ResumeLayout(false);
@@ -1121,5 +1145,7 @@
         private Panel panel28;
         private DataGridView dtgvAccount;
         private Button button3;
+        private TextBox doanhThu;
+        private TextBox tongDoanhThu;
     }
 }
