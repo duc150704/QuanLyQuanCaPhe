@@ -23,6 +23,11 @@ namespace QuanLyQuanCAFE.DAO
 
         private AccountDAO() { }
 
+        public DataTable GetListAccount()
+        {
+            return DataProvider.Instance.ExcuteQuery("select  UserName, DisplayName,Type from Account");
+        }
+
         public bool Login(string userName, string passWord)
         {
             string query = "USP_Login @userName , @passWord";
