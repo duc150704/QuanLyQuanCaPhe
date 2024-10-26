@@ -54,5 +54,24 @@ namespace QuanLyQuanCAFE.DAO
                 return 1;
             }
         }
+
+        public void CheckOut(int id,int discount, float totalPrice)
+        {
+            string query = "update Bill set timeCheckOut = getdate(), dateCheckOut = getdate(), status = 1, " + "discount = " + discount + ", totalPrice = " +totalPrice + " where id = " + id;
+            DataProvider.Instance.ExcuteNonQuery(query);
+        }
+
+        public DataTable LoadListBillByDate(DateTime checkIn, DateTime checkOut)
+        {
+            return DataProvider.Instance.ExcuteQuery("exec USP_GetListBillByDate @checkIn , @checkOut", new object[] {checkIn, checkOut });
+        }
+
+        public DataTable GetRevenueFromDateToDate(DateTime d1, DateTime d2)
+        {
+            string query = "select sum(totalPrice) from Bill where DateCheckIn >= '" + d1 + "' and DateCheckOut <= '" + d2 + "' and status = 1";
+
+            return DataProvider.Instance.ExcuteQuery(query);
+
+        }
     }
 }

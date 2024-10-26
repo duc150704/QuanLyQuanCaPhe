@@ -44,7 +44,7 @@
             txbtotalPrice = new TextBox();
             cbSwitchTable = new ComboBox();
             SwitchTable = new Button();
-            numericUpDown = new NumericUpDown();
+            nmDiscount = new NumericUpDown();
             butDiscount = new Button();
             Pay = new Button();
             panel4 = new Panel();
@@ -56,7 +56,7 @@
             menuStrip2.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nmDiscount).BeginInit();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nnFoodCount).BeginInit();
             SuspendLayout();
@@ -154,7 +154,7 @@
             panel3.Controls.Add(txbtotalPrice);
             panel3.Controls.Add(cbSwitchTable);
             panel3.Controls.Add(SwitchTable);
-            panel3.Controls.Add(numericUpDown);
+            panel3.Controls.Add(nmDiscount);
             panel3.Controls.Add(butDiscount);
             panel3.Controls.Add(Pay);
             panel3.Location = new Point(466, 506);
@@ -172,6 +172,7 @@
             txbtotalPrice.TabIndex = 8;
             txbtotalPrice.Text = "0";
             txbtotalPrice.TextAlign = HorizontalAlignment.Center;
+            txbtotalPrice.TextChanged += txbtotalPrice_TextChanged;
             // 
             // cbSwitchTable
             // 
@@ -189,16 +190,16 @@
             SwitchTable.TabIndex = 6;
             SwitchTable.Text = "Chuyển Bàn";
             SwitchTable.UseVisualStyleBackColor = true;
+            SwitchTable.Click += SwitchTable_Click;
             // 
-            // numericUpDown
+            // nmDiscount
             // 
-            numericUpDown.Location = new Point(120, 35);
-            numericUpDown.Name = "numericUpDown";
-            numericUpDown.Size = new Size(104, 27);
-            numericUpDown.TabIndex = 5;
-            numericUpDown.TextAlign = HorizontalAlignment.Center;
-            numericUpDown.Value = new decimal(new int[] { 1, 0, 0, 0 });
-            numericUpDown.ValueChanged += numericUpDown1_ValueChanged;
+            nmDiscount.Location = new Point(120, 35);
+            nmDiscount.Name = "nmDiscount";
+            nmDiscount.Size = new Size(104, 27);
+            nmDiscount.TabIndex = 5;
+            nmDiscount.TextAlign = HorizontalAlignment.Center;
+            nmDiscount.ValueChanged += numericUpDown1_ValueChanged;
             // 
             // butDiscount
             // 
@@ -217,6 +218,7 @@
             Pay.TabIndex = 3;
             Pay.Text = "Thanh Toán";
             Pay.UseVisualStyleBackColor = true;
+            Pay.Click += Pay_Click;
             // 
             // panel4
             // 
@@ -294,7 +296,7 @@
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nmDiscount).EndInit();
             panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)nnFoodCount).EndInit();
             ResumeLayout(false);
@@ -318,7 +320,7 @@
         private ComboBox cbFood;
         private FlowLayoutPanel flpTable;
         private Button Pay;
-        private NumericUpDown numericUpDown;
+        private NumericUpDown nmDiscount;
         private Button butDiscount;
         private ComboBox cbSwitchTable;
         private Button SwitchTable;

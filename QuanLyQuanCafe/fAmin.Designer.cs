@@ -30,11 +30,13 @@
         {
             tabControl1 = new TabControl();
             tabBill = new TabPage();
-            dataGridView1 = new DataGridView();
+            tongDoanhThu = new TextBox();
+            doanhThu = new TextBox();
+            listBill = new DataGridView();
             panel3 = new Panel();
             button1 = new Button();
-            dateTimePicker1 = new DateTimePicker();
-            dateTimePicker2 = new DateTimePicker();
+            dateTimePicker02 = new DateTimePicker();
+            dateTimePicker01 = new DateTimePicker();
             tabFood = new TabPage();
             panel5 = new Panel();
             txbSearchFoodName = new TextBox();
@@ -116,7 +118,7 @@
             dtgvAccount = new DataGridView();
             tabControl1.SuspendLayout();
             tabBill.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)listBill).BeginInit();
             panel3.SuspendLayout();
             tabFood.SuspendLayout();
             panel5.SuspendLayout();
@@ -171,7 +173,9 @@
             // 
             // tabBill
             // 
-            tabBill.Controls.Add(dataGridView1);
+            tabBill.Controls.Add(tongDoanhThu);
+            tabBill.Controls.Add(doanhThu);
+            tabBill.Controls.Add(listBill);
             tabBill.Controls.Add(panel3);
             tabBill.Location = new Point(4, 24);
             tabBill.Margin = new Padding(3, 2, 3, 2);
@@ -179,27 +183,47 @@
             tabBill.Padding = new Padding(3, 2, 3, 2);
             tabBill.Size = new Size(772, 343);
             tabBill.TabIndex = 0;
-            tabBill.Text = "Doanh thu";
+            tabBill.Text = "Tổng doanh thu";
             tabBill.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // tongDoanhThu
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(5, 46);
-            dataGridView1.Margin = new Padding(3, 2, 3, 2);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(656, 296);
-            dataGridView1.TabIndex = 3;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            tongDoanhThu.Location = new Point(137, 418);
+            tongDoanhThu.Name = "tongDoanhThu";
+            tongDoanhThu.ReadOnly = true;
+            tongDoanhThu.Size = new Size(202, 27);
+            tongDoanhThu.TabIndex = 5;
+            tongDoanhThu.TextAlign = HorizontalAlignment.Center;
+            // 
+            // doanhThu
+            // 
+            doanhThu.Location = new Point(6, 418);
+            doanhThu.Name = "doanhThu";
+            doanhThu.ReadOnly = true;
+            doanhThu.Size = new Size(125, 27);
+            doanhThu.TabIndex = 4;
+            doanhThu.Text = "Tổng doanh thu";
+            doanhThu.TextAlign = HorizontalAlignment.Center;
+            // 
+            // listBill
+            // 
+            listBill.AllowUserToResizeColumns = false;
+            listBill.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            listBill.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            listBill.Location = new Point(6, 62);
+            listBill.Name = "listBill";
+            listBill.ReadOnly = true;
+            listBill.RowHeadersWidth = 51;
+            listBill.Size = new Size(750, 335);
+            listBill.TabIndex = 3;
+            listBill.CellContentClick += listBill_CellContentClick;
             // 
             // panel3
             // 
             panel3.Controls.Add(button1);
-            panel3.Controls.Add(dateTimePicker1);
-            panel3.Controls.Add(dateTimePicker2);
-            panel3.Location = new Point(6, 4);
-            panel3.Margin = new Padding(3, 2, 3, 2);
+            panel3.Controls.Add(dateTimePicker02);
+            panel3.Controls.Add(dateTimePicker01);
+            panel3.Location = new Point(7, 6);
             panel3.Name = "panel3";
             panel3.Size = new Size(655, 31);
             panel3.TabIndex = 2;
@@ -213,22 +237,22 @@
             button1.TabIndex = 2;
             button1.Text = "Thống kê";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
-            // dateTimePicker1
+            // dateTimePicker02
             // 
-            dateTimePicker1.Location = new Point(423, 5);
-            dateTimePicker1.Margin = new Padding(3, 2, 3, 2);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(231, 23);
-            dateTimePicker1.TabIndex = 1;
+            dateTimePicker02.Location = new Point(483, 7);
+            dateTimePicker02.Name = "dateTimePicker02";
+            dateTimePicker02.Size = new Size(263, 27);
+            dateTimePicker02.TabIndex = 1;
             // 
-            // dateTimePicker2
+            // dateTimePicker01
             // 
-            dateTimePicker2.Location = new Point(3, 5);
-            dateTimePicker2.Margin = new Padding(3, 2, 3, 2);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(228, 23);
-            dateTimePicker2.TabIndex = 0;
+
+            dateTimePicker01.Location = new Point(3, 7);
+            dateTimePicker01.Name = "dateTimePicker01";
+            dateTimePicker01.Size = new Size(260, 27);
+            dateTimePicker01.TabIndex = 0;
             // 
             // tabFood
             // 
@@ -632,11 +656,10 @@
             tabTable.Controls.Add(panel10);
             tabTable.Controls.Add(panel13);
             tabTable.Controls.Add(panel19);
-            tabTable.Location = new Point(4, 24);
-            tabTable.Margin = new Padding(3, 2, 3, 2);
+            tabTable.Location = new Point(4, 29);
             tabTable.Name = "tabTable";
-            tabTable.Padding = new Padding(3, 2, 3, 2);
-            tabTable.Size = new Size(772, 343);
+            tabTable.Padding = new Padding(3);
+            tabTable.Size = new Size(884, 462);
             tabTable.TabIndex = 3;
             tabTable.Text = "Bàn ăn";
             tabTable.UseVisualStyleBackColor = true;
@@ -708,19 +731,20 @@
             // 
             panel20.Controls.Add(cbTableStatus);
             panel20.Controls.Add(label8);
-            panel20.Location = new Point(3, 117);
-            panel20.Margin = new Padding(3, 2, 3, 2);
+            panel20.Location = new Point(3, 156);
             panel20.Name = "panel20";
-            panel20.Size = new Size(362, 47);
+            panel20.Size = new Size(414, 63);
             panel20.TabIndex = 5;
             // 
             // cbTableStatus
             // 
             cbTableStatus.FormattingEnabled = true;
+
             cbTableStatus.Location = new Point(146, 14);
             cbTableStatus.Margin = new Padding(3, 2, 3, 2);
             cbTableStatus.Name = "cbTableStatus";
             cbTableStatus.Size = new Size(199, 23);
+
             cbTableStatus.TabIndex = 2;
             // 
             // label8
@@ -730,6 +754,7 @@
             label8.Location = new Point(8, 16);
             label8.Name = "label8";
             label8.Size = new Size(91, 19);
+
             label8.TabIndex = 1;
             label8.Text = "Trạng thái:";
             // 
@@ -817,11 +842,13 @@
             tabAccount.Controls.Add(panel22);
             tabAccount.Controls.Add(panel23);
             tabAccount.Controls.Add(panel28);
+
             tabAccount.Location = new Point(4, 24);
             tabAccount.Margin = new Padding(3, 2, 3, 2);
             tabAccount.Name = "tabAccount";
             tabAccount.Padding = new Padding(3, 2, 3, 2);
             tabAccount.Size = new Size(772, 343);
+
             tabAccount.TabIndex = 4;
             tabAccount.Text = "Tài khoản";
             tabAccount.UseVisualStyleBackColor = true;
@@ -1048,7 +1075,8 @@
             Text = "fAmin";
             tabControl1.ResumeLayout(false);
             tabBill.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            tabBill.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)listBill).EndInit();
             panel3.ResumeLayout(false);
             tabFood.ResumeLayout(false);
             panel5.ResumeLayout(false);
@@ -1110,11 +1138,11 @@
         private TabPage tabFoodCategory;
         private TabPage tabTable;
         private TabPage tabAccount;
-        private DataGridView dataGridView1;
+        private DataGridView listBill;
         private Panel panel3;
         private Button button1;
-        private DateTimePicker dateTimePicker1;
-        private DateTimePicker dateTimePicker2;
+        private DateTimePicker dateTimePicker02;
+        private DateTimePicker dateTimePicker01;
         private Panel panel5;
         private Panel panel4;
         private Panel panel2;
@@ -1193,5 +1221,7 @@
         private Panel panel28;
         private DataGridView dtgvAccount;
         private Button button3;
+        private TextBox doanhThu;
+        private TextBox tongDoanhThu;
     }
 }
