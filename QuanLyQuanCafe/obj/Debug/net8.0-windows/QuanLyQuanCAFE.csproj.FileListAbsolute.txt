@@ -75,3 +75,100 @@ E:\Thuc_Tap_Co_So_Nganh\Project\QuanLyQuanCafe\bin\Debug\net8.0-windows\runtimes
 E:\Thuc_Tap_Co_So_Nganh\Project\QuanLyQuanCafe\bin\Debug\net8.0-windows\runtimes\win-x86\native\sni.dll
 E:\Thuc_Tap_Co_So_Nganh\Project\QuanLyQuanCafe\bin\Debug\net8.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 E:\Thuc_Tap_Co_So_Nganh\Project\QuanLyQuanCafe\bin\Debug\net8.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\git\QuanLyQuanCaPhe-main (4)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\bin\Debug\net8.0-windows\QuanLyQuanCAFE.exe
+C:\git\QuanLyQuanCaPhe-main (4)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\bin\Debug\net8.0-windows\QuanLyQuanCAFE.deps.json
+C:\git\QuanLyQuanCaPhe-main (4)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\bin\Debug\net8.0-windows\QuanLyQuanCAFE.runtimeconfig.json
+C:\git\QuanLyQuanCaPhe-main (4)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\bin\Debug\net8.0-windows\QuanLyQuanCAFE.dll
+C:\git\QuanLyQuanCaPhe-main (4)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\bin\Debug\net8.0-windows\QuanLyQuanCAFE.pdb
+C:\git\QuanLyQuanCaPhe-main (4)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\git\QuanLyQuanCaPhe-main (4)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\git\QuanLyQuanCaPhe-main (4)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll
+C:\git\QuanLyQuanCaPhe-main (4)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\git\QuanLyQuanCaPhe-main (4)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+C:\git\QuanLyQuanCaPhe-main (4)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\bin\Debug\net8.0-windows\System.Data.SqlClient.dll
+C:\git\QuanLyQuanCaPhe-main (4)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\bin\Debug\net8.0-windows\runtimes\win-arm64\native\sni.dll
+C:\git\QuanLyQuanCaPhe-main (4)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\bin\Debug\net8.0-windows\runtimes\win-x64\native\sni.dll
+C:\git\QuanLyQuanCaPhe-main (4)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\bin\Debug\net8.0-windows\runtimes\win-x86\native\sni.dll
+C:\git\QuanLyQuanCaPhe-main (4)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\bin\Debug\net8.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\git\QuanLyQuanCaPhe-main (4)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\bin\Debug\net8.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\git\QuanLyQuanCaPhe-main (4)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.csproj.AssemblyReference.cache
+C:\git\QuanLyQuanCaPhe-main (4)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.AcountProfile.resources
+C:\git\QuanLyQuanCaPhe-main (4)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.fAmin.resources
+C:\git\QuanLyQuanCaPhe-main (4)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.fLogin.resources
+C:\git\QuanLyQuanCaPhe-main (4)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.tableManagercs.resources
+C:\git\QuanLyQuanCaPhe-main (4)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.csproj.GenerateResource.cache
+C:\git\QuanLyQuanCaPhe-main (4)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.GeneratedMSBuildEditorConfig.editorconfig
+C:\git\QuanLyQuanCaPhe-main (4)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.AssemblyInfoInputs.cache
+C:\git\QuanLyQuanCaPhe-main (4)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.AssemblyInfo.cs
+C:\git\QuanLyQuanCaPhe-main (4)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.csproj.CoreCompileInputs.cache
+C:\git\QuanLyQuanCaPhe-main (4)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQu.548D49A2.Up2Date
+C:\git\QuanLyQuanCaPhe-main (4)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.dll
+C:\git\QuanLyQuanCaPhe-main (4)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\obj\Debug\net8.0-windows\refint\QuanLyQuanCAFE.dll
+C:\git\QuanLyQuanCaPhe-main (4)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.pdb
+C:\git\QuanLyQuanCaPhe-main (4)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.genruntimeconfig.cache
+C:\git\QuanLyQuanCaPhe-main (4)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\obj\Debug\net8.0-windows\ref\QuanLyQuanCAFE.dll
+C:\git\QuanLyQuanCaPhe-main (now)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\bin\Debug\net8.0-windows\QuanLyQuanCAFE.exe
+C:\git\QuanLyQuanCaPhe-main (now)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\bin\Debug\net8.0-windows\QuanLyQuanCAFE.deps.json
+C:\git\QuanLyQuanCaPhe-main (now)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\bin\Debug\net8.0-windows\QuanLyQuanCAFE.runtimeconfig.json
+C:\git\QuanLyQuanCaPhe-main (now)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\bin\Debug\net8.0-windows\QuanLyQuanCAFE.dll
+C:\git\QuanLyQuanCaPhe-main (now)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\bin\Debug\net8.0-windows\QuanLyQuanCAFE.pdb
+C:\git\QuanLyQuanCaPhe-main (now)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\git\QuanLyQuanCaPhe-main (now)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\git\QuanLyQuanCaPhe-main (now)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll
+C:\git\QuanLyQuanCaPhe-main (now)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\git\QuanLyQuanCaPhe-main (now)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+C:\git\QuanLyQuanCaPhe-main (now)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\bin\Debug\net8.0-windows\System.Data.SqlClient.dll
+C:\git\QuanLyQuanCaPhe-main (now)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\bin\Debug\net8.0-windows\runtimes\win-arm64\native\sni.dll
+C:\git\QuanLyQuanCaPhe-main (now)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\bin\Debug\net8.0-windows\runtimes\win-x64\native\sni.dll
+C:\git\QuanLyQuanCaPhe-main (now)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\bin\Debug\net8.0-windows\runtimes\win-x86\native\sni.dll
+C:\git\QuanLyQuanCaPhe-main (now)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\bin\Debug\net8.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\git\QuanLyQuanCaPhe-main (now)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\bin\Debug\net8.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\git\QuanLyQuanCaPhe-main (now)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.csproj.AssemblyReference.cache
+C:\git\QuanLyQuanCaPhe-main (now)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.AcountProfile.resources
+C:\git\QuanLyQuanCaPhe-main (now)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.fAmin.resources
+C:\git\QuanLyQuanCaPhe-main (now)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.fLogin.resources
+C:\git\QuanLyQuanCaPhe-main (now)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.tableManagercs.resources
+C:\git\QuanLyQuanCaPhe-main (now)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.csproj.GenerateResource.cache
+C:\git\QuanLyQuanCaPhe-main (now)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.GeneratedMSBuildEditorConfig.editorconfig
+C:\git\QuanLyQuanCaPhe-main (now)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.AssemblyInfoInputs.cache
+C:\git\QuanLyQuanCaPhe-main (now)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.AssemblyInfo.cs
+C:\git\QuanLyQuanCaPhe-main (now)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.csproj.CoreCompileInputs.cache
+C:\git\QuanLyQuanCaPhe-main (now)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQu.548D49A2.Up2Date
+C:\git\QuanLyQuanCaPhe-main (now)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.dll
+C:\git\QuanLyQuanCaPhe-main (now)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\obj\Debug\net8.0-windows\refint\QuanLyQuanCAFE.dll
+C:\git\QuanLyQuanCaPhe-main (now)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.pdb
+C:\git\QuanLyQuanCaPhe-main (now)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.genruntimeconfig.cache
+C:\git\QuanLyQuanCaPhe-main (now)\QuanLyQuanCaPhe-main\QuanLyQuanCafe\obj\Debug\net8.0-windows\ref\QuanLyQuanCAFE.dll
+C:\git\HienThiDsTk\QuanLyQuanCaPhe\HienThiDsTK\QuanLyQuanCafe\bin\Debug\net8.0-windows\QuanLyQuanCAFE.exe
+C:\git\HienThiDsTk\QuanLyQuanCaPhe\HienThiDsTK\QuanLyQuanCafe\bin\Debug\net8.0-windows\QuanLyQuanCAFE.deps.json
+C:\git\HienThiDsTk\QuanLyQuanCaPhe\HienThiDsTK\QuanLyQuanCafe\bin\Debug\net8.0-windows\QuanLyQuanCAFE.runtimeconfig.json
+C:\git\HienThiDsTk\QuanLyQuanCaPhe\HienThiDsTK\QuanLyQuanCafe\bin\Debug\net8.0-windows\QuanLyQuanCAFE.dll
+C:\git\HienThiDsTk\QuanLyQuanCaPhe\HienThiDsTK\QuanLyQuanCafe\bin\Debug\net8.0-windows\QuanLyQuanCAFE.pdb
+C:\git\HienThiDsTk\QuanLyQuanCaPhe\HienThiDsTK\QuanLyQuanCafe\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\git\HienThiDsTk\QuanLyQuanCaPhe\HienThiDsTK\QuanLyQuanCafe\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\git\HienThiDsTk\QuanLyQuanCaPhe\HienThiDsTK\QuanLyQuanCafe\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll
+C:\git\HienThiDsTk\QuanLyQuanCaPhe\HienThiDsTK\QuanLyQuanCafe\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\git\HienThiDsTk\QuanLyQuanCaPhe\HienThiDsTK\QuanLyQuanCafe\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+C:\git\HienThiDsTk\QuanLyQuanCaPhe\HienThiDsTK\QuanLyQuanCafe\bin\Debug\net8.0-windows\System.Data.SqlClient.dll
+C:\git\HienThiDsTk\QuanLyQuanCaPhe\HienThiDsTK\QuanLyQuanCafe\bin\Debug\net8.0-windows\runtimes\win-arm64\native\sni.dll
+C:\git\HienThiDsTk\QuanLyQuanCaPhe\HienThiDsTK\QuanLyQuanCafe\bin\Debug\net8.0-windows\runtimes\win-x64\native\sni.dll
+C:\git\HienThiDsTk\QuanLyQuanCaPhe\HienThiDsTK\QuanLyQuanCafe\bin\Debug\net8.0-windows\runtimes\win-x86\native\sni.dll
+C:\git\HienThiDsTk\QuanLyQuanCaPhe\HienThiDsTK\QuanLyQuanCafe\bin\Debug\net8.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\git\HienThiDsTk\QuanLyQuanCaPhe\HienThiDsTK\QuanLyQuanCafe\bin\Debug\net8.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\git\HienThiDsTk\QuanLyQuanCaPhe\HienThiDsTK\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.csproj.AssemblyReference.cache
+C:\git\HienThiDsTk\QuanLyQuanCaPhe\HienThiDsTK\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.AcountProfile.resources
+C:\git\HienThiDsTk\QuanLyQuanCaPhe\HienThiDsTK\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.fAmin.resources
+C:\git\HienThiDsTk\QuanLyQuanCaPhe\HienThiDsTK\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.fLogin.resources
+C:\git\HienThiDsTk\QuanLyQuanCaPhe\HienThiDsTK\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.tableManagercs.resources
+C:\git\HienThiDsTk\QuanLyQuanCaPhe\HienThiDsTK\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.csproj.GenerateResource.cache
+C:\git\HienThiDsTk\QuanLyQuanCaPhe\HienThiDsTK\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.GeneratedMSBuildEditorConfig.editorconfig
+C:\git\HienThiDsTk\QuanLyQuanCaPhe\HienThiDsTK\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.AssemblyInfoInputs.cache
+C:\git\HienThiDsTk\QuanLyQuanCaPhe\HienThiDsTK\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.AssemblyInfo.cs
+C:\git\HienThiDsTk\QuanLyQuanCaPhe\HienThiDsTK\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.csproj.CoreCompileInputs.cache
+C:\git\HienThiDsTk\QuanLyQuanCaPhe\HienThiDsTK\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.sourcelink.json
+C:\git\HienThiDsTk\QuanLyQuanCaPhe\HienThiDsTK\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQu.548D49A2.Up2Date
+C:\git\HienThiDsTk\QuanLyQuanCaPhe\HienThiDsTK\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.dll
+C:\git\HienThiDsTk\QuanLyQuanCaPhe\HienThiDsTK\QuanLyQuanCafe\obj\Debug\net8.0-windows\refint\QuanLyQuanCAFE.dll
+C:\git\HienThiDsTk\QuanLyQuanCaPhe\HienThiDsTK\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.pdb
+C:\git\HienThiDsTk\QuanLyQuanCaPhe\HienThiDsTK\QuanLyQuanCafe\obj\Debug\net8.0-windows\QuanLyQuanCAFE.genruntimeconfig.cache
+C:\git\HienThiDsTk\QuanLyQuanCaPhe\HienThiDsTK\QuanLyQuanCafe\obj\Debug\net8.0-windows\ref\QuanLyQuanCAFE.dll
