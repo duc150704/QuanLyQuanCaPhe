@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\git\\HienThiDsTk\\QuanLyQuanCaPhe\\HienThiDsTK\\QuanLyQuanCafe\\QuanLyQuanCAFE.csproj": {}
+    "E:\\Thuc_Tap_Co_So_Nganh\\QuanLyQuanCaPhe\\QuanLyQuanCafe\\QuanLyQuanCAFE.csproj": {}
   },
   "projects": {
-    "C:\\git\\HienThiDsTk\\QuanLyQuanCaPhe\\HienThiDsTK\\QuanLyQuanCafe\\QuanLyQuanCAFE.csproj": {
+    "E:\\Thuc_Tap_Co_So_Nganh\\QuanLyQuanCaPhe\\QuanLyQuanCafe\\QuanLyQuanCAFE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\git\\HienThiDsTk\\QuanLyQuanCaPhe\\HienThiDsTK\\QuanLyQuanCafe\\QuanLyQuanCAFE.csproj",
+        "projectUniqueName": "E:\\Thuc_Tap_Co_So_Nganh\\QuanLyQuanCaPhe\\QuanLyQuanCafe\\QuanLyQuanCAFE.csproj",
         "projectName": "QuanLyQuanCAFE",
-        "projectPath": "C:\\git\\HienThiDsTk\\QuanLyQuanCaPhe\\HienThiDsTK\\QuanLyQuanCafe\\QuanLyQuanCAFE.csproj",
-        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "C:\\git\\HienThiDsTk\\QuanLyQuanCaPhe\\HienThiDsTK\\QuanLyQuanCafe\\obj\\",
+        "projectPath": "E:\\Thuc_Tap_Co_So_Nganh\\QuanLyQuanCaPhe\\QuanLyQuanCafe\\QuanLyQuanCAFE.csproj",
+        "packagesPath": "C:\\Users\\nvduc\\.nuget\\packages\\",
+        "outputPath": "E:\\Thuc_Tap_Co_So_Nganh\\QuanLyQuanCaPhe\\QuanLyQuanCafe\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nvduc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -35,11 +39,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -77,7 +76,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
