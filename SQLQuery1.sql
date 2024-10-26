@@ -324,6 +324,7 @@ begin
 	from Bill as b, TableFood as t
 	where DateCheckIn >= @checkIn and DateCheckOut <= @checkOut and b.status = 1
 	and t.id = b.idTable
+	order by b.id desc
 end
 go
 
@@ -333,4 +334,5 @@ alter table Bill
 add timeCheckIn time(0), timeCheckOut time(0)
 
 
-delete Bill
+select * from Bill
+order by timeCheckOut desc
