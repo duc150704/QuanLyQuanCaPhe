@@ -21,10 +21,8 @@ namespace QuanLyQuanCAFE
         public fAmin()
         {
             InitializeComponent();
-            LoadDateTimePicker();
-            LoadListBillByDate(dateTimePicker01.Value, dateTimePicker02.Value);           
             Load();
-            ShowRevenue(dateTimePicker01.Value, dateTimePicker02.Value);
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -33,9 +31,17 @@ namespace QuanLyQuanCAFE
         }
         void Load()
         {
+            LoadDateTimePicker();
+            LoadListBillByDate(dateTimePicker01.Value, dateTimePicker02.Value);
+
             dtgvAccount.DataSource = accountList;
             AddAccountBinding();
             LoadAccount();
+            LoadListTable();
+            LoadListCategory();
+            ShowRevenue(dateTimePicker01.Value, dateTimePicker02.Value);
+            LoadListFood();
+
         }
         void AddAccountBinding()
         {
@@ -57,7 +63,7 @@ namespace QuanLyQuanCAFE
         {
             LoadDateTimePicker();
             LoadListBillByDate(dateTimePicker01.Value, dateTimePicker02.Value);
-            ShowRevenue(dateTimePicker01.Value,dateTimePicker02.Value);
+            ShowRevenue(dateTimePicker01.Value, dateTimePicker02.Value);
         }
 
         void LoadDateTimePicker()
@@ -81,7 +87,7 @@ namespace QuanLyQuanCAFE
 
         private void listBill_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
 
@@ -98,8 +104,38 @@ namespace QuanLyQuanCAFE
             {
                 revenue = Convert.ToSingle(data.Rows[0][0]);
             }
-            
+
             tongDoanhThu.Text = revenue.ToString("c", new CultureInfo("vi-VN"));
+        }
+
+        private void butView_Click(object sender, EventArgs e)
+        {
+            LoadListFood();
+        }
+
+        void LoadListFood()
+        {
+            dtgvFood.DataSource = FoodDAO.Instance.GetListFood();
+        }
+
+        private void butViewCategory_Click(object sender, EventArgs e)
+        {
+            LoadListCategory();
+        }
+
+        private void LoadListCategory()
+        {
+            dtgvCategory.DataSource = CategoryDAO.Instance.GetListCategory();
+        }
+
+        private void butViewTable_Click(object sender, EventArgs e)
+        {
+            LoadListTable();
+        }
+
+        private void LoadListTable()
+        {
+            dtgvTable.DataSource = TableDAO.Instance.GetTableList();
         }
     }
 }

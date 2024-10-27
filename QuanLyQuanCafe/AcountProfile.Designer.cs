@@ -30,7 +30,7 @@
         {
             panel2 = new Panel();
             lbUserName = new Label();
-            textBox1 = new TextBox();
+            txtUserName = new TextBox();
             panel3 = new Panel();
             label1 = new Label();
             txbDisPlayName = new TextBox();
@@ -39,10 +39,10 @@
             texPassWord = new TextBox();
             panel5 = new Panel();
             label2 = new Label();
-            textBox3 = new TextBox();
+            txbCfNewPassWord = new TextBox();
             panel6 = new Panel();
             label3 = new Label();
-            textBox2 = new TextBox();
+            txbNewPassword = new TextBox();
             butUpdate = new Button();
             butExit = new Button();
             panel1 = new Panel();
@@ -57,7 +57,7 @@
             // panel2
             // 
             panel2.Controls.Add(lbUserName);
-            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(txtUserName);
             panel2.Location = new Point(3, 3);
             panel2.Name = "panel2";
             panel2.Size = new Size(577, 63);
@@ -74,14 +74,14 @@
             lbUserName.TabIndex = 1;
             lbUserName.Text = "Tên Đăng Nhập:";
             // 
-            // textBox1
+            // txtUserName
             // 
-            textBox1.BackColor = SystemColors.ButtonHighlight;
-            textBox1.Location = new Point(179, 20);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(386, 27);
-            textBox1.TabIndex = 0;
+            txtUserName.BackColor = SystemColors.ButtonHighlight;
+            txtUserName.Location = new Point(179, 20);
+            txtUserName.Name = "txtUserName";
+            txtUserName.ReadOnly = true;
+            txtUserName.Size = new Size(386, 27);
+            txtUserName.TabIndex = 0;
             // 
             // panel3
             // 
@@ -107,7 +107,6 @@
             txbDisPlayName.BackColor = SystemColors.ButtonHighlight;
             txbDisPlayName.Location = new Point(179, 20);
             txbDisPlayName.Name = "txbDisPlayName";
-            txbDisPlayName.ReadOnly = true;
             txbDisPlayName.Size = new Size(386, 27);
             txbDisPlayName.TabIndex = 0;
             // 
@@ -141,7 +140,7 @@
             // panel5
             // 
             panel5.Controls.Add(label2);
-            panel5.Controls.Add(textBox3);
+            panel5.Controls.Add(txbCfNewPassWord);
             panel5.Location = new Point(3, 309);
             panel5.Name = "panel5";
             panel5.Size = new Size(577, 78);
@@ -157,18 +156,18 @@
             label2.TabIndex = 1;
             label2.Text = "Nhập Lại:";
             // 
-            // textBox3
+            // txbCfNewPassWord
             // 
-            textBox3.Location = new Point(179, 25);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(386, 27);
-            textBox3.TabIndex = 0;
-            textBox3.UseSystemPasswordChar = true;
+            txbCfNewPassWord.Location = new Point(179, 25);
+            txbCfNewPassWord.Name = "txbCfNewPassWord";
+            txbCfNewPassWord.Size = new Size(386, 27);
+            txbCfNewPassWord.TabIndex = 0;
+            txbCfNewPassWord.UseSystemPasswordChar = true;
             // 
             // panel6
             // 
             panel6.Controls.Add(label3);
-            panel6.Controls.Add(textBox2);
+            panel6.Controls.Add(txbNewPassword);
             panel6.Location = new Point(0, 225);
             panel6.Name = "panel6";
             panel6.Size = new Size(577, 78);
@@ -184,13 +183,13 @@
             label3.TabIndex = 1;
             label3.Text = "Mật Khẩu Mới:";
             // 
-            // textBox2
+            // txbNewPassword
             // 
-            textBox2.Location = new Point(179, 25);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(386, 27);
-            textBox2.TabIndex = 0;
-            textBox2.UseSystemPasswordChar = true;
+            txbNewPassword.Location = new Point(179, 25);
+            txbNewPassword.Name = "txbNewPassword";
+            txbNewPassword.Size = new Size(386, 27);
+            txbNewPassword.TabIndex = 0;
+            txbNewPassword.UseSystemPasswordChar = true;
             // 
             // butUpdate
             // 
@@ -255,7 +254,7 @@
 
         private Panel panel2;
         private Label lbUserName;
-        private TextBox textBox1;
+        private TextBox txtUserName;
         private Panel panel3;
         private Label label1;
         private TextBox txbDisPlayName;
@@ -264,10 +263,10 @@
         private TextBox texPassWord;
         private Panel panel5;
         private Label label2;
-        private TextBox textBox3;
+        private TextBox txbCfNewPassWord;
         private Panel panel6;
         private Label label3;
-        private TextBox textBox2;
+        private TextBox txbNewPassword;
         private Button butUpdate;
         private Button butExit;
         private Panel panel1;

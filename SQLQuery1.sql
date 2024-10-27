@@ -336,3 +336,40 @@ add timeCheckIn time(0), timeCheckOut time(0)
 
 select * from Bill
 order by timeCheckOut desc
+go
+
+create proc USP_UpdateAccount
+@userName nvarchar(100), @displayName nvarchar(100), @password nvarchar(100),
+@newPassword nvarchar(100)
+as
+begin
+	declare @isCorrectPassword int
+
+	select @isCorrectPassword = count (*) from Account where @userName = UserName and @password = Password
+
+	if(@isCorrectPassword = 1)
+		begin
+			if(@newPassword = null or @newPassword = '')
+				begin
+					update Account set DisplayName = @displayName where UserName = @userName
+				end
+			else 
+				begin
+						update Account set DisplayName = @displayName, Password = @newPassword where UserName = @userName
+				end
+		end
+
+end
+
+
+select  from Account
+select * from TableFood
+go
+
+create proc USP_GetListTable
+as
+begin
+	select id as [ID], name as [Tên bàn], status as [Trạng thái] from TableFood
+end
+
+

@@ -1,4 +1,5 @@
 ﻿using QuanLyQuanCAFE.DAO;
+using QuanLyQuanCAFE.DTO;
 
 namespace QuanLyQuanCAFE
 {
@@ -24,7 +25,8 @@ namespace QuanLyQuanCAFE
             string password = texPassWord.Text;
             if (Login(userName,password))
             {
-                tableManagercs f = new tableManagercs();
+                Account loginAccount = AccountDAO.Instance.GetAccountByUserName(userName);
+                tableManagercs f = new tableManagercs(loginAccount);
                 this.Hide();
                 f.ShowDialog();
                 this.Show();

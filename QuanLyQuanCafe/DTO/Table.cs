@@ -25,17 +25,18 @@ namespace QuanLyQuanCAFE.DTO
 
         public Table(int id, string name, string status)
         {
-            this.iD = id;
-            this.name = name;
-            this.status = status;
+            this.ID = id;
+            this.Name = name;
+            this.Status = status;
         }
 
 
         public Table(DataRow row) 
         {
-            this.ID = (int)row["ID"];
-            this.name = (string)row["Name"];
-            this.status = (string)row["status"];
+            this.ID = (int)row["id"];
+            this.Name = row["name"].ToString();
+            this.Status = (string)row["status"];
         }
+
     }
 }

@@ -44,6 +44,22 @@ namespace QuanLyQuanCAFE.DAO
             return tableList;
         }
 
+        public List<Table> GetTableList()
+        {
+            List<Table> tableList = new List<Table>();
+            DataTable data = DataProvider.Instance.ExcuteQuery("exec USP_GetTableList");
+
+            foreach (DataRow row in data.Rows)
+            {
+                Table table = new Table(row);
+                tableList.Add(table);
+
+            }
+
+
+            return tableList;
+        }
+
 
         public void SwitchTable(int id1, int id2)
         {

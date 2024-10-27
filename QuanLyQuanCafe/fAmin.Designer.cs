@@ -308,6 +308,7 @@
             butView.TabIndex = 3;
             butView.Text = "Xem";
             butView.UseVisualStyleBackColor = true;
+            butView.Click += butView_Click;
             // 
             // butDeleteFood
             // 
@@ -466,6 +467,7 @@
             // 
             // dtgvFood
             // 
+            dtgvFood.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgvFood.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgvFood.Location = new Point(3, 13);
             dtgvFood.Name = "dtgvFood";
@@ -505,6 +507,7 @@
             butViewCategory.TabIndex = 3;
             butViewCategory.Text = "Xem";
             butViewCategory.UseVisualStyleBackColor = true;
+            butViewCategory.Click += butViewCategory_Click;
             // 
             // butDleteCategory
             // 
@@ -607,6 +610,7 @@
             // 
             // dtgvCategory
             // 
+            dtgvCategory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgvCategory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgvCategory.Location = new Point(3, 13);
             dtgvCategory.Name = "dtgvCategory";
@@ -646,6 +650,7 @@
             butViewTable.TabIndex = 3;
             butViewTable.Text = "Xem";
             butViewTable.UseVisualStyleBackColor = true;
+            butViewTable.Click += butViewTable_Click;
             // 
             // butDeleteTable
             // 
@@ -776,6 +781,7 @@
             // 
             // dtgvTable
             // 
+            dtgvTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgvTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgvTable.Location = new Point(3, 13);
             dtgvTable.Name = "dtgvTable";

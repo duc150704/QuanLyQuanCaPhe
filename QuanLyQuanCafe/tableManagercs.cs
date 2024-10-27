@@ -16,14 +16,25 @@ namespace QuanLyQuanCAFE
 {
     public partial class tableManagercs : Form
     {
-        public tableManagercs()
+        private Account loginAccount;
+
+        public Account LoginAccount { get => loginAccount; set { loginAccount = value; ChangeAccount(loginAccount.Type); } }
+
+        public tableManagercs(Account acc)
         {
             InitializeComponent();
+
+            this.LoginAccount = acc;
+
             LoadTable();
             LoadCategory();
             LoadComboBoxTable(cbSwitchTable);
         }
 
+        void ChangeAccount(int type)
+        {
+            adminToolStripMenuItem.Enabled = type == 1 ? true : false;
+        }
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -64,8 +75,14 @@ namespace QuanLyQuanCAFE
 
         private void thôngTinCáNhânToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            AcountProfile f = new AcountProfile();
+            AcountProfile f = new AcountProfile(LoginAccount);
+            f.UpdateAccountEv += f_UpdateAcount;
             f.ShowDialog();
+        }
+
+        private void f_UpdateAcount(object? sender, EventArgs e)
+        {
+            
         }
         #endregion
         private void cbFood_SelectedIndexChanged(object sender, EventArgs e)
