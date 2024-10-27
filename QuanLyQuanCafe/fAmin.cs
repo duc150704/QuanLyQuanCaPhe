@@ -21,7 +21,10 @@ namespace QuanLyQuanCAFE
         public fAmin()
         {
             InitializeComponent();
+            LoadDateTimePicker();
+            LoadListBillByDate(dateTimePicker01.Value, dateTimePicker02.Value);           
             Load();
+            ShowRevenue(dateTimePicker01.Value, dateTimePicker02.Value);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

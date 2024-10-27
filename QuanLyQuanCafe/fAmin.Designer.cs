@@ -118,7 +118,6 @@
             dtgvAccount = new DataGridView();
             tabControl1.SuspendLayout();
             tabBill.SuspendLayout();
-
             ((System.ComponentModel.ISupportInitialize)listBill).BeginInit();
             panel3.SuspendLayout();
             tabFood.SuspendLayout();
@@ -179,7 +178,7 @@
             tabBill.Controls.Add(panel3);
             tabBill.Location = new Point(4, 29);
             tabBill.Name = "tabBill";
-            tabBill.Padding = new Padding(3, 3, 3, 3);
+            tabBill.Padding = new Padding(3);
             tabBill.Size = new Size(883, 462);
             tabBill.TabIndex = 0;
             tabBill.Text = "Tổng doanh thu";
@@ -220,11 +219,9 @@
             // panel3
             // 
             panel3.Controls.Add(button1);
-
             panel3.Controls.Add(dateTimePicker02);
             panel3.Controls.Add(dateTimePicker01);
             panel3.Location = new Point(7, 6);
-
             panel3.Name = "panel3";
             panel3.Size = new Size(749, 41);
             panel3.TabIndex = 2;
@@ -241,7 +238,6 @@
             // 
             // dateTimePicker02
             // 
-
             dateTimePicker02.Location = new Point(483, 7);
             dateTimePicker02.Name = "dateTimePicker02";
             dateTimePicker02.Size = new Size(263, 27);
@@ -249,8 +245,6 @@
             // 
             // dateTimePicker01
             // 
-
-
             dateTimePicker01.Location = new Point(3, 7);
             dateTimePicker01.Name = "dateTimePicker01";
             dateTimePicker01.Size = new Size(260, 27);
@@ -264,7 +258,7 @@
             tabFood.Controls.Add(panel1);
             tabFood.Location = new Point(4, 29);
             tabFood.Name = "tabFood";
-            tabFood.Padding = new Padding(3, 3, 3, 3);
+            tabFood.Padding = new Padding(3);
             tabFood.Size = new Size(883, 462);
             tabFood.TabIndex = 1;
             tabFood.Text = "Thức ăn";
@@ -486,7 +480,7 @@
             tabFoodCategory.Controls.Add(panel17);
             tabFoodCategory.Location = new Point(4, 29);
             tabFoodCategory.Name = "tabFoodCategory";
-            tabFoodCategory.Padding = new Padding(3, 3, 3, 3);
+            tabFoodCategory.Padding = new Padding(3);
             tabFoodCategory.Size = new Size(883, 462);
             tabFoodCategory.TabIndex = 2;
             tabFoodCategory.Text = "Danh mục";
@@ -627,10 +621,8 @@
             tabTable.Controls.Add(panel19);
             tabTable.Location = new Point(4, 29);
             tabTable.Name = "tabTable";
-
-            tabTable.Padding = new Padding(3, 3, 3, 3);
+            tabTable.Padding = new Padding(3);
             tabTable.Size = new Size(883, 462);
-
             tabTable.TabIndex = 3;
             tabTable.Text = "Bàn ăn";
             tabTable.UseVisualStyleBackColor = true;
@@ -799,7 +791,7 @@
             tabAccount.Controls.Add(panel28);
             tabAccount.Location = new Point(4, 29);
             tabAccount.Name = "tabAccount";
-            tabAccount.Padding = new Padding(3, 3, 3, 3);
+            tabAccount.Padding = new Padding(3);
             tabAccount.Size = new Size(883, 462);
             tabAccount.TabIndex = 4;
             tabAccount.Text = "Tài khoản";
@@ -990,6 +982,7 @@
             // 
             // dtgvAccount
             // 
+            dtgvAccount.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgvAccount.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgvAccount.Location = new Point(3, 13);
             dtgvAccount.Name = "dtgvAccount";
