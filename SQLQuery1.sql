@@ -57,6 +57,24 @@ create table BillInfo
 
 )
 
+alter table Bill
+add timeCheckIn time(0), timeCheckOut time(0)
+
+
+alter table Bill add totalPrice Float
+go
+
+
+
+alter table Bill
+add discount int
+go
+
+
+update Bill set discount = 0
+go
+
+
 
 insert into Account (UserName, DisplayName, Password, Type)
 values ('NgoVanDuc', 'NgoDuc', 'ngovanduc@123',0),
@@ -96,11 +114,13 @@ as select * from TableFood
 go
 
 
+
+
+
 --thêm category
 insert FoodCategory (name)
 values (N'Đồ uống'),
 		(N'Đồ ăn nhẹ')
-
 go
 
 --thêm món ăn
@@ -116,31 +136,6 @@ values (N'Cà phê đen', 5, 30000),
 		(N'Đùi gà', 6, 30000)
 go
 
-		
-
-
---thêm bill
-insert into Bill (DateCheckIn, DateCheckOut , idTable , status)
-values (GETDATE(), null , 1, 0),
-		(GETDATE(), null , 2, 0),
-		(GETDATE(), GETDATE() , 3, 1),
-		(GETDATE(), GETDATE() , 4, 1)
-go
-
-
---thêm billinfo
-insert BillInfo
-values (2,4,5),
-		(3,2,4),
-		(1,1,3),
-		(4,1,3)
-go
-
-
-select * from BillInfo
-select * from Bill
-select * from Food
-go
 
 create proc USP_InserBill
 @idTable int
@@ -176,7 +171,7 @@ END
 GO
 
 
-alter trigger UTG_UpdateBillInfo
+create trigger UTG_UpdateBillInfo
 on BillInfo for insert, update
 as
 begin
@@ -228,27 +223,8 @@ go
 
 
 
-select * from FoodCategory
-select * from Food
-select * from Bill
-select * from BillInfo
-select * from TableFood
 
-
-delete from BillInfo
-delete from Bill
-
-alter table Bill
-add discount int
-go
-
-select * from Bill
-
-update Bill set discount = 0
-go
-
-
-alter proc USP_SwitchTable
+create proc USP_SwitchTable
 @idTable1 int, @idTable2 int
 as
 begin
@@ -312,11 +288,10 @@ begin
 end
 go
 
-alter table Bill add totalPrice Float
-go
 
 
-alter proc USP_GetListBillByDate
+
+create proc USP_GetListBillByDate
 @checkIn date, @checkOut date
 as
 begin
@@ -328,15 +303,6 @@ begin
 end
 go
 
-select * from Bill
-
-alter table Bill
-add timeCheckIn time(0), timeCheckOut time(0)
-
-
-select * from Bill
-order by timeCheckOut desc
-go
 
 create proc USP_UpdateAccount
 @userName nvarchar(100), @displayName nvarchar(100), @password nvarchar(100),
@@ -360,10 +326,6 @@ begin
 		end
 
 end
-
-
-select  from Account
-select * from TableFood
 go
 
 create proc USP_GetListTable
