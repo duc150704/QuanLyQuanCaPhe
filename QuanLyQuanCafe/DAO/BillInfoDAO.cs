@@ -1,4 +1,4 @@
-﻿using QuanLyQuanCAFE.DTO;
+using QuanLyQuanCAFE.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -24,6 +24,11 @@ namespace QuanLyQuanCAFE.DAO
         
         private BillInfoDAO() { }
 
+
+        public void DeleteBillInfoByFoodID(int id)
+        {
+            DataProvider.Instance.ExcuteQuery("delete dbo.BillInfo where idFood = " + id);
+        }
         public List<BillInfo> GetListBillInfo(int id)
         {
             List<BillInfo> listBillInfo = new List<BillInfo>();
