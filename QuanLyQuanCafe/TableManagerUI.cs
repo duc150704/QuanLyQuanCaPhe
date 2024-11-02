@@ -85,72 +85,73 @@ namespace QuanLyQuanCAFE
         private void f_InsertCategory(object? sender, EventArgs e)
         {
             LoadCategory();
+        }
 
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AdminUI f = new AdminUI();
-            f.InsertTable += f_InsertTable;
-            f.UpdateTable += f_UpdateTable;
-            f.DeleteTable += f_DeleteTable;
+            {
+                AdminUI f = new AdminUI();
+                f.InsertTable += f_InsertTable;
+                f.UpdateTable += f_UpdateTable;
+                f.DeleteTable += f_DeleteTable;
 
-            f.InsertFood += F_InsertFood;
-            f.DeleteFood += F_DeleteFood;
-            f.UpdateFood += F_UpdateFood;
-            
-            f.InsertCategory += f_InsertCategory;
-            f.DeleteCategory += f_DeleteCategory;
-            f.UpdateCategory += f_UpdateCategory;
-            f.ShowDialog();
-        }
+                f.InsertFood += F_InsertFood;
+                f.DeleteFood += F_DeleteFood;
+                f.UpdateFood += F_UpdateFood;
 
-        private void F_UpdateFood(object? sender, EventArgs e)
-        {
-            LoadFoodListByCategoryID((cbCategory.SelectedItem as Category).Id);
-            if (lsvBill.Tag != null)
-                ShowBill((lsvBill.Tag as Table).ID);
-        }
+                f.InsertCategory += f_InsertCategory;
+                f.DeleteCategory += f_DeleteCategory;
+                f.UpdateCategory += f_UpdateCategory;
+                f.ShowDialog();
+            }
 
-        private void F_DeleteFood(object? sender, EventArgs e)
-        {
-            LoadFoodListByCategoryID((cbCategory.SelectedItem as Category).Id);
-            if (lsvBill.Tag != null)
-                ShowBill((lsvBill.Tag as Table).ID);
-            LoadTable();
-        }
+            private void F_UpdateFood(object? sender, EventArgs e)
+            {
+                LoadFoodListByCategoryID((cbCategory.SelectedItem as Category).Id);
+                if (lsvBill.Tag != null)
+                    ShowBill((lsvBill.Tag as Table).ID);
+            }
 
-        private void F_InsertFood(object? sender, EventArgs e)
-        {
-            LoadFoodListByCategoryID((cbCategory.SelectedItem as Category).Id);
-            if (lsvBill.Tag != null)
-                ShowBill((lsvBill.Tag as Table).ID);
-        }
+            private void F_DeleteFood(object? sender, EventArgs e)
+            {
+                LoadFoodListByCategoryID((cbCategory.SelectedItem as Category).Id);
+                if (lsvBill.Tag != null)
+                    ShowBill((lsvBill.Tag as Table).ID);
+                LoadTable();
+            }
 
-        private void f_UpdateTable(object? sender, EventArgs e)
-        {
-            LoadTable();
-            LoadComboBoxTable(cbSwitchTable);
-        }
+            private void F_InsertFood(object? sender, EventArgs e)
+            {
+                LoadFoodListByCategoryID((cbCategory.SelectedItem as Category).Id);
+                if (lsvBill.Tag != null)
+                    ShowBill((lsvBill.Tag as Table).ID);
+            }
 
-        private void f_DeleteTable(object? sender, EventArgs e)
-        {
-            LoadTable();
-            LoadComboBoxTable(cbSwitchTable);
-        }
+            private void f_UpdateTable(object? sender, EventArgs e)
+            {
+                LoadTable();
+                LoadComboBoxTable(cbSwitchTable);
+            }
 
-        private void f_InsertTable(object? sender, EventArgs e)
-        {
-            LoadTable();
-            LoadComboBoxTable(cbSwitchTable);
+            private void f_DeleteTable(object? sender, EventArgs e)
+            {
+                LoadTable();
+                LoadComboBoxTable(cbSwitchTable);
+            }
 
-        }
+            private void f_InsertTable(object? sender, EventArgs e)
+            {
+                LoadTable();
+                LoadComboBoxTable(cbSwitchTable);
 
-        private void thôngTinCáNhânToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            AcountProfileUI f = new AcountProfileUI(LoginAccount);
-            f.UpdateAccountEv += f_UpdateAcount;
+            }
 
-            f.ShowDialog();
-        }
+            private void thôngTinCáNhânToolStripMenuItem1_Click(object sender, EventArgs e)
+            {
+                AcountProfileUI f = new AcountProfileUI(LoginAccount);
+                f.UpdateAccountEv += f_UpdateAcount;
+
+                f.ShowDialog();
+            } 
 
         private event EventHandler insertFood;
         public event EventHandler InsertFood

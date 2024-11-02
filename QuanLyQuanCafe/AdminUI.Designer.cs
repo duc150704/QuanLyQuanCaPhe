@@ -638,7 +638,7 @@
             txbCategoryName.Name = "txbCategoryName";
             txbCategoryName.Size = new Size(227, 27);
             txbCategoryName.TabIndex = 0;
-            txbCategoryName.TextChanged += textBox2_TextChanged;
+          //  txbCategoryName.TextChanged += textBox2_TextChanged;
 
             // 
             // panel16
@@ -673,7 +673,7 @@
             txbCategoryID.Size = new Size(227, 27);
             txbCategoryID.TabIndex = 0;
 
-            txbCategoryID.TextChanged += txbCategoryID_TextChanged;
+           // txbCategoryID.TextChanged += txbCategoryID_TextChanged;
 
             // 
             // panel17

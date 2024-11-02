@@ -201,10 +201,6 @@ namespace QuanLyQuanCAFE
             LoadListCategory();
         }
 
-        private void LoadListCategory()
-        {
-            dtgvCategory.DataSource = CategoryDAO.Instance.GetListCategory();
-        }
 
         private void butViewTable_Click(object sender, EventArgs e)
         {
