@@ -70,7 +70,7 @@ namespace QuanLyQuanCAFE
             panel12 = new Panel();
             panel15 = new Panel();
             label6 = new Label();
-            textBox2 = new TextBox();
+            txbCategoryName = new TextBox();
             panel16 = new Panel();
             label7 = new Label();
             txbCategoryID = new TextBox();
@@ -113,7 +113,7 @@ namespace QuanLyQuanCAFE
             txbDisplayName = new TextBox();
             panel27 = new Panel();
             label12 = new Label();
-            textBox6 = new TextBox();
+            txbUserName = new TextBox();
             panel28 = new Panel();
             dtgvAccount = new DataGridView();
             tabControl1.SuspendLayout();
@@ -549,7 +549,7 @@ namespace QuanLyQuanCAFE
             // panel15
             // 
             panel15.Controls.Add(label6);
-            panel15.Controls.Add(textBox2);
+            panel15.Controls.Add(txbCategoryName);
             panel15.Location = new Point(3, 72);
             panel15.Name = "panel15";
             panel15.Size = new Size(414, 63);
@@ -565,13 +565,14 @@ namespace QuanLyQuanCAFE
             label6.TabIndex = 1;
             label6.Text = "Tên danh mục:";
             // 
-            // textBox2
+            // txbCategoryName
             // 
-            textBox2.BackColor = SystemColors.ControlLightLight;
-            textBox2.Location = new Point(167, 22);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(227, 27);
-            textBox2.TabIndex = 0;
+            txbCategoryName.BackColor = SystemColors.ControlLightLight;
+            txbCategoryName.Location = new Point(167, 22);
+            txbCategoryName.Name = "txbCategoryName";
+            txbCategoryName.Size = new Size(227, 27);
+            txbCategoryName.TabIndex = 0;
+            txbCategoryName.TextChanged += textBox2_TextChanged;
             // 
             // panel16
             // 
@@ -600,6 +601,7 @@ namespace QuanLyQuanCAFE
             txbCategoryID.ReadOnly = true;
             txbCategoryID.Size = new Size(227, 27);
             txbCategoryID.TabIndex = 0;
+            txbCategoryID.TextChanged += txbCategoryID_TextChanged;
             // 
             // panel17
             // 
@@ -950,7 +952,7 @@ namespace QuanLyQuanCAFE
             // panel27
             // 
             panel27.Controls.Add(label12);
-            panel27.Controls.Add(textBox6);
+            panel27.Controls.Add(txbUserName);
             panel27.Location = new Point(3, 3);
             panel27.Name = "panel27";
             panel27.Size = new Size(414, 63);
@@ -966,14 +968,14 @@ namespace QuanLyQuanCAFE
             label12.TabIndex = 1;
             label12.Text = "Tên tài khoản:";
             // 
-            // textBox6
+            // txbUserName
             // 
-            textBox6.BackColor = SystemColors.ControlLightLight;
-            textBox6.Location = new Point(185, 22);
-            textBox6.Name = "textBox6";
-            textBox6.ReadOnly = true;
-            textBox6.Size = new Size(209, 27);
-            textBox6.TabIndex = 0;
+            txbUserName.BackColor = SystemColors.ControlLightLight;
+            txbUserName.Location = new Point(185, 22);
+            txbUserName.Name = "txbUserName";
+            txbUserName.ReadOnly = true;
+            txbUserName.Size = new Size(209, 27);
+            txbUserName.TabIndex = 0;
             // 
             // panel28
             // 
@@ -1085,7 +1087,6 @@ namespace QuanLyQuanCAFE
         private Panel panel7;
         private Label label1;
         private TextBox txbFoodName;
-        private TextBox txbCategoryName;
         private Panel panel6;
         private Label lbUserName;
         private TextBox txbFoodID;
@@ -1103,7 +1104,7 @@ namespace QuanLyQuanCAFE
         private Panel panel12;
         private Panel panel15;
         private Label label6;
-        private TextBox textBox2;
+        private TextBox txbCategoryName;
         private Panel panel16;
         private Label label7;
         private TextBox txbCategoryID;
@@ -1146,7 +1147,7 @@ namespace QuanLyQuanCAFE
         private TextBox txbDisplayName;
         private Panel panel27;
         private Label label12;
-        private TextBox textBox6;
+        private TextBox txbUserName;
         private Panel panel28;
         private DataGridView dtgvAccount;
         private Button button3;

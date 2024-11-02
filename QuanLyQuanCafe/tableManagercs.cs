@@ -69,14 +69,34 @@ namespace QuanLyQuanCAFE
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fAmin f = new fAmin();
+            f.InsertCategory += f_InsertCategory;
+            f.DeleteCategory += f_DeleteCategory;
+            f.UpdateCategory += f_UpdateCategory;
+
             f.ShowDialog();
 
+        }
+
+        private void f_UpdateCategory(object? sender, EventArgs e)
+        {
+            LoadCategory();
+        }
+
+        private void f_DeleteCategory(object? sender, EventArgs e)
+        {
+            LoadCategory();
+        }
+
+        private void f_InsertCategory(object? sender, EventArgs e)
+        {
+            LoadCategory();
         }
 
         private void thôngTinCáNhânToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             AcountProfile f = new AcountProfile(LoginAccount);
             f.UpdateAccountEv += f_UpdateAcount;
+
             f.ShowDialog();
         }
 

@@ -29,7 +29,7 @@ namespace QuanLyQuanCAFE.DAO
         public List<Category> GetListCategory()
         {
             List<Category> list = new List<Category>();
-            string query = "select * from FoodCategory";
+            string query = "select * from FoodCategory where isAvailable = 1";
 
             DataTable data = DataProvider.Instance.ExcuteQuery(query);
 
@@ -45,7 +45,7 @@ namespace QuanLyQuanCAFE.DAO
         {
             Category category = null;
 
-            string query = "select * from FoodCategory where id = " + id;
+            string query = "select * from FoodCategory where id = " + id + " and isAvailable = 1";
 
             DataTable data = DataProvider.Instance.ExcuteQuery(query);
 
@@ -60,25 +60,24 @@ namespace QuanLyQuanCAFE.DAO
 
         public bool InsertCategory(string name)
         {
-            string query = string.Format("INSERT dbo.FoodCategory ( name)VALUES  ( N'{0}')", name);
+            string query = $"insert into FoodCategory (name) values (N'{name}')";
             int result = DataProvider.Instance.ExcuteNonQuery(query);
 
             return result > 0;
         }
 
-        public bool UpdateCategory( string name)
+        public bool UpdateCategory( int id,string name)
         {
-            string query = string.Format("UPDATE dbo.FoodCategory SET name = N'{0}' WHERE id = {3}", name);
+            string query = $"UPDATE dbo.FoodCategory SET name = N'{name}' WHERE id = {id}";
             int result = DataProvider.Instance.ExcuteNonQuery(query);
 
             return result > 0;
         }
 
-        public bool DeleteCategory(string name)
+        public bool DeleteCategory(int id)
         {
-            BillInfoDAO.Instance.DeleteBillInfoByCategoryID(name);
 
-            string query = string.Format("Delete Food where id = {0}", name);
+            string query = $"update FoodCategory set isAvailable = 0 where id = {id}";
             int result = DataProvider.Instance.ExcuteNonQuery(query);
 
             return result > 0;
