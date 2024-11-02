@@ -1,4 +1,4 @@
-﻿using QuanLyQuanCAFE.DAO;
+using QuanLyQuanCAFE.DAO;
 using QuanLyQuanCAFE.DTO;
 using System;
 using System.Collections.Generic;
@@ -69,8 +69,32 @@ namespace QuanLyQuanCAFE
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fAmin f = new fAmin();
+            f.InsertFood += F_InsertFood;
+            f.DeleteFood += F_DeleteFood;
+            f.UpdateFood += F_UpdateFood;
             f.ShowDialog();
+        }
 
+        private void F_UpdateFood(object? sender, EventArgs e)
+        {
+            LoadFoodListByCategoryID((cbCategory.SelectedItem as Category).Id);
+            if (lsvBill.Tag != null)
+                ShowBill((lsvBill.Tag as Table).ID);
+        }
+
+        private void F_DeleteFood(object? sender, EventArgs e)
+        {
+            LoadFoodListByCategoryID((cbCategory.SelectedItem as Category).Id);
+            if (lsvBill.Tag != null)
+                ShowBill((lsvBill.Tag as Table).ID);
+            LoadTable();
+        }
+
+        private void F_InsertFood(object? sender, EventArgs e)
+        {
+            LoadFoodListByCategoryID((cbCategory.SelectedItem as Category).Id);
+            if (lsvBill.Tag != null)
+                ShowBill((lsvBill.Tag as Table).ID);
         }
 
         private void thôngTinCáNhânToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -78,6 +102,27 @@ namespace QuanLyQuanCAFE
             AcountProfile f = new AcountProfile(LoginAccount);
             f.UpdateAccountEv += f_UpdateAcount;
             f.ShowDialog();
+        }
+
+        private event EventHandler insertFood;
+        public event EventHandler InsertFood
+        {
+            add { insertFood += value; }
+            remove { insertFood -= value; }
+        }
+
+        private event EventHandler deleteFood;
+        public event EventHandler DeleteFood
+        {
+            add { deleteFood += value; }
+            remove { deleteFood -= value; }
+        }
+
+        private event EventHandler updateFood;
+        public event EventHandler UpdateFood
+        {
+            add { updateFood += value; }
+            remove { updateFood -= value; }
         }
 
         private void f_UpdateAcount(object? sender, EventArgs e)
