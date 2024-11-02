@@ -1,4 +1,7 @@
+
 ﻿using QuanLyQuanCAFE.DAO;
+
+
 using QuanLyQuanCAFE.DTO;
 using System;
 using System.Collections.Generic;
@@ -66,16 +69,8 @@ namespace QuanLyQuanCAFE
             this.Close();
         }
 
-        private void adminToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AdminUI f = new AdminUI();
-            f.InsertCategory += f_InsertCategory;
-            f.DeleteCategory += f_DeleteCategory;
-            f.UpdateCategory += f_UpdateCategory;
 
-            f.ShowDialog();
-
-        }
+            
 
         private void f_UpdateCategory(object? sender, EventArgs e)
         {
@@ -90,6 +85,63 @@ namespace QuanLyQuanCAFE
         private void f_InsertCategory(object? sender, EventArgs e)
         {
             LoadCategory();
+
+        private void adminToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AdminUI f = new AdminUI();
+            f.InsertTable += f_InsertTable;
+            f.UpdateTable += f_UpdateTable;
+            f.DeleteTable += f_DeleteTable;
+
+            f.InsertFood += F_InsertFood;
+            f.DeleteFood += F_DeleteFood;
+            f.UpdateFood += F_UpdateFood;
+            
+            f.InsertCategory += f_InsertCategory;
+            f.DeleteCategory += f_DeleteCategory;
+            f.UpdateCategory += f_UpdateCategory;
+            f.ShowDialog();
+        }
+
+        private void F_UpdateFood(object? sender, EventArgs e)
+        {
+            LoadFoodListByCategoryID((cbCategory.SelectedItem as Category).Id);
+            if (lsvBill.Tag != null)
+                ShowBill((lsvBill.Tag as Table).ID);
+        }
+
+        private void F_DeleteFood(object? sender, EventArgs e)
+        {
+            LoadFoodListByCategoryID((cbCategory.SelectedItem as Category).Id);
+            if (lsvBill.Tag != null)
+                ShowBill((lsvBill.Tag as Table).ID);
+            LoadTable();
+        }
+
+        private void F_InsertFood(object? sender, EventArgs e)
+        {
+            LoadFoodListByCategoryID((cbCategory.SelectedItem as Category).Id);
+            if (lsvBill.Tag != null)
+                ShowBill((lsvBill.Tag as Table).ID);
+        }
+
+        private void f_UpdateTable(object? sender, EventArgs e)
+        {
+            LoadTable();
+            LoadComboBoxTable(cbSwitchTable);
+        }
+
+        private void f_DeleteTable(object? sender, EventArgs e)
+        {
+            LoadTable();
+            LoadComboBoxTable(cbSwitchTable);
+        }
+
+        private void f_InsertTable(object? sender, EventArgs e)
+        {
+            LoadTable();
+            LoadComboBoxTable(cbSwitchTable);
+
         }
 
         private void thôngTinCáNhânToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -100,9 +152,30 @@ namespace QuanLyQuanCAFE
             f.ShowDialog();
         }
 
+        private event EventHandler insertFood;
+        public event EventHandler InsertFood
+        {
+            add { insertFood += value; }
+            remove { insertFood -= value; }
+        }
+
+        private event EventHandler deleteFood;
+        public event EventHandler DeleteFood
+        {
+            add { deleteFood += value; }
+            remove { deleteFood -= value; }
+        }
+
+        private event EventHandler updateFood;
+        public event EventHandler UpdateFood
+        {
+            add { updateFood += value; }
+            remove { updateFood -= value; }
+        }
+
         private void f_UpdateAcount(object? sender, EventArgs e)
         {
-            
+
         }
         #endregion
         private void cbFood_SelectedIndexChanged(object sender, EventArgs e)
@@ -283,6 +356,7 @@ namespace QuanLyQuanCAFE
 
         public void LoadComboBoxTable(ComboBox cb)
         {
+
             cb.DataSource = TableDAO.Instance.LoadTableList();
             cb.DisplayMember = "Name";
         }
@@ -291,5 +365,12 @@ namespace QuanLyQuanCAFE
         {
 
         }
+
+
+        private void cbSwitchTable_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

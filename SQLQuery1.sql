@@ -65,6 +65,15 @@ alter table Bill add totalPrice Float
 go
 
 
+alter table TableFood
+add isActive bit default 0
+go
+
+update TableFood set isActive = 1
+go
+
+select * from TableFood
+
 
 alter table Bill
 add discount int
@@ -109,13 +118,13 @@ end
 go
 
 
-create proc USP_GetTableList
-as select * from TableFood
+alter proc USP_GetTableList
+as select * from TableFood where isActive = 1
 go
 
 
 
-
+select * from Bill
 
 --thêm category
 insert FoodCategory (name)
@@ -328,6 +337,26 @@ begin
 end
 go
 
+CREATE TRIGGER UTG_DeleteBillInfo
+ON dbo.BillInfo FOR DELETE
+AS 
+BEGIN
+	DECLARE @idBillInfo INT
+	DECLARE @idBill INT
+	SELECT @idBillInfo = id, @idBill = Deleted.idBill FROM Deleted
+	
+	DECLARE @idTable INT
+	SELECT @idTable = idTable FROM dbo.Bill WHERE id = @idBill
+	
+	DECLARE @count INT = 0
+	
+	SELECT @count = COUNT(*) FROM dbo.BillInfo AS bi, dbo.Bill AS b WHERE b.id = bi.idBill AND b.id = @idBill AND b.status = 0
+	
+	IF (@count = 0)
+		UPDATE dbo.TableFood SET status = N'Trống' WHERE id = @idTable
+END
+GO
+
 create proc USP_GetListTable
 as
 begin
@@ -339,5 +368,11 @@ ALTER TABLE FoodCategory
 ADD isAvailable bit;
 
 
+
 update FoodCategory
 set isAvailable = 1
+
+
+select * from BillInfo
+
+
