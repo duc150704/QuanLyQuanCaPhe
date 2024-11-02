@@ -40,7 +40,10 @@ namespace QuanLyQuanCAFE.DAO
             
         }
 
-
+        public void DeleteBillInfoByCategoryID(string name)
+        {
+            DataProvider.Instance.ExcuteQuery("delete dbo.BillInfo WHERE name = " + name);
+        }
         public void InsertBillInfor(int idBill, int idFood , int count)
         {
             DataProvider.Instance.ExcuteNonQuery("USP_InsertBillInfo  @idBill , @idFood , @count", new object[] { idBill, idFood, count });
