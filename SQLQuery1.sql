@@ -65,6 +65,15 @@ alter table Bill add totalPrice Float
 go
 
 
+alter table TableFood
+add isActive bit default 0
+go
+
+update TableFood set isActive = 1
+go
+
+select * from TableFood
+
 
 alter table Bill
 add discount int
@@ -109,13 +118,13 @@ end
 go
 
 
-create proc USP_GetTableList
-as select * from TableFood
+alter proc USP_GetTableList
+as select * from TableFood where isActive = 1
 go
 
 
 
-
+select * from Bill
 
 --thêm category
 insert FoodCategory (name)
@@ -335,3 +344,4 @@ begin
 end
 
 
+select * from BillInfo

@@ -3,9 +3,9 @@ using QuanLyQuanCAFE.DTO;
 
 namespace QuanLyQuanCAFE
 {
-    public partial class fLogin : Form
+    public partial class LoginUI : Form
     {
-        public fLogin()
+        public LoginUI()
         {
             InitializeComponent();
         }
@@ -26,7 +26,7 @@ namespace QuanLyQuanCAFE
             if (Login(userName,password))
             {
                 Account loginAccount = AccountDAO.Instance.GetAccountByUserName(userName);
-                tableManagercs f = new tableManagercs(loginAccount);
+                TableManagerUI f = new TableManagerUI(loginAccount);
                 this.Hide();
                 f.ShowDialog();
                 this.Show();

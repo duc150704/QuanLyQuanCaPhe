@@ -1,6 +1,6 @@
 ﻿namespace QuanLyQuanCAFE
 {
-    partial class AcountProfile
+    partial class AcountProfileUI
     {
         /// <summary>
         /// Required designer variable.

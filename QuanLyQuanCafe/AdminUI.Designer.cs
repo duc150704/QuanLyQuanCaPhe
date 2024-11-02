@@ -1,6 +1,6 @@
 ﻿namespace QuanLyQuanCAFE
 {
-    partial class fAmin
+    partial class AdminUI
     {
         /// <summary>
         /// Required designer variable.
@@ -88,10 +88,10 @@
             label8 = new Label();
             panel14 = new Panel();
             label4 = new Label();
-            textBox1 = new TextBox();
+            txtTableName = new TextBox();
             panel18 = new Panel();
             label5 = new Label();
-            textBox3 = new TextBox();
+            txtTableId = new TextBox();
             panel19 = new Panel();
             dtgvTable = new DataGridView();
             tabAccount = new TabPage();
@@ -192,6 +192,7 @@
             tongDoanhThu.Size = new Size(202, 27);
             tongDoanhThu.TabIndex = 5;
             tongDoanhThu.TextAlign = HorizontalAlignment.Center;
+            tongDoanhThu.TextChanged += tongDoanhThu_TextChanged;
             // 
             // doanhThu
             // 
@@ -660,6 +661,7 @@
             butDeleteTable.TabIndex = 2;
             butDeleteTable.Text = "Xóa";
             butDeleteTable.UseVisualStyleBackColor = true;
+            butDeleteTable.Click += butDeleteTable_Click;
             // 
             // butEditTable
             // 
@@ -669,6 +671,7 @@
             butEditTable.TabIndex = 1;
             butEditTable.Text = "Sửa";
             butEditTable.UseVisualStyleBackColor = true;
+            butEditTable.Click += butEditTable_Click;
             // 
             // butAddTable
             // 
@@ -678,6 +681,7 @@
             butAddTable.TabIndex = 0;
             butAddTable.Text = "Thêm";
             butAddTable.UseVisualStyleBackColor = true;
+            butAddTable.Click += butAddTable_Click;
             // 
             // panel13
             // 
@@ -719,7 +723,7 @@
             // panel14
             // 
             panel14.Controls.Add(label4);
-            panel14.Controls.Add(textBox1);
+            panel14.Controls.Add(txtTableName);
             panel14.Location = new Point(3, 72);
             panel14.Name = "panel14";
             panel14.Size = new Size(414, 63);
@@ -735,18 +739,18 @@
             label4.TabIndex = 1;
             label4.Text = "Tên bàn:";
             // 
-            // textBox1
+            // txtTableName
             // 
-            textBox1.BackColor = SystemColors.ControlLightLight;
-            textBox1.Location = new Point(167, 21);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(227, 27);
-            textBox1.TabIndex = 0;
+            txtTableName.BackColor = SystemColors.ControlLightLight;
+            txtTableName.Location = new Point(167, 21);
+            txtTableName.Name = "txtTableName";
+            txtTableName.Size = new Size(227, 27);
+            txtTableName.TabIndex = 0;
             // 
             // panel18
             // 
             panel18.Controls.Add(label5);
-            panel18.Controls.Add(textBox3);
+            panel18.Controls.Add(txtTableId);
             panel18.Location = new Point(3, 3);
             panel18.Name = "panel18";
             panel18.Size = new Size(414, 63);
@@ -762,14 +766,14 @@
             label5.TabIndex = 1;
             label5.Text = "ID:";
             // 
-            // textBox3
+            // txtTableId
             // 
-            textBox3.BackColor = SystemColors.ControlLightLight;
-            textBox3.Location = new Point(167, 21);
-            textBox3.Name = "textBox3";
-            textBox3.ReadOnly = true;
-            textBox3.Size = new Size(227, 27);
-            textBox3.TabIndex = 0;
+            txtTableId.BackColor = SystemColors.ControlLightLight;
+            txtTableId.Location = new Point(167, 21);
+            txtTableId.Name = "txtTableId";
+            txtTableId.ReadOnly = true;
+            txtTableId.Size = new Size(227, 27);
+            txtTableId.TabIndex = 0;
             // 
             // panel19
             // 
@@ -788,6 +792,7 @@
             dtgvTable.RowHeadersWidth = 51;
             dtgvTable.Size = new Size(440, 347);
             dtgvTable.TabIndex = 0;
+            dtgvTable.CellContentClick += dtgvTable_CellContentClick;
             // 
             // tabAccount
             // 
@@ -1121,10 +1126,10 @@
         private Panel panel13;
         private Panel panel14;
         private Label label4;
-        private TextBox textBox1;
+        private TextBox txtTableName;
         private Panel panel18;
         private Label label5;
-        private TextBox textBox3;
+        private TextBox txtTableId;
         private Panel panel19;
         private DataGridView dtgvTable;
         private Panel panel20;

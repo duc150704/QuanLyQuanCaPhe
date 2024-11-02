@@ -14,13 +14,13 @@ using System.Windows.Forms;
 
 namespace QuanLyQuanCAFE
 {
-    public partial class tableManagercs : Form
+    public partial class TableManagerUI : Form
     {
         private Account loginAccount;
 
         public Account LoginAccount { get => loginAccount; set { loginAccount = value; ChangeAccount(loginAccount.Type); } }
 
-        public tableManagercs(Account acc)
+        public TableManagerUI(Account acc)
         {
             InitializeComponent();
 
@@ -68,21 +68,42 @@ namespace QuanLyQuanCAFE
 
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fAmin f = new fAmin();
+            AdminUI f = new AdminUI();
+            f.InsertTable += f_InsertTable;
+            f.UpdateTable += f_UpdateTable;
+            f.DeleteTable += f_DeleteTable;
             f.ShowDialog();
 
         }
 
+        private void f_UpdateTable(object? sender, EventArgs e)
+        {
+            LoadTable();
+            LoadComboBoxTable(cbSwitchTable);
+        }
+
+        private void f_DeleteTable(object? sender, EventArgs e)
+        {
+            LoadTable();
+            LoadComboBoxTable(cbSwitchTable);
+        }
+
+        private void f_InsertTable(object? sender, EventArgs e)
+        {
+            LoadTable();
+            LoadComboBoxTable(cbSwitchTable);
+        }
+
         private void thôngTinCáNhânToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            AcountProfile f = new AcountProfile(LoginAccount);
+            AcountProfileUI f = new AcountProfileUI(LoginAccount);
             f.UpdateAccountEv += f_UpdateAcount;
             f.ShowDialog();
         }
 
         private void f_UpdateAcount(object? sender, EventArgs e)
         {
-            
+
         }
         #endregion
         private void cbFood_SelectedIndexChanged(object sender, EventArgs e)
@@ -263,11 +284,17 @@ namespace QuanLyQuanCAFE
 
         public void LoadComboBoxTable(ComboBox cb)
         {
+            
             cb.DataSource = TableDAO.Instance.LoadTableList();
             cb.DisplayMember = "Name";
         }
 
         private void txbtotalPrice_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbSwitchTable_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -67,5 +67,34 @@ namespace QuanLyQuanCAFE.DAO
             
         }
 
+
+
+        public bool InsertTable(string name)
+        {
+            string query = $"insert into TableFood(name, status, isActive) values (N'{name}',N'Trống',1 )";
+
+            int data = DataProvider.Instance.ExcuteNonQuery(query);
+
+            return data > 0;
+        }
+
+        public bool UpdateTable(int id,string name)
+        {
+            string query = $"update TableFood set name = N'{name}' where id = {id}";
+
+            int data = DataProvider.Instance.ExcuteNonQuery(query);
+
+            return data > 0;
+        }
+
+        public bool DeleteTable(int id)
+        {
+            string query = $"update TableFood set isActive = 0 where id = {id}";
+
+            int res = DataProvider.Instance.ExcuteNonQuery(query);
+
+            return res > 0;
+        }
+
     }
 }

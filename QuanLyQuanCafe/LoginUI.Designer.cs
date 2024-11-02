@@ -2,7 +2,7 @@
 
 namespace QuanLyQuanCAFE
 {
-    partial class fLogin
+    partial class LoginUI
     {
         /// <summary>
         ///  Required designer variable.

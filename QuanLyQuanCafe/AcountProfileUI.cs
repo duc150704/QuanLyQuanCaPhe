@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace QuanLyQuanCAFE
 {
-    public partial class AcountProfile : Form
+    public partial class AcountProfileUI : Form
     {
         private Account loginAccount;
 
         public Account LoginAccount { get => loginAccount; set { loginAccount = value; ChangeAccount(); } }
 
-        public AcountProfile(Account acc)
+        public AcountProfileUI(Account acc)
         {
             InitializeComponent();
             LoginAccount = acc;
