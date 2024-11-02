@@ -319,6 +319,7 @@
             butDeleteFood.TabIndex = 2;
             butDeleteFood.Text = "Xóa";
             butDeleteFood.UseVisualStyleBackColor = true;
+            butDeleteFood.Click += butDeleteFood_Click_1;
             // 
             // butEditFood
             // 
@@ -328,6 +329,7 @@
             butEditFood.TabIndex = 1;
             butEditFood.Text = "Sửa";
             butEditFood.UseVisualStyleBackColor = true;
+            butEditFood.Click += butEditFood_Click_1;
             // 
             // butAddFood
             // 
@@ -337,6 +339,7 @@
             butAddFood.TabIndex = 0;
             butAddFood.Text = "Thêm";
             butAddFood.UseVisualStyleBackColor = true;
+            butAddFood.Click += butAddFood_Click_1;
             // 
             // panel2
             // 
@@ -1001,13 +1004,13 @@
             dtgvAccount.Size = new Size(440, 347);
             dtgvAccount.TabIndex = 0;
             // 
-            // fAmin
+            // AdminUI
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(922, 519);
             Controls.Add(tabControl1);
-            Name = "fAmin";
+            Name = "AdminUI";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "fAmin";
             tabControl1.ResumeLayout(false);
