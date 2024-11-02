@@ -1,4 +1,4 @@
-﻿namespace QuanLyQuanCAFE
+namespace QuanLyQuanCAFE
 {
     partial class fAmin
     {
@@ -113,7 +113,7 @@
             txbDisplayName = new TextBox();
             panel27 = new Panel();
             label12 = new Label();
-            txbUserName = new TextBox();
+            textBox6 = new TextBox();
             panel28 = new Panel();
             dtgvAccount = new DataGridView();
             tabControl1.SuspendLayout();
@@ -167,7 +167,7 @@
             tabControl1.Location = new Point(18, 12);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(891, 495);
+            tabControl1.Size = new Size(892, 495);
             tabControl1.TabIndex = 0;
             // 
             // tabBill
@@ -179,7 +179,7 @@
             tabBill.Location = new Point(4, 29);
             tabBill.Name = "tabBill";
             tabBill.Padding = new Padding(3);
-            tabBill.Size = new Size(883, 462);
+            tabBill.Size = new Size(884, 462);
             tabBill.TabIndex = 0;
             tabBill.Text = "Tổng doanh thu";
             tabBill.UseVisualStyleBackColor = true;
@@ -259,7 +259,7 @@
             tabFood.Location = new Point(4, 29);
             tabFood.Name = "tabFood";
             tabFood.Padding = new Padding(3);
-            tabFood.Size = new Size(883, 462);
+            tabFood.Size = new Size(884, 462);
             tabFood.TabIndex = 1;
             tabFood.Text = "Thức ăn";
             tabFood.UseVisualStyleBackColor = true;
@@ -268,14 +268,14 @@
             // 
             panel5.Controls.Add(txbSearchFoodName);
             panel5.Controls.Add(butSearchFood);
-            panel5.Location = new Point(458, 5);
+            panel5.Location = new Point(458, 6);
             panel5.Name = "panel5";
-            panel5.Size = new Size(421, 69);
+            panel5.Size = new Size(420, 69);
             panel5.TabIndex = 3;
             // 
             // txbSearchFoodName
             // 
-            txbSearchFoodName.Location = new Point(11, 21);
+            txbSearchFoodName.Location = new Point(12, 21);
             txbSearchFoodName.Name = "txbSearchFoodName";
             txbSearchFoodName.Size = new Size(308, 27);
             txbSearchFoodName.TabIndex = 4;
@@ -295,7 +295,7 @@
             panel4.Controls.Add(butDeleteFood);
             panel4.Controls.Add(butEditFood);
             panel4.Controls.Add(butAddFood);
-            panel4.Location = new Point(6, 5);
+            panel4.Location = new Point(6, 6);
             panel4.Name = "panel4";
             panel4.Size = new Size(446, 69);
             panel4.TabIndex = 2;
@@ -308,7 +308,6 @@
             butView.TabIndex = 3;
             butView.Text = "Xem";
             butView.UseVisualStyleBackColor = true;
-            butView.Click += butView_Click;
             // 
             // butDeleteFood
             // 
@@ -321,7 +320,7 @@
             // 
             // butEditFood
             // 
-            butEditFood.Location = new Point(101, 0);
+            butEditFood.Location = new Point(100, 0);
             butEditFood.Name = "butEditFood";
             butEditFood.Size = new Size(94, 63);
             butEditFood.TabIndex = 1;
@@ -345,14 +344,14 @@
             panel2.Controls.Add(panel6);
             panel2.Location = new Point(458, 81);
             panel2.Name = "panel2";
-            panel2.Size = new Size(421, 375);
+            panel2.Size = new Size(420, 375);
             panel2.TabIndex = 1;
             // 
             // panel9
             // 
             panel9.Controls.Add(nmFoodPrice);
             panel9.Controls.Add(label3);
-            panel9.Location = new Point(3, 211);
+            panel9.Location = new Point(3, 210);
             panel9.Name = "panel9";
             panel9.Size = new Size(414, 63);
             panel9.TabIndex = 6;
@@ -369,7 +368,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(9, 21);
+            label3.Location = new Point(9, 22);
             label3.Name = "label3";
             label3.Size = new Size(49, 24);
             label3.TabIndex = 1;
@@ -387,7 +386,7 @@
             // cbFoodCategory
             // 
             cbFoodCategory.FormattingEnabled = true;
-            cbFoodCategory.Location = new Point(127, 21);
+            cbFoodCategory.Location = new Point(127, 22);
             cbFoodCategory.Name = "cbFoodCategory";
             cbFoodCategory.Size = new Size(267, 28);
             cbFoodCategory.TabIndex = 2;
@@ -396,7 +395,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(9, 21);
+            label2.Location = new Point(9, 22);
             label2.Name = "label2";
             label2.Size = new Size(112, 24);
             label2.TabIndex = 1;
@@ -415,7 +414,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(9, 21);
+            label1.Location = new Point(9, 22);
             label1.Name = "label1";
             label1.Size = new Size(100, 24);
             label1.TabIndex = 1;
@@ -424,7 +423,7 @@
             // txbFoodName
             // 
             txbFoodName.BackColor = SystemColors.ControlLightLight;
-            txbFoodName.Location = new Point(127, 21);
+            txbFoodName.Location = new Point(127, 22);
             txbFoodName.Name = "txbFoodName";
             txbFoodName.Size = new Size(267, 27);
             txbFoodName.TabIndex = 0;
@@ -442,7 +441,7 @@
             // 
             lbUserName.AutoSize = true;
             lbUserName.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbUserName.Location = new Point(11, 21);
+            lbUserName.Location = new Point(11, 22);
             lbUserName.Name = "lbUserName";
             lbUserName.Size = new Size(36, 24);
             lbUserName.TabIndex = 1;
@@ -451,7 +450,7 @@
             // txbFoodID
             // 
             txbFoodID.BackColor = SystemColors.ControlLightLight;
-            txbFoodID.Location = new Point(127, 21);
+            txbFoodID.Location = new Point(127, 22);
             txbFoodID.Name = "txbFoodID";
             txbFoodID.ReadOnly = true;
             txbFoodID.Size = new Size(267, 27);
@@ -467,9 +466,8 @@
             // 
             // dtgvFood
             // 
-            dtgvFood.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgvFood.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtgvFood.Location = new Point(3, 13);
+            dtgvFood.Location = new Point(3, 14);
             dtgvFood.Name = "dtgvFood";
             dtgvFood.RowHeadersWidth = 51;
             dtgvFood.Size = new Size(440, 347);
@@ -483,7 +481,7 @@
             tabFoodCategory.Location = new Point(4, 29);
             tabFoodCategory.Name = "tabFoodCategory";
             tabFoodCategory.Padding = new Padding(3);
-            tabFoodCategory.Size = new Size(883, 462);
+            tabFoodCategory.Size = new Size(884, 462);
             tabFoodCategory.TabIndex = 2;
             tabFoodCategory.Text = "Danh mục";
             tabFoodCategory.UseVisualStyleBackColor = true;
@@ -494,7 +492,7 @@
             panel11.Controls.Add(butDleteCategory);
             panel11.Controls.Add(butEditCategory);
             panel11.Controls.Add(butAddCategory);
-            panel11.Location = new Point(6, 5);
+            panel11.Location = new Point(6, 6);
             panel11.Name = "panel11";
             panel11.Size = new Size(446, 69);
             panel11.TabIndex = 6;
@@ -511,21 +509,23 @@
             // 
             // butDleteCategory
             // 
-            butDleteCategory.Location = new Point(200, 0);
+            butDleteCategory.Location = new Point(211, 3);
             butDleteCategory.Name = "butDleteCategory";
             butDleteCategory.Size = new Size(94, 63);
             butDleteCategory.TabIndex = 2;
             butDleteCategory.Text = "Xóa";
             butDleteCategory.UseVisualStyleBackColor = true;
+            butDleteCategory.Click += butDleteCategory_Click;
             // 
             // butEditCategory
             // 
-            butEditCategory.Location = new Point(101, 0);
+            butEditCategory.Location = new Point(100, 3);
             butEditCategory.Name = "butEditCategory";
             butEditCategory.Size = new Size(94, 63);
             butEditCategory.TabIndex = 1;
             butEditCategory.Text = "Sửa";
             butEditCategory.UseVisualStyleBackColor = true;
+            butEditCategory.Click += butEditCategory_Click;
             // 
             // butAddCategory
             // 
@@ -535,6 +535,7 @@
             butAddCategory.TabIndex = 0;
             butAddCategory.Text = "Thêm";
             butAddCategory.UseVisualStyleBackColor = true;
+            butAddCategory.Click += butAddCategory_Click;
             // 
             // panel12
             // 
@@ -542,7 +543,7 @@
             panel12.Controls.Add(panel16);
             panel12.Location = new Point(458, 81);
             panel12.Name = "panel12";
-            panel12.Size = new Size(421, 375);
+            panel12.Size = new Size(420, 375);
             panel12.TabIndex = 5;
             // 
             // panel15
@@ -558,7 +559,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(9, 21);
+            label6.Location = new Point(9, 22);
             label6.Name = "label6";
             label6.Size = new Size(152, 24);
             label6.TabIndex = 1;
@@ -567,7 +568,7 @@
             // textBox2
             // 
             textBox2.BackColor = SystemColors.ControlLightLight;
-            textBox2.Location = new Point(167, 21);
+            textBox2.Location = new Point(167, 22);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(227, 27);
             textBox2.TabIndex = 0;
@@ -585,7 +586,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(11, 21);
+            label7.Location = new Point(11, 22);
             label7.Name = "label7";
             label7.Size = new Size(36, 24);
             label7.TabIndex = 1;
@@ -594,7 +595,7 @@
             // txbCategoryID
             // 
             txbCategoryID.BackColor = SystemColors.ControlLightLight;
-            txbCategoryID.Location = new Point(167, 21);
+            txbCategoryID.Location = new Point(167, 22);
             txbCategoryID.Name = "txbCategoryID";
             txbCategoryID.ReadOnly = true;
             txbCategoryID.Size = new Size(227, 27);
@@ -610,9 +611,8 @@
             // 
             // dtgvCategory
             // 
-            dtgvCategory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgvCategory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtgvCategory.Location = new Point(3, 13);
+            dtgvCategory.Location = new Point(3, 14);
             dtgvCategory.Name = "dtgvCategory";
             dtgvCategory.RowHeadersWidth = 51;
             dtgvCategory.Size = new Size(440, 347);
@@ -626,7 +626,7 @@
             tabTable.Location = new Point(4, 29);
             tabTable.Name = "tabTable";
             tabTable.Padding = new Padding(3);
-            tabTable.Size = new Size(883, 462);
+            tabTable.Size = new Size(884, 462);
             tabTable.TabIndex = 3;
             tabTable.Text = "Bàn ăn";
             tabTable.UseVisualStyleBackColor = true;
@@ -637,7 +637,7 @@
             panel10.Controls.Add(butDeleteTable);
             panel10.Controls.Add(butEditTable);
             panel10.Controls.Add(butAddTable);
-            panel10.Location = new Point(6, 5);
+            panel10.Location = new Point(6, 6);
             panel10.Name = "panel10";
             panel10.Size = new Size(446, 69);
             panel10.TabIndex = 9;
@@ -650,7 +650,6 @@
             butViewTable.TabIndex = 3;
             butViewTable.Text = "Xem";
             butViewTable.UseVisualStyleBackColor = true;
-            butViewTable.Click += butViewTable_Click;
             // 
             // butDeleteTable
             // 
@@ -663,7 +662,7 @@
             // 
             // butEditTable
             // 
-            butEditTable.Location = new Point(101, 0);
+            butEditTable.Location = new Point(100, 0);
             butEditTable.Name = "butEditTable";
             butEditTable.Size = new Size(94, 63);
             butEditTable.TabIndex = 1;
@@ -686,7 +685,7 @@
             panel13.Controls.Add(panel18);
             panel13.Location = new Point(458, 81);
             panel13.Name = "panel13";
-            panel13.Size = new Size(421, 375);
+            panel13.Size = new Size(420, 375);
             panel13.TabIndex = 8;
             // 
             // panel20
@@ -701,7 +700,7 @@
             // cbTableStatus
             // 
             cbTableStatus.FormattingEnabled = true;
-            cbTableStatus.Location = new Point(167, 19);
+            cbTableStatus.Location = new Point(167, 18);
             cbTableStatus.Name = "cbTableStatus";
             cbTableStatus.Size = new Size(227, 28);
             cbTableStatus.TabIndex = 2;
@@ -710,7 +709,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(9, 21);
+            label8.Location = new Point(9, 22);
             label8.Name = "label8";
             label8.Size = new Size(113, 24);
             label8.TabIndex = 1;
@@ -729,7 +728,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(9, 21);
+            label4.Location = new Point(9, 22);
             label4.Name = "label4";
             label4.Size = new Size(94, 24);
             label4.TabIndex = 1;
@@ -738,7 +737,7 @@
             // textBox1
             // 
             textBox1.BackColor = SystemColors.ControlLightLight;
-            textBox1.Location = new Point(167, 21);
+            textBox1.Location = new Point(167, 22);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(227, 27);
             textBox1.TabIndex = 0;
@@ -756,7 +755,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(11, 21);
+            label5.Location = new Point(11, 22);
             label5.Name = "label5";
             label5.Size = new Size(36, 24);
             label5.TabIndex = 1;
@@ -765,7 +764,7 @@
             // textBox3
             // 
             textBox3.BackColor = SystemColors.ControlLightLight;
-            textBox3.Location = new Point(167, 21);
+            textBox3.Location = new Point(167, 22);
             textBox3.Name = "textBox3";
             textBox3.ReadOnly = true;
             textBox3.Size = new Size(227, 27);
@@ -781,9 +780,8 @@
             // 
             // dtgvTable
             // 
-            dtgvTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgvTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtgvTable.Location = new Point(3, 13);
+            dtgvTable.Location = new Point(3, 14);
             dtgvTable.Name = "dtgvTable";
             dtgvTable.RowHeadersWidth = 51;
             dtgvTable.Size = new Size(440, 347);
@@ -798,7 +796,7 @@
             tabAccount.Location = new Point(4, 29);
             tabAccount.Name = "tabAccount";
             tabAccount.Padding = new Padding(3);
-            tabAccount.Size = new Size(883, 462);
+            tabAccount.Size = new Size(884, 462);
             tabAccount.TabIndex = 4;
             tabAccount.Text = "Tài khoản";
             tabAccount.UseVisualStyleBackColor = true;
@@ -807,14 +805,14 @@
             // 
             panel21.Controls.Add(textBox4);
             panel21.Controls.Add(button2);
-            panel21.Location = new Point(458, 5);
+            panel21.Location = new Point(458, 6);
             panel21.Name = "panel21";
-            panel21.Size = new Size(421, 69);
+            panel21.Size = new Size(420, 69);
             panel21.TabIndex = 7;
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(11, 21);
+            textBox4.Location = new Point(12, 21);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(308, 27);
             textBox4.TabIndex = 4;
@@ -834,7 +832,7 @@
             panel22.Controls.Add(butDeleteAccount);
             panel22.Controls.Add(butEditAccount);
             panel22.Controls.Add(butAddAccount);
-            panel22.Location = new Point(6, 5);
+            panel22.Location = new Point(6, 6);
             panel22.Name = "panel22";
             panel22.Size = new Size(446, 69);
             panel22.TabIndex = 6;
@@ -847,7 +845,6 @@
             butViewAccount.TabIndex = 3;
             butViewAccount.Text = "Xem";
             butViewAccount.UseVisualStyleBackColor = true;
-            butViewAccount.Click += butViewAccount_Click;
             // 
             // butDeleteAccount
             // 
@@ -860,7 +857,7 @@
             // 
             // butEditAccount
             // 
-            butEditAccount.Location = new Point(101, 0);
+            butEditAccount.Location = new Point(100, 0);
             butEditAccount.Name = "butEditAccount";
             butEditAccount.Size = new Size(94, 63);
             butEditAccount.TabIndex = 1;
@@ -884,7 +881,7 @@
             panel23.Controls.Add(panel27);
             panel23.Location = new Point(458, 81);
             panel23.Name = "panel23";
-            panel23.Size = new Size(421, 375);
+            panel23.Size = new Size(420, 375);
             panel23.TabIndex = 5;
             // 
             // button3
@@ -908,7 +905,7 @@
             // cbAccountType
             // 
             cbAccountType.FormattingEnabled = true;
-            cbAccountType.Location = new Point(185, 21);
+            cbAccountType.Location = new Point(185, 22);
             cbAccountType.Name = "cbAccountType";
             cbAccountType.Size = new Size(209, 28);
             cbAccountType.TabIndex = 2;
@@ -917,7 +914,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(9, 21);
+            label10.Location = new Point(9, 22);
             label10.Name = "label10";
             label10.Size = new Size(150, 24);
             label10.TabIndex = 1;
@@ -936,7 +933,7 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.Location = new Point(9, 21);
+            label11.Location = new Point(9, 22);
             label11.Name = "label11";
             label11.Size = new Size(129, 24);
             label11.TabIndex = 1;
@@ -945,7 +942,7 @@
             // txbDisplayName
             // 
             txbDisplayName.BackColor = SystemColors.ControlLightLight;
-            txbDisplayName.Location = new Point(185, 21);
+            txbDisplayName.Location = new Point(185, 22);
             txbDisplayName.Name = "txbDisplayName";
             txbDisplayName.Size = new Size(209, 27);
             txbDisplayName.TabIndex = 0;
@@ -953,7 +950,7 @@
             // panel27
             // 
             panel27.Controls.Add(label12);
-            panel27.Controls.Add(txbUserName);
+            panel27.Controls.Add(textBox6);
             panel27.Location = new Point(3, 3);
             panel27.Name = "panel27";
             panel27.Size = new Size(414, 63);
@@ -963,20 +960,20 @@
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.Location = new Point(11, 21);
+            label12.Location = new Point(11, 22);
             label12.Name = "label12";
             label12.Size = new Size(146, 24);
             label12.TabIndex = 1;
             label12.Text = "Tên tài khoản:";
             // 
-            // txbUserName
+            // textBox6
             // 
-            txbUserName.BackColor = SystemColors.ControlLightLight;
-            txbUserName.Location = new Point(185, 21);
-            txbUserName.Name = "txbUserName";
-            txbUserName.ReadOnly = true;
-            txbUserName.Size = new Size(209, 27);
-            txbUserName.TabIndex = 0;
+            textBox6.BackColor = SystemColors.ControlLightLight;
+            textBox6.Location = new Point(185, 22);
+            textBox6.Name = "textBox6";
+            textBox6.ReadOnly = true;
+            textBox6.Size = new Size(209, 27);
+            textBox6.TabIndex = 0;
             // 
             // panel28
             // 
@@ -988,9 +985,8 @@
             // 
             // dtgvAccount
             // 
-            dtgvAccount.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgvAccount.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtgvAccount.Location = new Point(3, 13);
+            dtgvAccount.Location = new Point(3, 14);
             dtgvAccount.Name = "dtgvAccount";
             dtgvAccount.RowHeadersWidth = 51;
             dtgvAccount.Size = new Size(440, 347);
@@ -1070,7 +1066,6 @@
         private TabPage tabFoodCategory;
         private TabPage tabTable;
         private TabPage tabAccount;
-
         private DataGridView listBill;
         private Panel panel3;
         private Button button1;
@@ -1090,6 +1085,7 @@
         private Panel panel7;
         private Label label1;
         private TextBox txbFoodName;
+        private TextBox txbCategoryName;
         private Panel panel6;
         private Label lbUserName;
         private TextBox txbFoodID;
@@ -1150,7 +1146,7 @@
         private TextBox txbDisplayName;
         private Panel panel27;
         private Label label12;
-        private TextBox txbUserName;
+        private TextBox textBox6;
         private Panel panel28;
         private DataGridView dtgvAccount;
         private Button button3;
