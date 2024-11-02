@@ -4,9 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -35,19 +37,35 @@ namespace QuanLyQuanCAFE
             LoadListBillByDate(dateTimePicker01.Value, dateTimePicker02.Value);
 
             dtgvAccount.DataSource = accountList;
+            dtgvCategory.DataSource = categoryList;
             AddAccountBinding();
             LoadAccount();
             LoadListTable();
             LoadListCategory();
             ShowRevenue(dateTimePicker01.Value, dateTimePicker02.Value);
             LoadListFood();
+            LoadCategoryIntoCombobox(cbFoodCategory)
+            AddCategoryBinding();
 
         }
+        public event EventHandler insertCategory;
+        public event EventHandler updateCategory;
+        public event EventHandler deleteCategory;
         void AddAccountBinding()
         {
             txbUserName.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "UserName", true, DataSourceUpdateMode.Never));
             txbDisplayName.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "DisplayName", true, DataSourceUpdateMode.Never));
             cbAccountType.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "Type", true, DataSourceUpdateMode.Never));
+        }
+        void LoadCategoryIntoCombobox(ComboBox cb)
+        {
+            cb.DataSource = CategoryDAO.Instance.GetListCategory();
+            cb.DisplayMember = "Name";
+        }
+        void AddCategoryBinding()
+        {
+            txbCategoryName.DataBindings.Add(new Binding("Text", dtgvCategory.DataSource, "Name", true, DataSourceUpdateMode.Never));
+            txbCategoryID.DataBindings.Add(new Binding("Text", dtgvCategory.DataSource, "ID", true, DataSourceUpdateMode.Never));
         }
         void LoadAccount()
         {
@@ -116,6 +134,61 @@ namespace QuanLyQuanCAFE
         void LoadListFood()
         {
             dtgvFood.DataSource = FoodDAO.Instance.GetListFood();
+        }
+
+        private void butViewCategory_Click(object sender, EventArgs e)
+        {
+            LoadListCategory();
+        }
+        private void butEditCategory_Click(object sender, EventArgs e)
+        {
+            string name = txbCategoryName.Text;
+        
+            if (CategoryDAO.Instance.UpdateCategory(name))
+            {
+                MessageBox.Show("Sửa danh mục thành công");
+                LoadListCategory();
+                if (updateCategory != null)
+                    updateCategory(this, new EventArgs());
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi sửa danh mục");
+            }
+        }
+        
+        private void butDleteCategory_Click(object sender, EventArgs e)
+        {
+            string name = txbCategoryName.Text;
+        
+            if (CategoryDAO.Instance.DeleteCategory(name))
+            {
+                MessageBox.Show("Xóa danh mục thành công");
+                LoadListCategory();
+                if (deleteCategory != null)
+                    deleteCategory(this, new EventArgs());
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi xóa danh mục");
+            }
+        }
+        
+        private void butAddCategory_Click(object sender, EventArgs e)
+        {
+            string name = txbCategoryName.Text;
+        
+            if (CategoryDAO.Instance.InsertCategory(name))
+            {
+                MessageBox.Show("Thêm danh mục  thành công");
+                LoadListCategory();
+                if (insertCategory != null)
+                    insertCategory(this, new EventArgs());
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi thêm danh mục");
+            }
         }
 
         private void butViewCategory_Click(object sender, EventArgs e)
