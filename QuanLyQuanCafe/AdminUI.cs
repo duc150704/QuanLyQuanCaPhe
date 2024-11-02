@@ -15,13 +15,13 @@ using System.Windows.Forms;
 
 namespace QuanLyQuanCAFE
 {
-    public partial class fAmin : Form
+    public partial class AdminUI : Form
     {
         BindingSource accountList = new BindingSource();
         BindingSource categoryList = new BindingSource();
 
 
-        public fAmin()
+        public AdminUI()
         {
             InitializeComponent();
             Load();
@@ -39,6 +39,7 @@ namespace QuanLyQuanCAFE
 
             dtgvAccount.DataSource = accountList;
             dtgvCategory.DataSource = categoryList;
+
             AddAccountBinding();
             LoadAccount();
             LoadListTable();
@@ -214,7 +215,7 @@ namespace QuanLyQuanCAFE
 
         private void LoadListCategory()
         {
-            dtgvCategory.DataSource = CategoryDAO.Instance.GetListCategory();
+           categoryList.DataSource = CategoryDAO.Instance.GetListCategory();
         }
 
         private void butViewTable_Click(object sender, EventArgs e)

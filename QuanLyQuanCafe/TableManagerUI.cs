@@ -14,13 +14,13 @@ using System.Windows.Forms;
 
 namespace QuanLyQuanCAFE
 {
-    public partial class tableManagercs : Form
+    public partial class TableManagerUI : Form
     {
         private Account loginAccount;
 
         public Account LoginAccount { get => loginAccount; set { loginAccount = value; ChangeAccount(loginAccount.Type); } }
 
-        public tableManagercs(Account acc)
+        public TableManagerUI(Account acc)
         {
             InitializeComponent();
 
@@ -68,7 +68,7 @@ namespace QuanLyQuanCAFE
 
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fAmin f = new fAmin();
+            AdminUI f = new AdminUI();
             f.InsertCategory += f_InsertCategory;
             f.DeleteCategory += f_DeleteCategory;
             f.UpdateCategory += f_UpdateCategory;
@@ -94,7 +94,7 @@ namespace QuanLyQuanCAFE
 
         private void thôngTinCáNhânToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            AcountProfile f = new AcountProfile(LoginAccount);
+            AcountProfileUI f = new AcountProfileUI(LoginAccount);
             f.UpdateAccountEv += f_UpdateAcount;
 
             f.ShowDialog();

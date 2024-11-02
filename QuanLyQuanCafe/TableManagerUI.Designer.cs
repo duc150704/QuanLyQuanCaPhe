@@ -1,6 +1,6 @@
 ﻿namespace QuanLyQuanCAFE
 {
-    partial class tableManagercs
+    partial class TableManagerUI
     {
         /// <summary>
         /// Required designer variable.

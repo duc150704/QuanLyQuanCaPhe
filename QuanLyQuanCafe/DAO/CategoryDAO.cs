@@ -60,7 +60,7 @@ namespace QuanLyQuanCAFE.DAO
 
         public bool InsertCategory(string name)
         {
-            string query = $"insert into FoodCategory (name) values (N'{name}')";
+            string query = $"insert into FoodCategory (name,isAvailable) values (N'{name}',1)";
             int result = DataProvider.Instance.ExcuteNonQuery(query);
 
             return result > 0;

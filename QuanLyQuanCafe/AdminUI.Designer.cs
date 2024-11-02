@@ -1,6 +1,6 @@
 namespace QuanLyQuanCAFE
 {
-    partial class fAmin
+    partial class AdminUI
     {
         /// <summary>
         /// Required designer variable.
