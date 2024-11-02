@@ -70,7 +70,7 @@
             panel12 = new Panel();
             panel15 = new Panel();
             label6 = new Label();
-            textBox2 = new TextBox();
+            txbCategoryName = new TextBox();
             panel16 = new Panel();
             label7 = new Label();
             txbCategoryID = new TextBox();
@@ -552,7 +552,7 @@
             // panel15
             // 
             panel15.Controls.Add(label6);
-            panel15.Controls.Add(textBox2);
+            panel15.Controls.Add(txbCategoryName);
             panel15.Location = new Point(3, 72);
             panel15.Name = "panel15";
             panel15.Size = new Size(414, 63);
@@ -568,13 +568,13 @@
             label6.TabIndex = 1;
             label6.Text = "Tên danh mục:";
             // 
-            // textBox2
+            // txbCategoryName
             // 
-            textBox2.BackColor = SystemColors.ControlLightLight;
-            textBox2.Location = new Point(167, 21);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(227, 27);
-            textBox2.TabIndex = 0;
+            txbCategoryName.BackColor = SystemColors.ControlLightLight;
+            txbCategoryName.Location = new Point(167, 21);
+            txbCategoryName.Name = "txbCategoryName";
+            txbCategoryName.Size = new Size(227, 27);
+            txbCategoryName.TabIndex = 0;
             // 
             // panel16
             // 
@@ -1115,7 +1115,7 @@
         private Panel panel12;
         private Panel panel15;
         private Label label6;
-        private TextBox textBox2;
+        private TextBox txbCategoryName;
         private Panel panel16;
         private Label label7;
         private TextBox txbCategoryID;
