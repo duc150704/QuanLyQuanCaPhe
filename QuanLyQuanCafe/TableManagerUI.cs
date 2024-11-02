@@ -1,4 +1,7 @@
-using QuanLyQuanCAFE.DAO;
+
+﻿using QuanLyQuanCAFE.DAO;
+
+
 using QuanLyQuanCAFE.DTO;
 using System;
 using System.Collections.Generic;
@@ -66,9 +69,25 @@ namespace QuanLyQuanCAFE
             this.Close();
         }
 
+
+            
+
+        private void f_UpdateCategory(object? sender, EventArgs e)
+        {
+            LoadCategory();
+        }
+
+        private void f_DeleteCategory(object? sender, EventArgs e)
+        {
+            LoadCategory();
+        }
+
+        private void f_InsertCategory(object? sender, EventArgs e)
+        {
+            LoadCategory();
+
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             AdminUI f = new AdminUI();
             f.InsertTable += f_InsertTable;
             f.UpdateTable += f_UpdateTable;
@@ -77,6 +96,10 @@ namespace QuanLyQuanCAFE
             f.InsertFood += F_InsertFood;
             f.DeleteFood += F_DeleteFood;
             f.UpdateFood += F_UpdateFood;
+            
+            f.InsertCategory += f_InsertCategory;
+            f.DeleteCategory += f_DeleteCategory;
+            f.UpdateCategory += f_UpdateCategory;
             f.ShowDialog();
         }
 
@@ -118,12 +141,14 @@ namespace QuanLyQuanCAFE
         {
             LoadTable();
             LoadComboBoxTable(cbSwitchTable);
+
         }
 
         private void thôngTinCáNhânToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             AcountProfileUI f = new AcountProfileUI(LoginAccount);
             f.UpdateAccountEv += f_UpdateAcount;
+
             f.ShowDialog();
         }
 
@@ -331,7 +356,7 @@ namespace QuanLyQuanCAFE
 
         public void LoadComboBoxTable(ComboBox cb)
         {
-            
+
             cb.DataSource = TableDAO.Instance.LoadTableList();
             cb.DisplayMember = "Name";
         }
@@ -341,9 +366,11 @@ namespace QuanLyQuanCAFE
 
         }
 
+
         private void cbSwitchTable_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+
     }
 }

@@ -182,6 +182,7 @@
             cbSwitchTable.Size = new Size(114, 28);
             cbSwitchTable.TabIndex = 7;
             cbSwitchTable.SelectedIndexChanged += cbSwitchTable_SelectedIndexChanged;
+
             // 
             // SwitchTable
             // 

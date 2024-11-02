@@ -1,4 +1,6 @@
+
 ﻿namespace QuanLyQuanCAFE
+
 {
     partial class AdminUI
     {
@@ -88,6 +90,7 @@
             label8 = new Label();
             panel14 = new Panel();
             label4 = new Label();
+
             txtTableName = new TextBox();
             panel18 = new Panel();
             label5 = new Label();
@@ -167,7 +170,9 @@
             tabControl1.Location = new Point(18, 12);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(891, 495);
+
+            tabControl1.Size = new Size(892, 495);
+
             tabControl1.TabIndex = 0;
             // 
             // tabBill
@@ -179,7 +184,9 @@
             tabBill.Location = new Point(4, 29);
             tabBill.Name = "tabBill";
             tabBill.Padding = new Padding(3);
+
             tabBill.Size = new Size(883, 462);
+
             tabBill.TabIndex = 0;
             tabBill.Text = "Tổng doanh thu";
             tabBill.UseVisualStyleBackColor = true;
@@ -192,7 +199,9 @@
             tongDoanhThu.Size = new Size(202, 27);
             tongDoanhThu.TabIndex = 5;
             tongDoanhThu.TextAlign = HorizontalAlignment.Center;
+
             tongDoanhThu.TextChanged += tongDoanhThu_TextChanged;
+
             // 
             // doanhThu
             // 
@@ -260,7 +269,9 @@
             tabFood.Location = new Point(4, 29);
             tabFood.Name = "tabFood";
             tabFood.Padding = new Padding(3);
+
             tabFood.Size = new Size(883, 462);
+
             tabFood.TabIndex = 1;
             tabFood.Text = "Thức ăn";
             tabFood.UseVisualStyleBackColor = true;
@@ -269,14 +280,18 @@
             // 
             panel5.Controls.Add(txbSearchFoodName);
             panel5.Controls.Add(butSearchFood);
+
             panel5.Location = new Point(458, 5);
             panel5.Name = "panel5";
             panel5.Size = new Size(421, 69);
+
             panel5.TabIndex = 3;
             // 
             // txbSearchFoodName
             // 
-            txbSearchFoodName.Location = new Point(11, 21);
+
+            txbSearchFoodName.Location = new Point(12, 21);
+
             txbSearchFoodName.Name = "txbSearchFoodName";
             txbSearchFoodName.Size = new Size(308, 27);
             txbSearchFoodName.TabIndex = 4;
@@ -296,7 +311,9 @@
             panel4.Controls.Add(butDeleteFood);
             panel4.Controls.Add(butEditFood);
             panel4.Controls.Add(butAddFood);
-            panel4.Location = new Point(6, 5);
+
+            panel4.Location = new Point(6, 6);
+
             panel4.Name = "panel4";
             panel4.Size = new Size(446, 69);
             panel4.TabIndex = 2;
@@ -309,7 +326,9 @@
             butView.TabIndex = 3;
             butView.Text = "Xem";
             butView.UseVisualStyleBackColor = true;
+
             butView.Click += butView_Click;
+
             // 
             // butDeleteFood
             // 
@@ -319,17 +338,21 @@
             butDeleteFood.TabIndex = 2;
             butDeleteFood.Text = "Xóa";
             butDeleteFood.UseVisualStyleBackColor = true;
+
             butDeleteFood.Click += butDeleteFood_Click_1;
             // 
             // butEditFood
             // 
             butEditFood.Location = new Point(101, 0);
+
             butEditFood.Name = "butEditFood";
             butEditFood.Size = new Size(94, 63);
             butEditFood.TabIndex = 1;
             butEditFood.Text = "Sửa";
             butEditFood.UseVisualStyleBackColor = true;
+
             butEditFood.Click += butEditFood_Click_1;
+
             // 
             // butAddFood
             // 
@@ -339,7 +362,9 @@
             butAddFood.TabIndex = 0;
             butAddFood.Text = "Thêm";
             butAddFood.UseVisualStyleBackColor = true;
+
             butAddFood.Click += butAddFood_Click_1;
+
             // 
             // panel2
             // 
@@ -349,14 +374,17 @@
             panel2.Controls.Add(panel6);
             panel2.Location = new Point(458, 81);
             panel2.Name = "panel2";
+
             panel2.Size = new Size(421, 375);
+
             panel2.TabIndex = 1;
             // 
             // panel9
             // 
             panel9.Controls.Add(nmFoodPrice);
-            panel9.Controls.Add(label3);
+
             panel9.Location = new Point(3, 211);
+
             panel9.Name = "panel9";
             panel9.Size = new Size(414, 63);
             panel9.TabIndex = 6;
@@ -373,7 +401,9 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(9, 21);
+
+            label3.Location = new Point(9, 22);
+
             label3.Name = "label3";
             label3.Size = new Size(49, 24);
             label3.TabIndex = 1;
@@ -391,7 +421,9 @@
             // cbFoodCategory
             // 
             cbFoodCategory.FormattingEnabled = true;
+
             cbFoodCategory.Location = new Point(127, 21);
+
             cbFoodCategory.Name = "cbFoodCategory";
             cbFoodCategory.Size = new Size(267, 28);
             cbFoodCategory.TabIndex = 2;
@@ -400,7 +432,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+
             label2.Location = new Point(9, 21);
+
             label2.Name = "label2";
             label2.Size = new Size(112, 24);
             label2.TabIndex = 1;
@@ -419,7 +453,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+
             label1.Location = new Point(9, 21);
+
             label1.Name = "label1";
             label1.Size = new Size(100, 24);
             label1.TabIndex = 1;
@@ -428,7 +464,9 @@
             // txbFoodName
             // 
             txbFoodName.BackColor = SystemColors.ControlLightLight;
-            txbFoodName.Location = new Point(127, 21);
+
+            txbFoodName.Location = new Point(127, 22);
+
             txbFoodName.Name = "txbFoodName";
             txbFoodName.Size = new Size(267, 27);
             txbFoodName.TabIndex = 0;
@@ -446,7 +484,9 @@
             // 
             lbUserName.AutoSize = true;
             lbUserName.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+
             lbUserName.Location = new Point(11, 21);
+
             lbUserName.Name = "lbUserName";
             lbUserName.Size = new Size(36, 24);
             lbUserName.TabIndex = 1;
@@ -455,7 +495,9 @@
             // txbFoodID
             // 
             txbFoodID.BackColor = SystemColors.ControlLightLight;
+
             txbFoodID.Location = new Point(127, 21);
+
             txbFoodID.Name = "txbFoodID";
             txbFoodID.ReadOnly = true;
             txbFoodID.Size = new Size(267, 27);
@@ -471,9 +513,11 @@
             // 
             // dtgvFood
             // 
+
             dtgvFood.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgvFood.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgvFood.Location = new Point(3, 13);
+
             dtgvFood.Name = "dtgvFood";
             dtgvFood.RowHeadersWidth = 51;
             dtgvFood.Size = new Size(440, 347);
@@ -487,7 +531,9 @@
             tabFoodCategory.Location = new Point(4, 29);
             tabFoodCategory.Name = "tabFoodCategory";
             tabFoodCategory.Padding = new Padding(3);
+
             tabFoodCategory.Size = new Size(883, 462);
+
             tabFoodCategory.TabIndex = 2;
             tabFoodCategory.Text = "Danh mục";
             tabFoodCategory.UseVisualStyleBackColor = true;
@@ -498,7 +544,9 @@
             panel11.Controls.Add(butDleteCategory);
             panel11.Controls.Add(butEditCategory);
             panel11.Controls.Add(butAddCategory);
+
             panel11.Location = new Point(6, 5);
+
             panel11.Name = "panel11";
             panel11.Size = new Size(446, 69);
             panel11.TabIndex = 6;
@@ -515,21 +563,29 @@
             // 
             // butDleteCategory
             // 
-            butDleteCategory.Location = new Point(200, 0);
+
+            butDleteCategory.Location = new Point(211, 3);
+
             butDleteCategory.Name = "butDleteCategory";
             butDleteCategory.Size = new Size(94, 63);
             butDleteCategory.TabIndex = 2;
             butDleteCategory.Text = "Xóa";
             butDleteCategory.UseVisualStyleBackColor = true;
+
+            butDleteCategory.Click += butDleteCategory_Click;
             // 
             // butEditCategory
             // 
-            butEditCategory.Location = new Point(101, 0);
+            butEditCategory.Location = new Point(100, 3);
+
             butEditCategory.Name = "butEditCategory";
             butEditCategory.Size = new Size(94, 63);
             butEditCategory.TabIndex = 1;
             butEditCategory.Text = "Sửa";
             butEditCategory.UseVisualStyleBackColor = true;
+
+            butEditCategory.Click += butEditCategory_Click;
+
             // 
             // butAddCategory
             // 
@@ -539,6 +595,9 @@
             butAddCategory.TabIndex = 0;
             butAddCategory.Text = "Thêm";
             butAddCategory.UseVisualStyleBackColor = true;
+
+            butAddCategory.Click += butAddCategory_Click;
+
             // 
             // panel12
             // 
@@ -546,7 +605,9 @@
             panel12.Controls.Add(panel16);
             panel12.Location = new Point(458, 81);
             panel12.Name = "panel12";
-            panel12.Size = new Size(421, 375);
+
+            panel12.Size = new Size(420, 375);
+
             panel12.TabIndex = 5;
             // 
             // panel15
@@ -562,7 +623,9 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+
             label6.Location = new Point(9, 21);
+
             label6.Name = "label6";
             label6.Size = new Size(152, 24);
             label6.TabIndex = 1;
@@ -571,10 +634,12 @@
             // txbCategoryName
             // 
             txbCategoryName.BackColor = SystemColors.ControlLightLight;
-            txbCategoryName.Location = new Point(167, 21);
+            txbCategoryName.Location = new Point(167, 22);
             txbCategoryName.Name = "txbCategoryName";
             txbCategoryName.Size = new Size(227, 27);
             txbCategoryName.TabIndex = 0;
+            txbCategoryName.TextChanged += textBox2_TextChanged;
+
             // 
             // panel16
             // 
@@ -589,7 +654,9 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(11, 21);
+
+            label7.Location = new Point(11, 22);
+
             label7.Name = "label7";
             label7.Size = new Size(36, 24);
             label7.TabIndex = 1;
@@ -598,11 +665,16 @@
             // txbCategoryID
             // 
             txbCategoryID.BackColor = SystemColors.ControlLightLight;
-            txbCategoryID.Location = new Point(167, 21);
+
+            txbCategoryID.Location = new Point(167, 22);
+
             txbCategoryID.Name = "txbCategoryID";
             txbCategoryID.ReadOnly = true;
             txbCategoryID.Size = new Size(227, 27);
             txbCategoryID.TabIndex = 0;
+
+            txbCategoryID.TextChanged += txbCategoryID_TextChanged;
+
             // 
             // panel17
             // 
@@ -614,6 +686,7 @@
             // 
             // dtgvCategory
             // 
+
             dtgvCategory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgvCategory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgvCategory.Location = new Point(3, 13);
@@ -630,7 +703,9 @@
             tabTable.Location = new Point(4, 29);
             tabTable.Name = "tabTable";
             tabTable.Padding = new Padding(3);
+
             tabTable.Size = new Size(883, 462);
+
             tabTable.TabIndex = 3;
             tabTable.Text = "Bàn ăn";
             tabTable.UseVisualStyleBackColor = true;
@@ -641,7 +716,8 @@
             panel10.Controls.Add(butDeleteTable);
             panel10.Controls.Add(butEditTable);
             panel10.Controls.Add(butAddTable);
-            panel10.Location = new Point(6, 5);
+            panel10.Location = new Point(6, 6);
+
             panel10.Name = "panel10";
             panel10.Size = new Size(446, 69);
             panel10.TabIndex = 9;
@@ -654,6 +730,7 @@
             butViewTable.TabIndex = 3;
             butViewTable.Text = "Xem";
             butViewTable.UseVisualStyleBackColor = true;
+
             butViewTable.Click += butViewTable_Click;
             // 
             // butDeleteTable
@@ -664,6 +741,7 @@
             butDeleteTable.TabIndex = 2;
             butDeleteTable.Text = "Xóa";
             butDeleteTable.UseVisualStyleBackColor = true;
+
             butDeleteTable.Click += butDeleteTable_Click;
             // 
             // butEditTable
@@ -674,6 +752,7 @@
             butEditTable.TabIndex = 1;
             butEditTable.Text = "Sửa";
             butEditTable.UseVisualStyleBackColor = true;
+
             butEditTable.Click += butEditTable_Click;
             // 
             // butAddTable
@@ -684,7 +763,9 @@
             butAddTable.TabIndex = 0;
             butAddTable.Text = "Thêm";
             butAddTable.UseVisualStyleBackColor = true;
+
             butAddTable.Click += butAddTable_Click;
+
             // 
             // panel13
             // 
@@ -693,6 +774,7 @@
             panel13.Controls.Add(panel18);
             panel13.Location = new Point(458, 81);
             panel13.Name = "panel13";
+
             panel13.Size = new Size(421, 375);
             panel13.TabIndex = 8;
             // 
@@ -708,7 +790,9 @@
             // cbTableStatus
             // 
             cbTableStatus.FormattingEnabled = true;
+
             cbTableStatus.Location = new Point(167, 19);
+
             cbTableStatus.Name = "cbTableStatus";
             cbTableStatus.Size = new Size(227, 28);
             cbTableStatus.TabIndex = 2;
@@ -717,7 +801,9 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+
             label8.Location = new Point(9, 21);
+
             label8.Name = "label8";
             label8.Size = new Size(113, 24);
             label8.TabIndex = 1;
@@ -726,6 +812,7 @@
             // panel14
             // 
             panel14.Controls.Add(label4);
+
             panel14.Controls.Add(txtTableName);
             panel14.Location = new Point(3, 72);
             panel14.Name = "panel14";
@@ -736,12 +823,15 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+
             label4.Location = new Point(9, 21);
+
             label4.Name = "label4";
             label4.Size = new Size(94, 24);
             label4.TabIndex = 1;
             label4.Text = "Tên bàn:";
             // 
+
             // txtTableName
             // 
             txtTableName.BackColor = SystemColors.ControlLightLight;
@@ -749,10 +839,12 @@
             txtTableName.Name = "txtTableName";
             txtTableName.Size = new Size(227, 27);
             txtTableName.TabIndex = 0;
+
             // 
             // panel18
             // 
             panel18.Controls.Add(label5);
+
             panel18.Controls.Add(txtTableId);
             panel18.Location = new Point(3, 3);
             panel18.Name = "panel18";
@@ -763,12 +855,15 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+
             label5.Location = new Point(11, 21);
+
             label5.Name = "label5";
             label5.Size = new Size(36, 24);
             label5.TabIndex = 1;
             label5.Text = "ID:";
             // 
+
             // txtTableId
             // 
             txtTableId.BackColor = SystemColors.ControlLightLight;
@@ -777,6 +872,7 @@
             txtTableId.ReadOnly = true;
             txtTableId.Size = new Size(227, 27);
             txtTableId.TabIndex = 0;
+
             // 
             // panel19
             // 
@@ -788,13 +884,16 @@
             // 
             // dtgvTable
             // 
+
             dtgvTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgvTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgvTable.Location = new Point(3, 13);
+
             dtgvTable.Name = "dtgvTable";
             dtgvTable.RowHeadersWidth = 51;
             dtgvTable.Size = new Size(440, 347);
             dtgvTable.TabIndex = 0;
+
             dtgvTable.CellContentClick += dtgvTable_CellContentClick;
             // 
             // tabAccount
@@ -806,6 +905,7 @@
             tabAccount.Location = new Point(4, 29);
             tabAccount.Name = "tabAccount";
             tabAccount.Padding = new Padding(3);
+
             tabAccount.Size = new Size(883, 462);
             tabAccount.TabIndex = 4;
             tabAccount.Text = "Tài khoản";
@@ -815,13 +915,16 @@
             // 
             panel21.Controls.Add(textBox4);
             panel21.Controls.Add(button2);
+
             panel21.Location = new Point(458, 5);
             panel21.Name = "panel21";
             panel21.Size = new Size(421, 69);
+
             panel21.TabIndex = 7;
             // 
             // textBox4
             // 
+
             textBox4.Location = new Point(11, 21);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(308, 27);
@@ -842,7 +945,9 @@
             panel22.Controls.Add(butDeleteAccount);
             panel22.Controls.Add(butEditAccount);
             panel22.Controls.Add(butAddAccount);
+
             panel22.Location = new Point(6, 5);
+
             panel22.Name = "panel22";
             panel22.Size = new Size(446, 69);
             panel22.TabIndex = 6;
@@ -855,7 +960,9 @@
             butViewAccount.TabIndex = 3;
             butViewAccount.Text = "Xem";
             butViewAccount.UseVisualStyleBackColor = true;
+
             butViewAccount.Click += butViewAccount_Click;
+
             // 
             // butDeleteAccount
             // 
@@ -868,7 +975,9 @@
             // 
             // butEditAccount
             // 
+
             butEditAccount.Location = new Point(101, 0);
+
             butEditAccount.Name = "butEditAccount";
             butEditAccount.Size = new Size(94, 63);
             butEditAccount.TabIndex = 1;
@@ -892,7 +1001,9 @@
             panel23.Controls.Add(panel27);
             panel23.Location = new Point(458, 81);
             panel23.Name = "panel23";
+
             panel23.Size = new Size(421, 375);
+
             panel23.TabIndex = 5;
             // 
             // button3
@@ -916,7 +1027,9 @@
             // cbAccountType
             // 
             cbAccountType.FormattingEnabled = true;
+
             cbAccountType.Location = new Point(185, 21);
+
             cbAccountType.Name = "cbAccountType";
             cbAccountType.Size = new Size(209, 28);
             cbAccountType.TabIndex = 2;
@@ -925,6 +1038,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+
             label10.Location = new Point(9, 21);
             label10.Name = "label10";
             label10.Size = new Size(150, 24);
@@ -944,7 +1058,9 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+
             label11.Location = new Point(9, 21);
+
             label11.Name = "label11";
             label11.Size = new Size(129, 24);
             label11.TabIndex = 1;
@@ -953,6 +1069,7 @@
             // txbDisplayName
             // 
             txbDisplayName.BackColor = SystemColors.ControlLightLight;
+
             txbDisplayName.Location = new Point(185, 21);
             txbDisplayName.Name = "txbDisplayName";
             txbDisplayName.Size = new Size(209, 27);
@@ -971,7 +1088,9 @@
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+
             label12.Location = new Point(11, 21);
+
             label12.Name = "label12";
             label12.Size = new Size(146, 24);
             label12.TabIndex = 1;
@@ -980,7 +1099,9 @@
             // txbUserName
             // 
             txbUserName.BackColor = SystemColors.ControlLightLight;
+
             txbUserName.Location = new Point(185, 21);
+
             txbUserName.Name = "txbUserName";
             txbUserName.ReadOnly = true;
             txbUserName.Size = new Size(209, 27);
@@ -996,21 +1117,27 @@
             // 
             // dtgvAccount
             // 
+
             dtgvAccount.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgvAccount.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgvAccount.Location = new Point(3, 13);
+
             dtgvAccount.Name = "dtgvAccount";
             dtgvAccount.RowHeadersWidth = 51;
             dtgvAccount.Size = new Size(440, 347);
             dtgvAccount.TabIndex = 0;
             // 
+
             // AdminUI
+
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(922, 519);
             Controls.Add(tabControl1);
+
             Name = "AdminUI";
+
             StartPosition = FormStartPosition.CenterScreen;
             Text = "fAmin";
             tabControl1.ResumeLayout(false);
@@ -1079,6 +1206,7 @@
         private TabPage tabTable;
         private TabPage tabAccount;
 
+
         private DataGridView listBill;
         private Panel panel3;
         private Button button1;
@@ -1129,6 +1257,7 @@
         private Panel panel13;
         private Panel panel14;
         private Label label4;
+
         private TextBox txtTableName;
         private Panel panel18;
         private Label label5;
@@ -1165,4 +1294,6 @@
         private TextBox doanhThu;
         private TextBox tongDoanhThu;
     }
+
 }
+
