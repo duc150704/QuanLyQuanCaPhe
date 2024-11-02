@@ -50,7 +50,7 @@ namespace QuanLyQuanCAFE
 
             AddTableFoodBinding();
 
-          AddFoodBinding();
+            AddFoodBinding();
             LoadCategoryIntoCombobox(cbFoodCategory);
 
         }
@@ -315,7 +315,9 @@ namespace QuanLyQuanCAFE
             remove { updateFood -= value; }
         }
 
-        private void butAddFood_Click(object sender, EventArgs e)
+
+
+        private void butAddFood_Click_1(object sender, EventArgs e)
         {
             string name = txbFoodName.Text;
             int categoryID = (cbFoodCategory.SelectedItem as Category).Id;
@@ -334,7 +336,7 @@ namespace QuanLyQuanCAFE
             }
         }
 
-        private void butEditFood_Click(object sender, EventArgs e)
+        private void butEditFood_Click_1(object sender, EventArgs e)
         {
             string name = txbFoodName.Text;
             int categoryID = (cbFoodCategory.SelectedItem as Category).Id;
@@ -354,7 +356,7 @@ namespace QuanLyQuanCAFE
             }
         }
 
-        private void butDeleteFood_Click(object sender, EventArgs e)
+        private void butDeleteFood_Click_1(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(txbFoodID.Text);
 
