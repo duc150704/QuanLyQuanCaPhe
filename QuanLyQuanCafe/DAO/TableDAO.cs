@@ -96,5 +96,16 @@ namespace QuanLyQuanCAFE.DAO
             return res > 0;
         }
 
+
+        public void SetTableStatusNotEmpty(int id)
+        {
+            DataProvider.Instance.ExcuteQuery("Update TableFood set status = N'Có người' where id = " + id);
+        }
+
+        public void SetTableStatusEmpty(int id)
+        {
+            DataProvider.Instance.ExcuteNonQuery("Update TableFood set status = N'Trống' where id = " + id);
+
+        }
     }
 }

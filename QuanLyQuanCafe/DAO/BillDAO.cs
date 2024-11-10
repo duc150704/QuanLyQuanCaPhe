@@ -73,5 +73,19 @@ namespace QuanLyQuanCAFE.DAO
             return DataProvider.Instance.ExcuteQuery(query);
 
         }
+
+        public string GetDateCheckIn(int idBill)
+        {
+            DataTable data = DataProvider.Instance.ExcuteQuery("select FORMAT(DateCheckIn, 'dd/MM/yyyy hh:mm:ss') as [DateCheckIn] from Bill where id =" + idBill);
+
+            if (data.Rows.Count > 0)
+            {
+                return data.Rows[0]["DateCheckIn"].ToString();
+            }
+            else
+            {
+                return ""; 
+            }
+        }
     }
 }

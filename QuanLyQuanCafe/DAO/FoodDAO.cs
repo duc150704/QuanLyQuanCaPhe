@@ -83,5 +83,21 @@ namespace QuanLyQuanCAFE.DAO
 
             return result > 0;
         }
+
+        public List<Food> GetFoodList(string name)
+        {
+            List<Food> list = new List<Food>();
+            string query = $"select * from Food where name like N'%{name}%'";
+
+            DataTable data = DataProvider.Instance.ExcuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                Food food = new Food(item);
+                list.Add(food);
+
+            }
+            return list;
+        }
     }
 }

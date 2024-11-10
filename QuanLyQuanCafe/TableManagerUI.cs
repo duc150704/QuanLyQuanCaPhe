@@ -1,7 +1,4 @@
-
-﻿using QuanLyQuanCAFE.DAO;
-
-
+using QuanLyQuanCAFE.DAO;
 using QuanLyQuanCAFE.DTO;
 using System;
 using System.Collections.Generic;
@@ -14,6 +11,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
+using System.Diagnostics;
+using System.Security.Cryptography.Xml;
 
 namespace QuanLyQuanCAFE
 {
@@ -90,6 +92,8 @@ namespace QuanLyQuanCAFE
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
             {
                 AdminUI f = new AdminUI();
+                f.loginAcount = LoginAccount;
+
                 f.InsertTable += f_InsertTable;
                 f.UpdateTable += f_UpdateTable;
                 f.DeleteTable += f_DeleteTable;
@@ -202,11 +206,12 @@ namespace QuanLyQuanCAFE
             {
                 BillDAO.Instance.InsertBill(table.ID);
                 BillInfoDAO.Instance.InsertBillInfor(BillDAO.Instance.GetMaxIdBill(), idFood, count);
+                TableDAO.Instance.SetTableStatusNotEmpty(table.ID);
             }
             else
             {
                 BillInfoDAO.Instance.InsertBillInfor(idBill, idFood, count);
-
+                TableDAO.Instance.SetTableStatusNotEmpty(table.ID);
             }
 
             ShowBill(table.ID);
@@ -334,11 +339,17 @@ namespace QuanLyQuanCAFE
                     + "\nGiảm giá: " + discount + "%\nThành tiền: " + finalTotalPrice.ToString("c", new CultureInfo("vi-VN"))
                     , "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
+                    ExportToPDF(table.ID,discount,totalPrice,finalTotalPrice);
                     BillDAO.Instance.CheckOut(idBill, discount, (float)finalTotalPrice);
+                    TableDAO.Instance.SetTableStatusEmpty(table.ID);
                     ShowBill(table.ID);
                     LoadTable();
+
+
                 }
             }
+
+            
 
         }
 
@@ -347,6 +358,29 @@ namespace QuanLyQuanCAFE
             int id1 = (lsvBill.Tag as Table).ID; //lấy ra id table đang chọn
             int id2 = (cbSwitchTable.SelectedItem as Table).ID; //lấy ra id table muốn chuyển bàn
 
+            if (id1 == id2)
+            {
+                MessageBox.Show("Bàn bị trùng!");
+                return;
+            }
+
+            string s1 = (lsvBill.Tag as Table).Status;
+            string s2 = (cbSwitchTable.SelectedItem as Table).Status;
+
+            if(s1.Equals("Trống")  && s2.Equals("Có người"))
+            {
+                TableDAO.Instance.SetTableStatusNotEmpty(id1);
+                TableDAO.Instance.SetTableStatusEmpty(id2);
+            } else if (s1.Equals("Có người") && s2.Equals("Trống"))
+            {
+                TableDAO.Instance.SetTableStatusNotEmpty(id2);
+                TableDAO.Instance.SetTableStatusEmpty(id1);
+            } else if (s1.Equals("Trống") && s2.Equals("Trống"))
+            {
+                MessageBox.Show("Hai bàn đã chọn đều trống!");
+                return;
+            }
+     
 
             if (MessageBox.Show(string.Format("Bạn có muốn chuyển bàn {0} qua bàn {1} không?", (lsvBill.Tag as Table).Name, (cbSwitchTable.SelectedItem as Table).Name), "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
@@ -373,5 +407,92 @@ namespace QuanLyQuanCAFE
 
         }
 
+
+        public void ExportToPDF(int tableID, int discount, double totalPrice, double finalTotalPrice)
+        {
+            int idBill = BillDAO.Instance.GetUncheckBillIDBytableID(tableID);
+            string folder = "ListBill";
+            if (!Directory.Exists(folder))
+            {
+                Directory.CreateDirectory(folder);
+            }
+
+            List<Menu> listBillInfo = MenuDAO.Instance.GetListMenuByTable(tableID);
+
+            Document bill = new Document();
+            string pdfPath = $"ListBill\\bill{idBill}.pdf";
+       
+            using (FileStream fs = new FileStream(pdfPath, FileMode.Create))
+            {
+                PdfWriter.GetInstance(bill, fs);
+
+                bill.Open();
+
+                string fontPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "arial.ttf");
+                BaseFont bf = BaseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+                iTextSharp.text.Font font = new iTextSharp.text.Font(bf, 12); 
+
+
+                Paragraph title = new Paragraph("Quán Cà Phê Nhóm 3, Trường Đại học Công Nghiệp Hà Nội", font);
+                bill.Add(title);
+                bill.Add(new Paragraph("Số 298 Đ. Cầu Diễn, Minh Khai, Bắc Từ Liêm, Hà Nội", font));
+
+                
+                bill.Add(new Paragraph("Thời gia vào : " + BillDAO.Instance.GetDateCheckIn(idBill),font));
+                bill.Add(new Paragraph("Thời gia ra : " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "                Mã hóa đơn : " + idBill,font));
+
+
+                bill.Add(new Paragraph("-------------------------------------------------------------------------------------------"));
+
+
+                PdfPTable table = new PdfPTable(4); 
+                table.WidthPercentage = 70; 
+                table.HorizontalAlignment = Element.ALIGN_LEFT;
+
+                table.AddCell(new PdfPCell(new Phrase("Tên món", font)) { HorizontalAlignment = Element.ALIGN_LEFT, Border = PdfPCell.NO_BORDER });
+                table.AddCell(new PdfPCell(new Phrase("Giá", font)) { HorizontalAlignment = Element.ALIGN_RIGHT, Border = PdfPCell.NO_BORDER });
+                table.AddCell(new PdfPCell(new Phrase("Số lượng", font)) { HorizontalAlignment = Element.ALIGN_RIGHT, Border = PdfPCell.NO_BORDER });
+                table.AddCell(new PdfPCell(new Phrase("Thành tiền", font)) { HorizontalAlignment = Element.ALIGN_RIGHT, Border = PdfPCell.NO_BORDER });
+
+                // Thêm dữ liệu món ăn vào bảng (ẩn viền)
+                foreach (Menu item in listBillInfo)
+                {
+                    table.AddCell(new PdfPCell(new Phrase(item.FoodName, font)) { HorizontalAlignment = Element.ALIGN_LEFT, Border = PdfPCell.NO_BORDER });
+                    table.AddCell(new PdfPCell(new Phrase(item.Price.ToString(), font)) { HorizontalAlignment = Element.ALIGN_RIGHT, Border = PdfPCell.NO_BORDER });
+                    table.AddCell(new PdfPCell(new Phrase(item.Count.ToString(), font)) { HorizontalAlignment = Element.ALIGN_RIGHT, Border = PdfPCell.NO_BORDER });
+                    table.AddCell(new PdfPCell(new Phrase(item.TotalPrice.ToString(), font)) { HorizontalAlignment = Element.ALIGN_RIGHT, Border = PdfPCell.NO_BORDER });
+                }
+
+                bill.Add(table);
+
+                bill.Add(new Paragraph("-------------------------------------------------------------------------------------------"));
+
+                // Thêm thông tin tổng tiền và giảm giá (ẩn viền)
+                string x = "Tổng tiền:";
+                string y = "Giảm Giá:";
+                string z = "Thanh Toán:";
+
+                PdfPTable totalsTable = new PdfPTable(2); // 2 cột: mô tả và giá trị
+                totalsTable.WidthPercentage = 70;
+                totalsTable.HorizontalAlignment = Element.ALIGN_LEFT;
+
+                totalsTable.AddCell(new PdfPCell(new Phrase(x, font)) { HorizontalAlignment = Element.ALIGN_LEFT, Border = PdfPCell.NO_BORDER });
+                totalsTable.AddCell(new PdfPCell(new Phrase(totalPrice.ToString(), font)) { HorizontalAlignment = Element.ALIGN_RIGHT, Border = PdfPCell.NO_BORDER });
+
+                totalsTable.AddCell(new PdfPCell(new Phrase(y, font)) { HorizontalAlignment = Element.ALIGN_LEFT, Border = PdfPCell.NO_BORDER });
+                totalsTable.AddCell(new PdfPCell(new Phrase($"{discount}%", font)) { HorizontalAlignment = Element.ALIGN_RIGHT, Border = PdfPCell.NO_BORDER });
+
+                totalsTable.AddCell(new PdfPCell(new Phrase(z, font)) { HorizontalAlignment = Element.ALIGN_LEFT, Border = PdfPCell.NO_BORDER });
+                totalsTable.AddCell(new PdfPCell(new Phrase(finalTotalPrice.ToString(), font)) { HorizontalAlignment = Element.ALIGN_RIGHT, Border = PdfPCell.NO_BORDER });
+
+                bill.Add(totalsTable);
+
+                bill.Close();
+            }
+        }
+
+
     }
+
+
 }

@@ -9,9 +9,9 @@ create table TableFood -- bàn thức ăn
 (
 	id int identity primary key ,
 	name nvarchar(100) not null, 
-	status nvarchar(100) default N'Trống'-- trạng thái của bàn, ví dụ : bàn trống hay bàn có người
+	status nvarchar(100) default N'Trống',-- trạng thái của bàn, ví dụ : bàn trống hay bàn có người
+	isActive bit default 1
 )
-
 
 
 create table Account
@@ -25,8 +25,11 @@ create table Account
 create table FoodCategory  -- Danh sách đồ ăn
 (
 	id int identity primary key,
-	name nvarchar(100) not null
+	name nvarchar(100) not null,
+	isAvailable bit default 1
 )
+
+
 
 create table Food
 (
@@ -40,13 +43,15 @@ create table Food
 create table Bill
 (
 	id int identity primary key,
-	DateCheckIn date not null default getdate() ,
+	DateCheckIn datetime not null default getdate() ,
 	DateCheckOut date,
 	idTable int foreign key references TableFood(id) not null,
 	status int not null default 0, -- 1 : đã thanh toán || 0 : chưa thanh toán
+	timeCheckIn time(0),
+	timeCheckOut time(0),
+	discount int default 0,
+	totalPrice float
 )
-
-
 
 create table BillInfo
 (
@@ -56,32 +61,6 @@ create table BillInfo
 	idFood int foreign key references Food(id) not null,
 
 )
-
-alter table Bill
-add timeCheckIn time(0), timeCheckOut time(0)
-
-
-alter table Bill add totalPrice Float
-go
-
-
-alter table TableFood
-add isActive bit default 0
-go
-
-update TableFood set isActive = 1
-go
-
-select * from TableFood
-
-
-alter table Bill
-add discount int
-go
-
-
-update Bill set discount = 0
-go
 
 
 
@@ -118,13 +97,12 @@ end
 go
 
 
-alter proc USP_GetTableList
+create proc USP_GetTableList
 as select * from TableFood where isActive = 1
 go
 
 
 
-select * from Bill
 
 --thêm category
 insert FoodCategory (name)
@@ -146,7 +124,7 @@ values (N'Cà phê đen', 5, 30000),
 go
 
 
-create proc USP_InserBill
+alter proc USP_InserBill
 @idTable int
 as
 begin
@@ -363,16 +341,3 @@ begin
 	select id as [ID], name as [Tên bàn], status as [Trạng thái] from TableFood
 end
 go
-
-ALTER TABLE FoodCategory
-ADD isAvailable bit;
-
-
-
-update FoodCategory
-set isAvailable = 1
-
-
-select * from BillInfo
-
-
