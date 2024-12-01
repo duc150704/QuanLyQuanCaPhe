@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Security.Cryptography;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -61,23 +62,36 @@ namespace QuanLyQuanCAFE.DAO
         public bool UpdateAccount(string userName, string displayName, string pass, string newPass)
         {
             byte[] p = ASCIIEncoding.ASCII.GetBytes(pass);
-            byte[] nP = ASCIIEncoding.ASCII.GetBytes(newPass);
 
             byte[] hashP = new MD5CryptoServiceProvider().ComputeHash(p);
-            byte[] hashNP = new MD5CryptoServiceProvider().ComputeHash(nP);
-
             string pString = "";
-            string nPString = "";
             foreach (byte item in hashP)
             {
                 pString += item;
             }
-            foreach (byte item in hashNP)
+
+
+            if (!(newPass.Equals("")))
             {
-                nPString += item;
+                
+                byte[] nP = ASCIIEncoding.ASCII.GetBytes(newPass);
+
+                
+                byte[] hashNP = new MD5CryptoServiceProvider().ComputeHash(nP);
+
+                
+                string nPString = "";
+                
+                foreach (byte item in hashNP)
+                {
+                    nPString += item;
+                }
+                int data = DataProvider.Instance.ExcuteNonQuery("exec USP_UpdateAccount @userName , @displayName , @password , @newPassword ", new object[] { userName, displayName, pString, nPString });
+                return data > 0;
             }
-            int data = DataProvider.Instance.ExcuteNonQuery("exec USP_UpdateAccount @userName , @displayName , @password , @newPassword ", new object[] { userName,displayName,pString, nPString});
-            return data > 0;
+            int data1 = DataProvider.Instance.ExcuteNonQuery($"Update Account set DisplayName = N'{displayName}' where UserName = N'{userName}' and Password = {pString}");
+            if (data1 > 0 ) { return true; }
+            return false;
 
         }
         public bool InsertAccount(string userName, string displayName, int type )

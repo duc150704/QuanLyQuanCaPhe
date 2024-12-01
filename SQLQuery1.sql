@@ -341,3 +341,4 @@ begin
 	select id as [ID], name as [Tên bàn], status as [Trạng thái] from TableFood
 end
 go
+

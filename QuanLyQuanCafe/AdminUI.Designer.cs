@@ -480,6 +480,7 @@
             dtgvFood.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgvFood.Location = new Point(3, 13);
             dtgvFood.Name = "dtgvFood";
+            dtgvFood.ReadOnly = true;
             dtgvFood.RowHeadersWidth = 51;
             dtgvFood.Size = new Size(440, 347);
             dtgvFood.TabIndex = 0;
@@ -626,6 +627,7 @@
             dtgvCategory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgvCategory.Location = new Point(3, 13);
             dtgvCategory.Name = "dtgvCategory";
+            dtgvCategory.ReadOnly = true;
             dtgvCategory.RowHeadersWidth = 51;
             dtgvCategory.Size = new Size(440, 347);
             dtgvCategory.TabIndex = 0;
@@ -800,6 +802,7 @@
             dtgvTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgvTable.Location = new Point(3, 13);
             dtgvTable.Name = "dtgvTable";
+            dtgvTable.ReadOnly = true;
             dtgvTable.RowHeadersWidth = 51;
             dtgvTable.Size = new Size(440, 347);
             dtgvTable.TabIndex = 0;
@@ -993,6 +996,7 @@
             dtgvAccount.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgvAccount.Location = new Point(3, 13);
             dtgvAccount.Name = "dtgvAccount";
+            dtgvAccount.ReadOnly = true;
             dtgvAccount.RowHeadersWidth = 51;
             dtgvAccount.Size = new Size(440, 347);
             dtgvAccount.TabIndex = 0;
