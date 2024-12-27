@@ -50,7 +50,6 @@ namespace QuanLyQuanCAFE
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(386, 27);
             textBox1.TabIndex = 0;
-            textBox1.Text = "admin";
             textBox1.TextChanged += textBox1_TextChanged;
             // 
             // panel1
@@ -108,7 +107,6 @@ namespace QuanLyQuanCAFE
             texPassWord.Name = "texPassWord";
             texPassWord.Size = new Size(386, 27);
             texPassWord.TabIndex = 0;
-            texPassWord.Text = "admin";
             texPassWord.UseSystemPasswordChar = true;
             // 
             // panel2
@@ -130,7 +128,7 @@ namespace QuanLyQuanCAFE
             lbUserName.Text = "Tên Đăng Nhập";
             lbUserName.FontChanged += lbUserName_FontChanged;
             // 
-            // fLogin
+            // LoginUI
             // 
             AcceptButton = butLogin;
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -138,7 +136,7 @@ namespace QuanLyQuanCAFE
             CancelButton = butExit;
             ClientSize = new Size(650, 282);
             Controls.Add(panel1);
-            Name = "fLogin";
+            Name = "LoginUI";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Đăng Nhập";
             FormClosing += fLogin_FormClosing;

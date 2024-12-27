@@ -1,0 +1,5 @@
+Xây dựng phần mềm quản lý quán cà phê - Nhóm 3
+
+Hướng dẫn cài đặt:
+Bước 1: Chạy file setup_data.bat
+Bước 2: Vào Debug chạy file setup.exe

@@ -47,6 +47,12 @@ namespace QuanLyQuanCAFE
             string newPass = txbNewPassword.Text;
             string reEnterPass = txbCfNewPassWord.Text;
 
+            if(password.Equals(""))
+            {
+                MessageBox.Show("Bạn chưa nhập mật khẩu!");
+                return;
+            }
+
             if (!newPass.Equals(reEnterPass))
             {
                 MessageBox.Show("Mật khẩu nhập lại không trùng nhau!");

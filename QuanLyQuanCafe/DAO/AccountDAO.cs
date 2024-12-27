@@ -70,7 +70,6 @@ namespace QuanLyQuanCAFE.DAO
                 pString += item;
             }
 
-
             if (!(newPass.Equals("")))
             {
                 

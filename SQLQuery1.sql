@@ -65,10 +65,14 @@ create table BillInfo
 
 
 insert into Account (UserName, DisplayName, Password, Type)
-values ('NgoVanDuc', 'NgoDuc', 'ngovanduc@123',0),
-		('NguyenVanHieu','NguyenHieu','nguyenvanhieu@123',1),
-		('admin','admin','admin',1)
+values ('NgoVanDuc', 'NgoDuc', '33354741122871651676713774147412831195',0),
+		('NguyenVanHieu','NguyenHieu','33354741122871651676713774147412831195',1),
+		('admin','admin','33354741122871651676713774147412831195',1) --mat khau "admin"
 
+go
+
+insert into Account (UserName, DisplayName, Password, Type)
+values ('123', '1223', '33354741122871651676713774147412831195',1)
 go
 
 create proc USP_GetPeopleByUserName
@@ -112,19 +116,19 @@ go
 
 --thêm món ăn
 insert into Food(name, idCategory, price)
-values (N'Cà phê đen', 5, 30000),
-		(N'Cà phê sữa', 5, 25000),
-		(N'Cà phê phin', 5, 50000),
-		(N'Trà xanh', 5, 30000),
-		(N'Trà đào', 5, 30000),
-		(N'Bánh mì', 6, 20000),
-		(N'Bánh bông lan', 6, 30000),
-		(N'Cánh gà', 6, 30000),
-		(N'Đùi gà', 6, 30000)
+values (N'Cà phê đen', 1, 30000),
+		(N'Cà phê sữa', 1, 25000),
+		(N'Cà phê phin', 1, 50000),
+		(N'Trà xanh', 1, 30000),
+		(N'Trà đào', 1, 30000),
+		(N'Bánh mì', 2, 20000),
+		(N'Bánh bông lan', 2, 30000),
+		(N'Cánh gà', 2, 30000),
+		(N'Đùi gà', 2, 30000)
 go
 
 
-alter proc USP_InserBill
+create proc USP_InserBill
 @idTable int
 as
 begin
@@ -341,4 +345,11 @@ begin
 	select id as [ID], name as [Tên bàn], status as [Trạng thái] from TableFood
 end
 go
+
+select * from Account
+select * from Food
+select * from FoodCategory
+select * from TableFood
+select * from Bill
+select * from BillInfo
 
